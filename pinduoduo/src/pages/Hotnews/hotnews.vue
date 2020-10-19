@@ -1,126 +1,146 @@
 <template>
-  <!-- 主体内容 -->
-  <div class="contentWrapper">
-    <!-- banner图 -->
-    <div class="bannerWrapper">
-      <img
-        src="./static/images/pdd_news_banner.jpg"
-        alt="newsbanner"
-        class="bannerImg"
-      />
-    </div>
-    <!-- 公开信札 -->
-    <div class="letter">
-      <div class="letterHead">公开信札</div>
-      <div class="letterContent">
-        <div class="letterTitle">致股东信</div>
-        <div class="lettterList">
-          <div class="letterItem">
-            <a
-              class="letterName"
-              @click="
-                openNews(
-                  'https://www.pinduoduo.com/home/static/pdf/2020%E5%B9%B4%E8%87%B4%E8%82%A1%E4%B8%9C%E4%BF%A1.pdf'
-                )
-              "
-              >2020年致股东信</a
-            >
-            <div class="letterTime">2020-04-20</div>
+  <div>
+    <!-- 主体内容 -->
+    <div class="contentWrapper">
+      <!-- banner图 -->
+      <div class="bannerWrapper">
+        <img
+          src="./static/images/pdd_news_banner.jpg"
+          alt="newsbanner"
+          class="bannerImg"
+        />
+      </div>
+      <!-- 公开信札 -->
+      <div class="letter">
+        <div class="letterHead">公开信札</div>
+        <div class="letterContent">
+          <div class="letterTitle">致股东信</div>
+          <div class="lettterList">
+            <div class="letterItem">
+              <a
+                class="letterName"
+                @click="
+                  openNews(
+                    'https://www.pinduoduo.com/home/static/pdf/2020%E5%B9%B4%E8%87%B4%E8%82%A1%E4%B8%9C%E4%BF%A1.pdf'
+                  )
+                "
+                >2020年致股东信</a
+              >
+              <div class="letterTime">2020-04-20</div>
+            </div>
+            <div class="letterItem">
+              <a
+                class="letterName"
+                @click="
+                  openNews(
+                    'https://www.pinduoduo.com/home/static/pdf/2019%E5%B9%B4%E8%87%B4%E8%82%A1%E4%B8%9C%E4%BF%A1.pdf'
+                  )
+                "
+                >2019年致股东信</a
+              >
+              <div class="letterTime">2019-04-20</div>
+            </div>
+            <div class="letterItem">
+              <a
+                class="letterName"
+                @click="
+                  openNews(
+                    'https://www.pinduoduo.com/home/static/pdf/2018%E5%B9%B4%E8%87%B4%E8%82%A1%E4%B8%9C%E4%BF%A1.pdf'
+                  )
+                "
+                >2018年致股东信</a
+              >
+              <div class="letterTime">2018-06</div>
+            </div>
           </div>
-          <div class="letterItem">
-            <a
-              class="letterName"
-              @click="
-                openNews(
-                  'https://www.pinduoduo.com/home/static/pdf/2019%E5%B9%B4%E8%87%B4%E8%82%A1%E4%B8%9C%E4%BF%A1.pdf'
-                )
-              "
-              >2019年致股东信</a
-            >
-            <div class="letterTime">2019-04-20</div>
-          </div>
-          <div class="letterItem">
-            <a
-              class="letterName"
-              @click="
-                openNews(
-                  'https://www.pinduoduo.com/home/static/pdf/2018%E5%B9%B4%E8%87%B4%E8%82%A1%E4%B8%9C%E4%BF%A1.pdf'
-                )
-              "
-              >2018年致股东信</a
-            >
-            <div class="letterTime">2018-06</div>
+        </div>
+        <div class="letterContent">
+          <div class="letterTitle">其他</div>
+          <div class="lettterList">
+            <div class="letterItem">
+              <a
+                class="letterName"
+                @click="
+                  openNews(
+                    'https://www.pinduoduo.com/home/static/pdf/%E9%BB%84%E5%B3%A5%E8%87%B4%E5%85%AC%E5%8F%B8%E5%85%A8%E5%91%98%E4%BF%A1%EF%BC%9A%E6%8B%BC%E5%A4%9A%E5%A4%9A%E7%9A%84%E4%B8%80%E5%B0%8F%E6%AD%A5.pdf'
+                  )
+                "
+                >黄峥致公司全员信：拼多多的一小步</a
+              >
+              <div class="letterTime">2020-07-01</div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="letterContent">
-        <div class="letterTitle">其他</div>
-        <div class="lettterList">
-          <div class="letterItem">
-            <a
-              class="letterName"
-              @click="
-                openNews(
-                  'https://www.pinduoduo.com/home/static/pdf/%E9%BB%84%E5%B3%A5%E8%87%B4%E5%85%AC%E5%8F%B8%E5%85%A8%E5%91%98%E4%BF%A1%EF%BC%9A%E6%8B%BC%E5%A4%9A%E5%A4%9A%E7%9A%84%E4%B8%80%E5%B0%8F%E6%AD%A5.pdf'
-                )
-              "
-              >黄峥致公司全员信：拼多多的一小步</a
-            >
-            <div class="letterTime">2020-07-01</div>
+      <!-- 热点资讯 -->
+      <div class="message">
+        <div class="letterHead">热点资讯</div>
+        <div
+          class="messageItem"
+          v-for="item in hotNewsList"
+          :key="item.id"
+          @click="openNews(item.jump_url)"
+        >
+          <img :src="item.main_img_url" alt="messageItem" />
+          <div class="messageContent">
+            <img :src="item.sub_img_url" alt="" class="hotNewsLogo" />
+            <div class="text">
+              <h3>
+                {{ item.main_title }}
+              </h3>
+              <p>
+                {{ item.sub_title }}
+              </p>
+              <p class="lookAll">查看全文</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 媒体报道 -->
+      <div class="mediaReport">
+        <div class="letterHead">媒体报道</div>
+        <div
+          class="reportItem"
+          v-for="item in mediaReport"
+          :key="item.id"
+          @click="openNews(item.jump_url)"
+        >
+          <h4>{{ item.main_title }}</h4>
+          <div class="reportFooter">
+            <div class="from">转自：{{ item.source }}</div>
+            <div class="time">{{ item.sourceDate }}</div>
           </div>
         </div>
       </div>
     </div>
-    <!-- 热点资讯 -->
-    <div class="message">
-      <div class="letterHead">热点资讯</div>
-      <div
-        class="messageItem"
-        v-for="item in hotNewsList"
-        :key="item.id"
-        @click="openNews(item.jump_url)"
+    <!-- 分页器 -->
+    <div class="block" style="margin: 0 auto; width: 600px">
+      <el-pagination
+        @size-change="handleSizeChange"
+        @current-change="handleCurrentChange"
+        :current-page.sync="currentPage"
+        :page-sizes="pageSizes"
+        :page-size="pageSize"
+        layout="sizes, prev, pager, next"
+        :total="total"
       >
-        <img :src="item.main_img_url" alt="messageItem" />
-        <div class="messageContent">
-          <img :src="item.sub_img_url" alt="" class="hotNewsLogo" />
-          <div class="text">
-            <h3>
-              {{ item.main_title }}
-            </h3>
-            <p>
-              {{ item.sub_title }}
-            </p>
-            <p class="lookAll">查看全文</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- 媒体报道 -->
-    <div class="mediaReport">
-      <div class="letterHead">媒体报道</div>
-      <div
-        class="reportItem"
-        v-for="item in mediaReport"
-        :key="item.id"
-        @click="openNews(item.jump_url)"
-      >
-        <h4>{{ item.main_title }}</h4>
-        <div class="reportFooter">
-          <div class="from">转自：{{ item.source }}</div>
-          <div class="time">{{ item.sourceDate }}</div>
-        </div>
-      </div>
+      </el-pagination>
     </div>
   </div>
 </template>
 <script>
 import { reqHotNews, reqMediaReports } from "@/api";
+import { Pagination } from "element-ui";
 export default {
   name: "Hotnews",
   data() {
     return {
       hotNewsList: [],
       mediaReport: [],
+      currentPage: 1,
+      pageSizes: [5, 10, 15, 20],
+      total: 294,
+      pageSize: 10,
     };
   },
   methods: {
@@ -137,6 +157,14 @@ export default {
     //点击跳转
     openNews(url) {
       window.open(url, "_blank");
+    },
+    handleSizeChange(pageSize) {
+      this.pageSize = pageSize;
+      this.getMediaReport(this.currentPage, pageSize);
+    },
+    handleCurrentChange(page) {
+      this.currentPage = page;
+      this.getMediaReport(page, this.pageSize);
     },
   },
   mounted() {
