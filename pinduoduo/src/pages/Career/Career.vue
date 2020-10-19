@@ -356,8 +356,17 @@
             </div>
           </div>
           <!-- 分页区 -->
-          <div class="page">
-            <p>加入分页组件</p>
+          <div class="block" style="margin: 0 auto; width: 600px">
+            <el-pagination
+              @size-change="handleSizeChange"
+              @current-change="handleCurrentChange"
+              :current-page.sync="currentPage"
+              :page-sizes="pageSizes"
+              :page-size="pageSize"
+              layout="sizes, prev, pager, next"
+              :total="total"
+            >
+      </el-pagination>
           </div>
         </div>
       </div>
@@ -365,8 +374,33 @@
   </div>
 </template>
 <script>
+import {Pagination} from 'element-ui'
 export default {
   name: "Career",
+  data() {
+    return {
+      currentPage: 1,
+      pageSizes: [5, 10, 15, 20],
+      total: 294,
+      pageSize: 10,
+    }
+  },
+  methods: {
+    handleSizeChange(pageSize) {
+      this.pageSize = pageSize;
+      this.getMediaReport(this.currentPage, pageSize);
+    },
+    handleCurrentChange(page) {
+      this.currentPage = page;
+      this.getMediaReport(page, this.pageSize);
+    },
+  },
+  mounted() {
+
+
+    // 更新一下
+    // this.getMediaReport();
+  },
 };
 </script>
 <style lang='less' rel='stylesheet/less' scoped>
@@ -566,11 +600,6 @@ export default {
             font-size: 16px;
           }
         }
-      }
-      .page {
-        height: 32px;
-        margin-top: 30px;
-        background-color: #999;
       }
     }
   }
