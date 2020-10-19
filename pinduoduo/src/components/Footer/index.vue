@@ -131,6 +131,7 @@ export default {
 <style lang='less' rel='stylesheet/less' scoped>
 // 底部部分
 .footer {
+  overflow: hidden;
   background-color: #fff;
   padding-top: 60px;
   position: relative;

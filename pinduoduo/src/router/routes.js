@@ -9,49 +9,54 @@ import Detail from '@/pages/Detail/detail.vue'
 import Help from '@/pages/Help/help.vue'
 import Recruitment from '@/pages/Recruitment/recruitment.vue'
 import Hotnews from '@/pages/Hotnews/hotnews.vue'
+import Shopping from '@/pages/Shopping/shopping.vue'
 export default [
     {
-        path:'/home',
-        component:Home
+        path: '/home',
+        component: Home
     },
     {
-        path:'/login',
-        component:Login
+        path: '/login',
+        component: Login
     },
     {
-        path:'/career',
-        component:Career
+        path: '/career',
+        component: Career
     },
     {
-        path:'/cart',
-        component:Cart
+        path: '/cart',
+        component: Cart
     },
     {
-        path:'/complaint',
-        component:Complaint
+        path: '/complaint',
+        component: Complaint
     },
     {
-        path:'/cooperation',
-        component:Cooperation
+        path: '/cooperation',
+        component: Cooperation
     },
     {
-        path:'/detail',
-        component:Detail
+        path: '/detail',
+        component: Detail,
     },
     {
-        path:'/help',
-        component:Help
+        path: '/detail/shopping',
+        component: Shopping
     },
     {
-        path:'/recruitment',
-        component:Recruitment
+        path: '/help',
+        component: Help
     },
     {
-        path:'/hotnews',
-        component:Hotnews
+        path: '/recruitment',
+        component: Recruitment
     },
     {
-        path:'/',
+        path: '/hotnews',
+        component: Hotnews
+    },
+    {
+        path: '/',
         redirect: '/home'
     }
 
