@@ -711,7 +711,12 @@
         <!-- 商品图片区 -->
         <div class="shop-list-img">
           <!-- 这是一个容器 -->
-          <div class="shop-list-one" @click="shoplist"  v-for="(item, index) in detGoodsList" :key="item">
+          <div
+            class="shop-list-one"
+            @click="shoplist"
+            v-for="(item, index) in detGoodsList"
+            :key="item"
+          >
             <!-- 这是一个装img的div -->
 
             <div class="shop-list-div">
@@ -1004,13 +1009,16 @@
   </div>
 </template>
 <script>
-import { mapState } from "vuex";
+import { mapState, mapActions } from "vuex";
 export default {
   name: "Detail",
   data() {
     return {};
   },
   methods: {
+    ...mapActions({
+      GETDETGOODSLIST: "GETDETGOODSLIST",
+    }),
     shoplist() {
       this.$router.push("/detail/shopping");
     },
@@ -1019,6 +1027,9 @@ export default {
     ...mapState({
       detGoodsList: (state) => state.detail.detGoodsList,
     }),
+  },
+  mounted() {
+    this.GETDETGOODSLIST();
   },
 };
 </script>

@@ -12,10 +12,10 @@ export default {
 
     actions: {
         async GETDETGOODSLIST({ commit }) {
-            const ressult = await goodsList()
-            if (ressult.code === 200) {
-                commit('DETGOODSLIST', result)
-            }
+            const result = await goodsList()
+
+            commit('DETGOODSLIST', result)
+
         }
     },
 
