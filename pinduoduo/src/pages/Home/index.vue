@@ -544,7 +544,7 @@ export default {
   },
   mounted(){
       // console.log(this.goodsList())
-      this.goodsList()
+      this.getGoodsList()
   },
   methods:{
     ...mapActions({
