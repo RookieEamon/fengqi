@@ -41,6 +41,8 @@
             <span class="count">{{ item.sales_tip }}</span>
           </div>
         </div>
+
+        
         <!-- 最后一个 -->
         <div class="goods">
           <div class="lastCode">

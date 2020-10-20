@@ -9,61 +9,65 @@ import Detail from '@/pages/Detail/detail.vue'
 import Help from '@/pages/Help/help.vue'
 import Recruitment from '@/pages/Recruitment/recruitment.vue'
 import Hotnews from '@/pages/Hotnews/hotnews.vue'
+import JobDetail from '@/pages/Career/JobDetail'
 // 引入home的子组件
 import More from '../pages/Home/More/index'
 import Download from '../pages/Home/Download/index'
 export default [
-    {
-        path: '/home',
-        component: Home,
-    },
-    {
-        path: '/home/more',
-        component: More
-    },
-    {
-        path: '/home/download',
-        component: Download
-    },
-    {
-        path: '/login',
-        component: Login
-    },
-    {
-        path: '/career',
-        component: Career
-    },
-    {
-        path: '/cart',
-        component: Cart
-    },
-    {
-        path: '/complaint',
-        component: Complaint
-    },
-    {
-        path: '/cooperation',
-        component: Cooperation
-    },
-    {
-        path: '/detail',
-        component: Detail
-    },
-    {
-        path: '/help',
-        component: Help
-    },
-    {
-        path: '/recruitment',
-        component: Recruitment
-    },
-    {
-        path: '/hotnews',
-        component: Hotnews
-    },
-    {
-        path: '/',
-        redirect: '/home'
-    }
-
+	{
+		path: '/home',
+		component: Home
+	},
+	{
+		path: '/login',
+		component: Login
+	},
+	{
+		path: '/career',
+		component: Career,
+		children: [{
+			path: '/career/jobdetail',
+			component: JobDetail
+		}, ]
+	},
+	{
+		path: '/cart',
+		component: Cart
+	},
+	{
+		path: '/complaint',
+		component: Complaint
+	},
+	{
+		path: '/cooperation',
+		component: Cooperation
+	},
+	{
+		path: '/detail',
+		component: Detail
+	},
+	{
+		path: '/help',
+		component: Help
+	},
+	{
+		path: '/recruitment',
+		component: Recruitment
+	},
+	{
+		path: '/hotnews',
+		component: Hotnews
+	},
+	{
+		path: '/home/more',
+		component: More
+	},
+	{
+		path: '/home/download',
+		component: Download
+	},
+	{
+		path: '/',
+		redirect: '/home'
+	}
 ]
