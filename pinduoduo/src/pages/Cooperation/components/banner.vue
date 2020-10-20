@@ -1,51 +1,85 @@
 <template>
   <div>
-    <div class="banner">
-      <el-carousel indicator-position="none" arrow="never">
-        <el-carousel-item>
-          <div>
-            <h1>拼多多商务合作</h1>
-            <div class="line"></div>
-            <div class="slogan">
-              诚信合作 <span></span> 本分做事 <span></span> 携手共赢
-            </div>
+    <swiper
+      ref="mySwiper"
+      :options="swiperOptions"
+      class="swiper-container"
+      :auto-update="true"
+    >
+      <swiper-slide>
+        <div class="banner">
+          <h1>拼多多商务合作</h1>
+          <div class="line"></div>
+          <div class="slogan">
+            诚信合作 <span></span> 本分做事 <span></span> 携手共赢
           </div>
-          <div>
-            <h1>拼多多商务合作</h1>
-            <div class="line"></div>
-            <div class="slogan">
-              诚信合作 <span></span> 本分做事 <span></span> 携手共赢
-            </div>
-          </div>
-        </el-carousel-item>
-        <el-carousel-item>
+        </div>
+      </swiper-slide>
+      <swiper-slide>
+        <div class="banner2">
           <h1>拼多多商务合作</h1>
           <div class="line"></div>
           <div class="slogan">
             廉洁公正 <span></span> 公开透明 <span></span> 阳光采购
           </div>
-        </el-carousel-item>
-      </el-carousel>
-    </div>
+        </div>
+      </swiper-slide>
+      <div class="swiper-pagination" slot="pagination"></div>
+    </swiper>
+
+    <!-- <div class="banner">
+            <h1>拼多多商务合作</h1>
+            <div class="line"></div>
+            <div class="slogan">
+              廉洁公正 <span></span> 公开透明 <span></span> 阳光采购
+            </div>
+          </div> -->
   </div>
 </template>
 <script>
+import { Swiper, SwiperSlide, directive } from "vue-awesome-swiper";
+import "swiper/css/swiper.css";
 export default {
   name: "Banner",
+  data() {
+    return {
+      swiperOptions: {
+        pagination: {
+          el: ".swiper-pagination",
+        },
+        autoplay:true,
+        loop: true,
+      },
+    };
+  },
+  components: {
+    Swiper,
+    SwiperSlide,
+  },
+  directives: {
+    swiper: directive,
+  },
+  computed: {
+    swiper() {
+      return this.$refs.mySwiper.$swiper;
+    },
+  },
+  mounted() {
+    // const swiper = new Swiper('swiper-container',this.swiperOptions);
+    //this.swiper.slideTo(2, 3000, false);
+  },
 };
 </script>
 <style lang='less' rel='stylesheet/less' scoped>
-.banner {
-  margin-top: 111px;
+.banner,
+.banner2 {
+  // margin-top: 111px;
   width: 100%;
   height: 514px;
   background-image: url(https://pinduoduoimg.yangkeduo.com/srm/banner1.jpg);
   background-repeat: no-repeat;
   background-size: 100% 100%;
   border-top: 1px solid transparent;
-  &:last-child {
-    background-image: url("https://pinduoduoimg.yangkeduo.com/srm/banner2.jpg");
-  }
   h1 {
     font-size: 64px;
     line-height: 64px;
@@ -80,5 +114,8 @@ export default {
       margin: 0 15px;
     }
   }
+}
+.banner2 {
+  background-image: url("https://pinduoduoimg.yangkeduo.com/srm/banner2.jpg");
 }
 </style>
