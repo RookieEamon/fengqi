@@ -24,7 +24,7 @@ export default [
     {
         path: '/home/download',
         component: Download
-    },
+    }, 
     {
         path: '/login',
         component: Login
