@@ -9,3 +9,6 @@ export const reqLatestPositionList = (job,page,pageSize) => ajax.post('/careers'
 export const reqJobdetail = (code) => ajax.post('/jobdetail',{code})
 //获取媒体报道列表
 export const reqMediaReports=(page,pageSize)=>ajax.get(`/mediareports/${page}/${pageSize}`)
+// 发送请求获取首页数据
+export const reqHome = () => ajax.get('/indexData')
+
