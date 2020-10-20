@@ -1,5 +1,5 @@
 // import Home from '@/pages/Home'
-import Home from '@/pages/Home/home.vue'
+import Home from '@/pages/Home'
 import Login from '@/pages/Login/login.vue'
 import Career from '@/pages/Career/Career.vue'
 import Cart from '@/pages/Cart/cart.vue'
@@ -9,49 +9,60 @@ import Detail from '@/pages/Detail/detail.vue'
 import Help from '@/pages/Help/help.vue'
 import Recruitment from '@/pages/Recruitment/recruitment.vue'
 import Hotnews from '@/pages/Hotnews/hotnews.vue'
+// 引入home的子组件
+import More from '../pages/Home/More/index'
+import Download from '../pages/Home/Download/index'
 export default [
     {
-        path:'/home',
-        component:Home
+        path: '/home',
+        component: Home,
     },
     {
-        path:'/login',
-        component:Login
+        path: '/home/more',
+        component: More
     },
     {
-        path:'/career',
-        component:Career
+        path: '/home/download',
+        component: Download
     },
     {
-        path:'/cart',
-        component:Cart
+        path: '/login',
+        component: Login
     },
     {
-        path:'/complaint',
-        component:Complaint
+        path: '/career',
+        component: Career
     },
     {
-        path:'/cooperation',
-        component:Cooperation
+        path: '/cart',
+        component: Cart
     },
     {
-        path:'/detail',
-        component:Detail
+        path: '/complaint',
+        component: Complaint
     },
     {
-        path:'/help',
-        component:Help
+        path: '/cooperation',
+        component: Cooperation
     },
     {
-        path:'/recruitment',
-        component:Recruitment
+        path: '/detail',
+        component: Detail
     },
     {
-        path:'/hotnews',
-        component:Hotnews
+        path: '/help',
+        component: Help
     },
     {
-        path:'/',
+        path: '/recruitment',
+        component: Recruitment
+    },
+    {
+        path: '/hotnews',
+        component: Hotnews
+    },
+    {
+        path: '/',
         redirect: '/home'
     }
 
