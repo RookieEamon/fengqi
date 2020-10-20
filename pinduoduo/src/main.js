@@ -3,7 +3,8 @@ import App from './App.vue'
 import router from '@/router'
 import store from '@/Store'
 Vue.config.productionTip = false
-
+import { Pagination } from 'element-ui';
+Vue.use(Pagination)
 new Vue({
   render: h => h(App),
   router,
