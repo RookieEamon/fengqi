@@ -47,7 +47,10 @@ export default [
     },
     {
         path: '/detail',
-        component: Detail
+        component: Detail,
+        meta: {
+            isshowheader: true
+        }
     },
     {
         path: '/help',

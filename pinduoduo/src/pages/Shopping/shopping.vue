@@ -198,10 +198,10 @@ export default {
       detGoodsList: [],
     };
   },
-  // mounted() {
-  //   console.log(this.$route);
-  //   this.detGoodsList = this.$route.query.item;
-  // },
+  mounted() {
+    console.log(this.$route);
+    this.detGoodsList = this.$route.query.item;
+  },
   components: {},
 };
 </script>
@@ -421,9 +421,9 @@ export default {
       //<!-- 最后部分大容器 -->
       .shopping-page-right-bottom {
         width: 550px;
-        height: 304px;
+        height: 330px;
         margin-top: 21px;
-        border-bottom: 1px solid #8b8a8a;
+        border-bottom
         //  <!-- 配送行 -->
         .shopping-page-right-bottom-one {
           width: 100%;

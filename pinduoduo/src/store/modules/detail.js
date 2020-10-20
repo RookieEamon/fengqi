@@ -1,23 +1,23 @@
-import { goodsList } from '@/api'
+// import { goodsList } from '@/api'
 
-export default {
-    state: {
-        detGoodsList: []
-    },
-    mutations: {
-        DETGOODSLIST(state, detGoodsList) {
-            state.detGoodsList = detGoodsList
-        }
-    },
+// export default {
+//     state: {
+//         detGoodsList: []
+//     },
+//     mutations: {
+//         DETGOODSLIST(state, detGoodsList) {
+//             state.detGoodsList = detGoodsList
+//         }
+//     },
 
-    actions: {
-        async GETDETGOODSLIST({ commit }) {
-            const result = await goodsList()
-            commit('DETGOODSLIST', result)
-        }
-    },
+//     actions: {
+//         async GETDETGOODSLIST({ commit }) {
+//             const result = await goodsList()
+//             commit('DETGOODSLIST', result)
+//         }
+//     },
 
-    getters: {
+//     getters: {
 
-    }
-}
+//     }
+// }

@@ -37,6 +37,7 @@
             <span><i class="fa fa-unlock-alt" aria-hidden="true"></i></span>
             <span>购物袋</span>
             <span>0</span>
+
             <!-- 隐藏框 -->
             <div class="shopping-bag-hidden">
               好像还未登录！<a href="">马上登录</a>查看购物袋吧!
@@ -145,7 +146,7 @@
             </li>
             <li class="shop-label">
               <a class="shop-label-a" href="##"
-                >更多<i class="fa fa-caret-down" aria-hidden="true"> </i
+                >更多<i class="fa fa-caret-down" aria-hidden="true"></i
               ></a>
               <div class="shop-yin">
                 <ol>
@@ -697,21 +698,13 @@
                 <em class="page-num2">1</em>
                 /4
               </span>
-              <!-- <span class="page-pre">
+              <span class="page-pre">
                 <i> < </i>
-              </span> -->
-              <!-- <a href="##" class="page-page">
+              </span>
+              <a href="##" class="page-page">
                 下一页
                 <i> > </i>
-              </a> -->
-              <div
-                class="block"
-                style="display: inline-block; line-height: 26px"
-              >
-                <!-- <span class="demonstration">页数较少时的效果</span> -->
-                <el-pagination layout="prev, pager, next" :total="40">
-                </el-pagination>
-              </div>
+              </a>
             </div>
           </div>
         </div>
@@ -720,14 +713,16 @@
           <!-- 这是一个容器 -->
           <div
             class="shop-list-one"
-            @click="shoplist(item)"
-            v-for="item in detGoodsList"
-            :key="item.goods_id"
+            @click="shoplist"
+            v-for="item in goodsList"
+            :key="item.id"
           >
             <!-- 这是一个装img的div -->
+
             <div class="shop-list-div">
-              <img class="shop-list-tu" :src="item.hd_thumb_url" alt="" />
+              <img class="shop-list-tu" :src="item.coverImgUrl" alt="" />
             </div>
+
             <!-- 这是装价格和介绍商品 -->
             <div class="shop-list-introduce">
               <!-- 介绍价格 -->
@@ -738,13 +733,13 @@
                   </div>
                   <div class="shop-list-item_temai2">
                     <span class="shop-list-item_text2">￥</span>
-                    {{ item.group_price }}
+                    284
                   </div>
                 </div>
               </div>
               <!-- 介绍商品样式 -->
               <div class="shop-list-item-content">
-                {{ item.goods_name }}
+                沐兰秋冬显瘦直筒针织长裤百搭休闲裤
               </div>
             </div>
           </div>
@@ -1018,31 +1013,28 @@ import { mapState, mapActions } from "vuex";
 export default {
   name: "Detail",
   data() {
-    return {
-      pager: 2,
-    };
+    return {};
   },
   methods: {
     ...mapActions({
-      GETDETGOODSLIST: "GETDETGOODSLIST",
+      getGoodsList: "getGoodsList",
     }),
-    // shoplist(item) {
-    //   const { path, query } = this.$route;
-    //   this.$router.push({
-    //     path: "/detail/shopping",
-    //     query: {
-    //       item: item,
-    //     },
-    //   });
-    // },
+    shoplist(item) {
+      this.$router.push({
+        path: "/detail/shopping",
+        query: {
+          item: item,
+        },
+      });
+    },
   },
   computed: {
     ...mapState({
-      detGoodsList: (state) => state.detail.detGoodsList,
+      goodsList: (state) => state.detail.goodsList,
     }),
   },
   mounted() {
-    this.GETDETGOODSLIST();
+    this.getGoodsList();
   },
 };
 </script>
@@ -1087,21 +1079,21 @@ export default {
 
         .nav-list-one {
           float: left;
-          // display: inline-block;
+          display: inline-block;
           width: 101px;
           height: 100px;
         }
 
         .nav-list-two {
           float: left;
-          // display: inline-block;
+          display: inline-block;
           width: 101px;
           height: 100px;
         }
 
         .nav-list-three {
           float: left;
-          // display: inline-block;
+          display: inline-block;
           width: 101px;
           height: 100px;
         }
@@ -1144,7 +1136,7 @@ export default {
       //搜索框结束
       //购物袋
       .shopping-bag {
-        // display: inline;
+        display: inline;
         width: 94px;
         height: 31px;
         border: 1px solid #a4a4a573;
