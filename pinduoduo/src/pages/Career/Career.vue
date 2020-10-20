@@ -1,6 +1,7 @@
 <template>
   <div>
     <!-- 主体内容区 -->
+    
     <!-- 背景图 -->
     <div class="setting">
       <img src="./images/recruitBanner-51483374151c764e6821ef8e2df9dcb5.jpg" alt="背景图" />
@@ -36,31 +37,31 @@
             </div>
             <div class="title_card_list">
               <div class="card_list">
-                <span>全部</span>
+                <span @click="changLatestPositionList('')">全部</span>
               </div>
               <div class="card_list">
-                <span>技术</span>
+                <span @click="changLatestPositionList('technology')" >技术</span>
               </div>
               <div class="card_list">
-                <span>产品</span>
+                <span @click="changLatestPositionList('product')">产品</span>
               </div>
               <div class="card_list">
-                <span>设计</span>
+                <span @click="changLatestPositionList('design')">设计</span>
               </div>
               <div class="card_list">
-                <span>市场营销</span>
+                <span @click="changLatestPositionList('market')">市场营销</span>
               </div>
               <div class="card_list">
-                <span>招商运营</span>
+                <span @click="changLatestPositionList('investment')">招商运营</span>
               </div>
               <div class="card_list">
-                <span>市场管理</span>
+                <span @click="changLatestPositionList('management')">市场管理</span>
               </div>
               <div class="card_list">
-                <span>综合</span>
+                <span @click="changLatestPositionList('general')">综合</span>
               </div>
               <div class="card_list">
-                <span>客服</span>
+                <span @click="changLatestPositionList('customerService')">客服</span>
               </div>
             </div>
           </div>
@@ -74,7 +75,8 @@
               <div 
                 class="card_list_next" 
                 v-for="item in hottestPositionList"
-                :key="item.name"  
+                :key="item.name"
+                @click="toJobDetail"  
               >
                 <p>{{item.name}}</p>
               </div>
@@ -96,11 +98,11 @@
         <div class="main_text">
           <div class="main_head">
             <div class="left_text">最新发布</div>
-            <div class="right_text">显示1-10,共{{total}}个职位</div>
+            <div class="right_text">显示{{page}}-{{pageSize}},共{{total}}个职位</div>
           </div>
           <div 
             class="main_list" 
-            v-for="item in latestPositionList.list"
+            v-for="item in latestPositionList"
             :key="item.code"
           >
             <div class="main_list_text">
@@ -108,7 +110,7 @@
               <div class="detail">
                 <div class="detail_item">
                   <img src="./images/1.svg" alt />
-                  <span>技术类</span>
+                  <span>{{item.job}}</span>
                 </div>
                 <div class="detail_item">
                   <img src="./images/2.svg" alt />
@@ -152,7 +154,7 @@ export default {
   data() {
     return {
       hottestPositionList:[],//热招岗位列表数组
-      latestPositionList:{},//最新发布岗位列表数组
+      latestPositionList:[],//最新发布岗位列表数组
       currentPage: 1,
       pageSizes: [5, 10, 15, 20],
       total: 0,
@@ -161,6 +163,10 @@ export default {
       page: 1
     }
   },
+  mounted() {
+    this.getHotpositionList();
+    this.getLatestPositionList('',1,10);
+  },
   methods: {
     //获取热招岗位列表和最新发布岗位列表
     async getHotpositionList (){
@@ -168,12 +174,23 @@ export default {
       this.hottestPositionList = hottestPositionList
     },
     //获取最新的岗位数据列表
-    async getLatestPositionList (){
+    async getLatestPositionList (type){
       let {job, page, pageSize} = this
-      const result = await reqLatestPositionList(job,page,pageSize);
-      this.latestPositionList = result;
+      const result = await reqLatestPositionList(type,page,pageSize);
+      this.latestPositionList = result.list;
       this.total = result.total;
     },
+    //点击job更新最新岗位数据
+    changLatestPositionList(type){
+      this.job = type
+      this.getLatestPositionList(type);
+
+    },
+    //点击跳转至JobDetail页面
+    toJobDetail(){
+      this.$router.push('/career/jobdetail')
+    },
+    //分页器函数
     handleSizeChange(pageSize) {
       this.pageSize = pageSize;
       this.getMediaReport(this.currentPage, pageSize);
@@ -183,10 +200,7 @@ export default {
       this.getMediaReport(page, this.pageSize);
     },
   },
-  mounted() {
-    this.getHotpositionList();
-    this.getLatestPositionList('product',1,10);
-  },
+  
 };
 </script>
 <style lang='less' rel='stylesheet/less' scoped>
@@ -305,6 +319,9 @@ export default {
             margin: 20px auto;
             span {
               display: block;
+              &:hover{
+                cursor: default;
+              }
             }
           }
           .card_list_next {

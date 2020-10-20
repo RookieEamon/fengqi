@@ -9,50 +9,54 @@ import Detail from '@/pages/Detail/detail.vue'
 import Help from '@/pages/Help/help.vue'
 import Recruitment from '@/pages/Recruitment/recruitment.vue'
 import Hotnews from '@/pages/Hotnews/hotnews.vue'
-export default [
-    {
-        path:'/home',
-        component:Home
-    },
-    {
-        path:'/login',
-        component:Login
-    },
-    {
-        path:'/career',
-        component:Career
-    },
-    {
-        path:'/cart',
-        component:Cart
-    },
-    {
-        path:'/complaint',
-        component:Complaint
-    },
-    {
-        path:'/cooperation',
-        component:Cooperation
-    },
-    {
-        path:'/detail',
-        component:Detail
-    },
-    {
-        path:'/help',
-        component:Help
-    },
-    {
-        path:'/recruitment',
-        component:Recruitment
-    },
-    {
-        path:'/hotnews',
-        component:Hotnews
-    },
-    {
-        path:'/',
-        redirect: '/home'
-    }
-
+import JobDetail from '@/pages/Career/JobDetail'
+export default [{
+		path: '/home',
+		component: Home
+	},
+	{
+		path: '/login',
+		component: Login
+	},
+	{
+		path: '/career',
+		component: Career,
+		children: [{
+			path: '/career/jobdetail',
+			component: JobDetail
+		},
+	]
+	},
+	{
+		path: '/cart',
+		component: Cart
+	},
+	{
+		path: '/complaint',
+		component: Complaint
+	},
+	{
+		path: '/cooperation',
+		component: Cooperation
+	},
+	{
+		path: '/detail',
+		component: Detail
+	},
+	{
+		path: '/help',
+		component: Help
+	},
+	{
+		path: '/recruitment',
+		component: Recruitment
+	},
+	{
+		path: '/hotnews',
+		component: Hotnews
+	},
+	{
+		path: '/',
+		redirect: '/home'
+	}
 ]
