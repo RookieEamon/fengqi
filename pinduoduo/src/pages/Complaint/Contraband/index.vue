@@ -96,7 +96,7 @@ export default {
 };
 </script>
 
-<style lang="less" rel="stylesheet/less" scoped>
+<style lang="less" rel="stylesheet/less" scoped>
 .main {
   width: 100%;
   // 头部
