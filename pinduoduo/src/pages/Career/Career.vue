@@ -180,7 +180,7 @@ export default {
     // console.log(this.path)
     this.getHotpositionList();
     this.getLatestPositionList("", 1, 10);
-    // this.getJobdetail();
+    // this.getMediaReport();
   },
   methods: {
     //获取热招岗位列表和最新发布岗位列表
@@ -209,9 +209,7 @@ export default {
     //点击跳转至JobDetail页面
     toJobDetail(code) {
       this.$router.push({path:"/career/jobdetail",query:{code:code}})
-      
       this.isShow = true;
-
     },
     //分页器函数
     handleSizeChange(pageSize) {
@@ -222,6 +220,7 @@ export default {
       this.currentPage = page;
       this.getMediaReport(page, this.pageSize);
     },
+    getMediaReport(){}
   },
 };
 </script>
