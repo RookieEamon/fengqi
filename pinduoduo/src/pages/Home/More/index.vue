@@ -11,7 +11,7 @@
       </div>
       <!-- 大图 -->
       <div class="bannerGroup">
-        <img src="../image/floorbannerMan.jpg" alt="" />
+        <img src="../image/floorBanner.jpg" alt="" />
         <div class="rightTitle">
           <div class="title">限时秒杀</div>
           <div class="desc">每日精选好货超低价秒杀，限时限量，全场包邮。</div>
@@ -19,29 +19,25 @@
       </div>
       <!-- 商品列表区 -->
       <div class="goodsList">
-        <div
-          class="goods"
-          v-for="(item, index) in goodsItem.goodsList"
-          :key="index"
-        >
+        <div class="goods">
           <div class="scan">
-            <img class="img" :src="item.hd_thumb_url" alt="" />
+            <img class="img" src="../image/floorListSmall.jpeg" alt="" />
             <div class="qrcode">
               <img src="../image/saowogoumai.png" alt="" />
               <div class="qrcodeText">微信扫我购买</div>
             </div>
           </div>
           <div class="goodsIntroduce">
-            {{ item.goods_name }}
+            外套女春秋季韩版宽松学生2020新款黑色小西装网红中长款休闲西服
           </div>
           <div class="price">
             ￥
-            <span class="groupPrice">{{ item.group_price / 100 }}</span>
-            <span class="marketPrice">￥{{ item.market_price / 100 }}</span>
-            <span class="count">{{ item.sales_tip }}</span>
+            <span class="groupPrice">197</span>
+            <span class="marketPrice">￥999</span>
+            <span class="count">已团584件</span>
           </div>
         </div>
-        <!-- <div class="goods">
+        <div class="goods">
           <div class="scan">
             <img class="img" src="../image/floorListSmall.jpeg" alt="" />
             <div class="qrcode">
@@ -185,7 +181,7 @@
             <span class="marketPrice">￥999</span>
             <span class="count">已团584件</span>
           </div>
-        </div> -->
+        </div>
         <!-- 最后一个 -->
         <div class="goods">
           <div class="lastCode">
@@ -199,18 +195,16 @@
   </div>
 </template>
 <script>
-import { mapState, mapActions } from "vuex";
 export default {
   name: "More",
-  data() {
-    return {
-      goodsItem: [],
-    };
+  components: {
+    
   },
-  mounted() {
-    this.goodsItem = this.$route.query.goodsData
-    console.log(this.goodsItem)
-  },
+  methods: {
+    // goDeatil(){
+    //     this.$router.push("/detail")
+    // }
+  }
 };
 </script>
 <style lang='less' rel='stylesheet/less' scoped>
@@ -297,7 +291,7 @@ export default {
       img {
         width: 220px;
         height: 220px;
-        margin: 28px 0 28px 28px;
+        margin: 28px auto;
       }
       .scan:hover .qrcode {
         display: block;
@@ -315,7 +309,6 @@ export default {
           margin-bottom: 0px;
           width: 160px;
           height: auto;
-          margin-left: 30px;
         }
         .qrcodeText {
           color: #fff;
