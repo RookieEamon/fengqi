@@ -64,8 +64,25 @@
 </template>
 
 <script>
+import {reqJobdetail} from '@/api'
 export default {
   name: "JobDetail",
+  data() {
+    return {
+      jobDetail:{},
+      code:''
+    }
+  },
+  methods: {
+    async getDetail(){
+      let result = await reqJobdetail(this.code)
+      this.jobDetail=result
+    }
+  },
+  mounted() {
+    this.code=this.$route.query.code
+    this.getDetail()
+  },
 };
 </script>
 
