@@ -177,10 +177,10 @@ export default {
     }
   },
   mounted() {
-    console.log(this.path)
+    // console.log(this.path)
     this.getHotpositionList();
     this.getLatestPositionList("", 1, 10);
-    this.getJobdetail();
+    // this.getJobdetail();
   },
   methods: {
     //获取热招岗位列表和最新发布岗位列表
@@ -201,16 +201,17 @@ export default {
       this.getLatestPositionList(type);
     },
     // 获取岗位详情信息
-    async getJobdetail() {
-      const result = await reqJobdetail(code);
-      this.jobDetail = result;
-    },
+    // async getJobdetail() {
+    //   let code = data.code
+    //   const result = await reqJobdetail({code});
+    //   this.jobDetail = result;
+    // },
     //点击跳转至JobDetail页面
     toJobDetail(code) {
       this.$router.push({path:"/career/jobdetail",query:{code:code}})
-      // this.getJobdetail(code);
+      
       this.isShow = true;
-      // this.code = code;
+
     },
     //分页器函数
     handleSizeChange(pageSize) {
