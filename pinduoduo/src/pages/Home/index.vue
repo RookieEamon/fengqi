@@ -564,9 +564,9 @@ export default {
   },
   mounted() {
     this.getGoodsList();
-    console.log(this.goods);
+    // console.log(this.goods);
     this.goodsData = this.goods;
-    console.log(this.goodsData)
+    // console.log(this.goodsData)
   },
   methods: {
     ...mapActions({
@@ -574,11 +574,12 @@ export default {
     }),
     
     goMore(item) {
+      console.log(item)
       const { path, query } = this.$route;
       this.$router.push({
         path: "/home/more",
         query: {
-          goodsData:goodsData
+          goodsData:item
         }
       });
     }

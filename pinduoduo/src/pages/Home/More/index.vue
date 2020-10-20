@@ -11,7 +11,7 @@
       </div>
       <!-- 大图 -->
       <div class="bannerGroup">
-        <img :src="goodsItem.coverImgUrl" alt="" />
+        <img src="../image/floorbannerMan.jpg" alt="" />
         <div class="rightTitle">
           <div class="title">限时秒杀</div>
           <div class="desc">每日精选好货超低价秒杀，限时限量，全场包邮。</div>
@@ -211,7 +211,6 @@ export default {
     this.goodsItem = this.$route.query.goodsData
     console.log(this.goodsItem)
   },
-
 };
 </script>
 <style lang='less' rel='stylesheet/less' scoped>
