@@ -33,7 +33,7 @@ small { font-size: 12px; } /* 小于 12px 的中文很难阅读，让 small 正�
 ul, ol { list-style: none; }
 
 /* 重置文本格式元素 */
-a { text-decoration: none; color: #6c6c6c;}
+a { text-decoration: none; color: #666;}
 
 
 /* 重置表单元素 */
@@ -63,8 +63,8 @@ hr {
 html { overflow-y: scroll; }
 
 a:link:hover{
-    /* color : rgb(79, 76, 212) !important; */
-    text-decoration: none;
+    color : rgb(79, 76, 212) !important;
+    text-decoration: underline;
 }
 
 /* 清除浮动 */
