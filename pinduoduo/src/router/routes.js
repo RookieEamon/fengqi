@@ -34,16 +34,8 @@ export default [
         component: Career
     },
     {
-<<<<<<< HEAD
         path: '/cart',
         component: Cart
-=======
-        path:'/cooperation',
-        component:Cooperation,
-        meta:{
-            isShowFooterTop:false
-        }
->>>>>>> feature/yangzhiqiang
     },
     {
         path: '/complaint',
