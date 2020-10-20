@@ -71,29 +71,12 @@
               </div>
             </div>
             <div class="title_card_list">
-              <div class="card_list_next">
-                <p>客服主管</p>
-              </div>
-              <div class="card_list_next">
-                <p>商业化营销策划</p>
-              </div>
-              <div class="card_list_next">
-                <p>新媒体运营</p>
-              </div>
-              <div class="card_list_next">
-                <p>Java开发工程师（直播-新媒体业务）</p>
-              </div>
-              <div class="card_list_next">
-                <p>产品运营</p>
-              </div>
-              <div class="card_list_next">
-                <p>java研发工程师（多多进宝方向）</p>
-              </div>
-              <div class="card_list_next">
-                <p>KOL运营-短视频方向</p>
-              </div>
-              <div class="card_list_next">
-                <p>广告创意经理/市场营销经理</p>
+              <div 
+                class="card_list_next" 
+                v-for="item in hottestPositionList"
+                :key="item.name"  
+              >
+                <p>{{item.name}}</p>
               </div>
             </div>
           </div>
@@ -113,231 +96,19 @@
         <div class="main_text">
           <div class="main_head">
             <div class="left_text">最新发布</div>
-            <div class="right_text">显示1-10,共39个职位</div>
+            <div class="right_text">显示1-10,共{{total}}个职位</div>
           </div>
-          <div class="main_list">
+          <div 
+            class="main_list" 
+            v-for="item in latestPositionList.list"
+            :key="item.code"
+          >
             <div class="main_list_text">
-              <p>招商运营专家-男装</p>
+              <p>{{item.name}}</p>
               <div class="detail">
                 <div class="detail_item">
                   <img src="./images/1.svg" alt />
-                  <span>招商运营类</span>
-                </div>
-                <div class="detail_item">
-                  <img src="./images/2.svg" alt />
-                  <span>上海</span>
-                </div>
-                <div class="detail_item">
-                  <img src="./images/3.svg" alt />
-                  <span>若干</span>
-                </div>
-                <div class="detail_item">
-                  <img src="./images/4.svg" alt />
-                  <span>2020-10-18</span>
-                </div>
-              </div>
-              <span class="detail-text">详情</span>
-            </div>
-          </div>
-          <div class="main_list">
-            <div class="main_list_text">
-              <p>招商运营专家-男装</p>
-              <div class="detail">
-                <div class="detail_item">
-                  <img src="./images/1.svg" alt />
-                  <span>招商运营类</span>
-                </div>
-                <div class="detail_item">
-                  <img src="./images/2.svg" alt />
-                  <span>上海</span>
-                </div>
-                <div class="detail_item">
-                  <img src="./images/3.svg" alt />
-                  <span>若干</span>
-                </div>
-                <div class="detail_item">
-                  <img src="./images/4.svg" alt />
-                  <span>2020-10-18</span>
-                </div>
-              </div>
-              <span class="detail-text">详情</span>
-            </div>
-          </div>
-          <div class="main_list">
-            <div class="main_list_text">
-              <p>招商运营专家-男装</p>
-              <div class="detail">
-                <div class="detail_item">
-                  <img src="./images/1.svg" alt />
-                  <span>招商运营类</span>
-                </div>
-                <div class="detail_item">
-                  <img src="./images/2.svg" alt />
-                  <span>上海</span>
-                </div>
-                <div class="detail_item">
-                  <img src="./images/3.svg" alt />
-                  <span>若干</span>
-                </div>
-                <div class="detail_item">
-                  <img src="./images/4.svg" alt />
-                  <span>2020-10-18</span>
-                </div>
-              </div>
-              <span class="detail-text">详情</span>
-            </div>
-          </div>
-          <div class="main_list">
-            <div class="main_list_text">
-              <p>招商运营专家-男装</p>
-              <div class="detail">
-                <div class="detail_item">
-                  <img src="./images/1.svg" alt />
-                  <span>招商运营类</span>
-                </div>
-                <div class="detail_item">
-                  <img src="./images/2.svg" alt />
-                  <span>上海</span>
-                </div>
-                <div class="detail_item">
-                  <img src="./images/3.svg" alt />
-                  <span>若干</span>
-                </div>
-                <div class="detail_item">
-                  <img src="./images/4.svg" alt />
-                  <span>2020-10-18</span>
-                </div>
-              </div>
-              <span class="detail-text">详情</span>
-            </div>
-          </div>
-          <div class="main_list">
-            <div class="main_list_text">
-              <p>招商运营专家-男装</p>
-              <div class="detail">
-                <div class="detail_item">
-                  <img src="./images/1.svg" alt />
-                  <span>招商运营类</span>
-                </div>
-                <div class="detail_item">
-                  <img src="./images/2.svg" alt />
-                  <span>上海</span>
-                </div>
-                <div class="detail_item">
-                  <img src="./images/3.svg" alt />
-                  <span>若干</span>
-                </div>
-                <div class="detail_item">
-                  <img src="./images/4.svg" alt />
-                  <span>2020-10-18</span>
-                </div>
-              </div>
-              <span class="detail-text">详情</span>
-            </div>
-          </div>
-          <div class="main_list">
-            <div class="main_list_text">
-              <p>招商运营专家-男装</p>
-              <div class="detail">
-                <div class="detail_item">
-                  <img src="./images/1.svg" alt />
-                  <span>招商运营类</span>
-                </div>
-                <div class="detail_item">
-                  <img src="./images/2.svg" alt />
-                  <span>上海</span>
-                </div>
-                <div class="detail_item">
-                  <img src="./images/3.svg" alt />
-                  <span>若干</span>
-                </div>
-                <div class="detail_item">
-                  <img src="./images/4.svg" alt />
-                  <span>2020-10-18</span>
-                </div>
-              </div>
-              <span class="detail-text">详情</span>
-            </div>
-          </div>
-          <div class="main_list">
-            <div class="main_list_text">
-              <p>招商运营专家-男装</p>
-              <div class="detail">
-                <div class="detail_item">
-                  <img src="./images/1.svg" alt />
-                  <span>招商运营类</span>
-                </div>
-                <div class="detail_item">
-                  <img src="./images/2.svg" alt />
-                  <span>上海</span>
-                </div>
-                <div class="detail_item">
-                  <img src="./images/3.svg" alt />
-                  <span>若干</span>
-                </div>
-                <div class="detail_item">
-                  <img src="./images/4.svg" alt />
-                  <span>2020-10-18</span>
-                </div>
-              </div>
-              <span class="detail-text">详情</span>
-            </div>
-          </div>
-          <div class="main_list">
-            <div class="main_list_text">
-              <p>招商运营专家-男装</p>
-              <div class="detail">
-                <div class="detail_item">
-                  <img src="./images/1.svg" alt />
-                  <span>招商运营类</span>
-                </div>
-                <div class="detail_item">
-                  <img src="./images/2.svg" alt />
-                  <span>上海</span>
-                </div>
-                <div class="detail_item">
-                  <img src="./images/3.svg" alt />
-                  <span>若干</span>
-                </div>
-                <div class="detail_item">
-                  <img src="./images/4.svg" alt />
-                  <span>2020-10-18</span>
-                </div>
-              </div>
-              <span class="detail-text">详情</span>
-            </div>
-          </div>
-          <div class="main_list">
-            <div class="main_list_text">
-              <p>招商运营专家-男装</p>
-              <div class="detail">
-                <div class="detail_item">
-                  <img src="./images/1.svg" alt />
-                  <span>招商运营类</span>
-                </div>
-                <div class="detail_item">
-                  <img src="./images/2.svg" alt />
-                  <span>上海</span>
-                </div>
-                <div class="detail_item">
-                  <img src="./images/3.svg" alt />
-                  <span>若干</span>
-                </div>
-                <div class="detail_item">
-                  <img src="./images/4.svg" alt />
-                  <span>2020-10-18</span>
-                </div>
-              </div>
-              <span class="detail-text">详情</span>
-            </div>
-          </div>
-          <div class="main_list">
-            <div class="main_list_text">
-              <p>招商运营专家-男装</p>
-              <div class="detail">
-                <div class="detail_item">
-                  <img src="./images/1.svg" alt />
-                  <span>招商运营类</span>
+                  <span>技术类</span>
                 </div>
                 <div class="detail_item">
                   <img src="./images/2.svg" alt />
@@ -374,18 +145,35 @@
   </div>
 </template>
 <script>
+import {reqHotpositionList,reqLatestPositionList} from '@/api'
 import {Pagination} from 'element-ui'
 export default {
   name: "Career",
   data() {
     return {
+      hottestPositionList:[],//热招岗位列表数组
+      latestPositionList:{},//最新发布岗位列表数组
       currentPage: 1,
       pageSizes: [5, 10, 15, 20],
-      total: 294,
+      total: 0,
+      job:'',
       pageSize: 10,
+      page: 1
     }
   },
   methods: {
+    //获取热招岗位列表和最新发布岗位列表
+    async getHotpositionList (){
+      const {hottestPositionList} = await reqHotpositionList();
+      this.hottestPositionList = hottestPositionList
+    },
+    //获取最新的岗位数据列表
+    async getLatestPositionList (){
+      let {job, page, pageSize} = this
+      const result = await reqLatestPositionList(job,page,pageSize);
+      this.latestPositionList = result;
+      this.total = result.total;
+    },
     handleSizeChange(pageSize) {
       this.pageSize = pageSize;
       this.getMediaReport(this.currentPage, pageSize);
@@ -396,10 +184,8 @@ export default {
     },
   },
   mounted() {
-
-
-    // 更新一下
-    // this.getMediaReport();
+    this.getHotpositionList();
+    this.getLatestPositionList('product',1,10);
   },
 };
 </script>
