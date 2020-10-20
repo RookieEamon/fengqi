@@ -12,3 +12,5 @@ export const reqMediaReports=(page,pageSize)=>ajax.get(`/mediareports/${page}/${
 // 发送请求获取首页数据
 export const reqHome = () => ajax.get('/indexData')
 
+
+
