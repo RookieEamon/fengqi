@@ -1,5 +1,5 @@
 // import Home from '@/pages/Home'
-import Home from '@/pages/Home/home.vue'
+import Home from '@/pages/Home'
 import Login from '@/pages/Login/login.vue'
 import Career from '@/pages/Career/Career.vue'
 import Cart from '@/pages/Cart/cart.vue'
@@ -9,11 +9,21 @@ import Detail from '@/pages/Detail/detail.vue'
 import Help from '@/pages/Help/help.vue'
 import Recruitment from '@/pages/Recruitment/recruitment.vue'
 import Hotnews from '@/pages/Hotnews/hotnews.vue'
-import Shopping from '@/pages/Shopping/shopping.vue'
+// 引入home的子组件
+import More from '../pages/Home/More/index'
+import Download from '../pages/Home/Download/index'
 export default [
     {
         path: '/home',
-        component: Home
+        component: Home,
+    },
+    {
+        path: '/home/more',
+        component: More
+    },
+    {
+        path: '/home/download',
+        component: Download
     },
     {
         path: '/login',
@@ -37,17 +47,7 @@ export default [
     },
     {
         path: '/detail',
-        component: Detail,
-        meta: {
-            isshowheader: true
-        }
-    },
-    {
-        path: '/detail/shopping',
-        component: Shopping,
-        meta: {
-            isshowheader: true
-        },
+        component: Detail
     },
     {
         path: '/help',
