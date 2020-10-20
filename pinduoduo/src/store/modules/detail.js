@@ -13,9 +13,7 @@ export default {
     actions: {
         async GETDETGOODSLIST({ commit }) {
             const result = await goodsList()
-
             commit('DETGOODSLIST', result)
-
         }
     },
 

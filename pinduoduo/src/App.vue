@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Header/>
+    <Header v-show="!$route.meta.isshowheader" />
     <router-view></router-view>
     <Footer />
   </div>
@@ -16,11 +16,11 @@ export default {
     Header,
     Footer,
   },
-  beforeCreate() { 
-    Vue.prototype.$Eventbus = new Vue()
+  beforeCreate() {
+    Vue.prototype.$Eventbus = new Vue();
   },
   mounted() {
-    this.$Eventbus.$emit('changeLogin',false)
+    this.$Eventbus.$emit("changeLogin", false);
   },
 };
 </script>

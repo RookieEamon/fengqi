@@ -6,9 +6,20 @@
         <!-- 大容器左边部分 -->
         <div class="shopping-page-left">
           <!-- 这个是大图 -->
-          <div class="shopping-page-img">
-            <img src="./images/shal.E咖啡.jpg" alt="" />
+          <div class="block">
+            <!-- <span class="demonstration">默认 Hover 指示器触发</span> -->
+            <el-carousel height="400px" style="width: 400px">
+              <el-carousel-item
+                v-for="item in detGoodsList.goodsList.slice(0, 4)"
+                :key="item"
+              >
+                <img style="width=420px" :src="item.hd_thumb_url" alt="" />
+              </el-carousel-item>
+            </el-carousel>
           </div>
+          <!-- <div class="shopping-page-img">
+            <img src="./images/shal.E咖啡.jpg" alt="" />
+          </div> -->
           <!-- 这个是下面4个小图 -->
           <div class="shopping-page-main">
             <div class="shopping-page-item">
@@ -172,6 +183,7 @@
                 <span class="Five-spanTwo">全网低价</span>
               </div>
             </div>
+            <!-- 客服在线 -->
           </div>
         </div>
       </div>
@@ -182,8 +194,14 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      detGoodsList: [],
+    };
   },
+  // mounted() {
+  //   console.log(this.$route);
+  //   this.detGoodsList = this.$route.query.item;
+  // },
   components: {},
 };
 </script>
@@ -209,14 +227,29 @@ export default {
       background: #fff;
       border-bottom: 1px solid #8d8989;
       // <!-- 这个是大图 -->
-      .shopping-page-img {
-        width: 420px;
-        height: 420px;
-        img {
-          width: 100%;
-          height: 100%;
-        }
+      .el-carousel__item h3 {
+        color: #475669;
+        font-size: 14px;
+        opacity: 0.75;
+        line-height: 150px;
+        margin: 0;
       }
+
+      .el-carousel__item:nth-child(2n) {
+        background-color: #99a9bf;
+      }
+
+      .el-carousel__item:nth-child(2n + 1) {
+        background-color: #d3dce6;
+      }
+      // .shopping-page-img {
+      //   width: 420px;
+      //   height: 420px;
+      //   img {
+      //     width: 100%;
+      //     height: 100%;
+      //   }
+      // }
       //<!-- 这个是下面4个小图 -->
       .shopping-page-main {
         width: 100%;
@@ -388,8 +421,9 @@ export default {
       //<!-- 最后部分大容器 -->
       .shopping-page-right-bottom {
         width: 550px;
-        height: 330px;
+        height: 304px;
         margin-top: 21px;
+        border-bottom: 1px solid #8b8a8a;
         //  <!-- 配送行 -->
         .shopping-page-right-bottom-one {
           width: 100%;
@@ -461,7 +495,7 @@ export default {
           width: 540px;
           height: 30px;
           line-height: 30px;
-          padding: 11px 5px;
+          padding: 11px 0px;
           margin-top: 15px;
           position: relative;
           .shopping-page-right-bottom-Four-text {

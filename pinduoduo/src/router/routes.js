@@ -38,10 +38,16 @@ export default [
     {
         path: '/detail',
         component: Detail,
+        meta: {
+            isshowheader: true
+        }
     },
     {
         path: '/detail/shopping',
-        component: Shopping
+        component: Shopping,
+        meta: {
+            isshowheader: true
+        },
     },
     {
         path: '/help',
