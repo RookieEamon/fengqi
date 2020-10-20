@@ -35,7 +35,10 @@ export default [
     },
     {
         path:'/cooperation',
-        component:Cooperation
+        component:Cooperation,
+        meta:{
+            isShowFooterTop:false
+        }
     },
     {
         path:'/detail',
