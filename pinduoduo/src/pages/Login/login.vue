@@ -7,7 +7,7 @@
       <div class="header_fixed"></div>
       <div class="loginContainer">
         <!-- 轮播图 -->
-        <div class="bannerBox">
+        <!-- <div class="bannerBox">
           <div class="banner">
             <div class="bannerImg2"></div>
             <div class="button">
@@ -15,7 +15,9 @@
               <p class="next"><i class="iconfont icon-dayuhao"></i></p>
             </div>
           </div>
-        </div>
+        </div> -->
+      
+        <Banner/>
         <!-- 登录-->
         <div class="loginBoxWrap">
           <div class="loginBox">
@@ -105,7 +107,6 @@
             </div>
           </div>
         </div>
-        <!--  -->
       </div>
     </div>
   </div>
@@ -113,42 +114,47 @@
 
 <script>
 // import iconfont from "./iconfont/iconfont.css";
-import {reqLogin} from '@/api/index'
+import Banner from './components/banner'
+// import Swiper from "swiper";
+import { reqLogin } from "@/api/index";
 export default {
   name: "Login",
-  data(){
+  data() {
     return {
-      username: "" ,   //用户名
-      password:""     //密码
-    }
+      username: "", //用户名
+      password: "", //密码
+    };
   },
   methods: {
     async toLogin() {
-     // 获取手机号码和密码
-      const { username, password } = this
+      // 获取手机号码和密码
+      const { username, password } = this;
       // 判断数据是否存在
-      if (username !== '' && password !== '') {
-       let result = await reqLogin(username,password)
-       console.log(result);
-       if(result.code === 200){
-         localStorage.setItem('USERINFO_TOKEN',result.token)
-         this.$router.replace('/home')
-       }else{
-          alert('登陆失败');
-       }
-      //  console.log(username, password);
+      if (username !== "" && password !== "") {
+        let result = await reqLogin(username, password);
+        console.log(result);
+        if (result.code === 200) {
+          localStorage.setItem("USERINFO_TOKEN", result.token);
+          this.$router.replace("/home");
+        } else {
+          alert("登录失败");
+        }
+        //  console.log(username, password);
       } else {
-        alert('手机号码或者密码不能为空')
+        alert("手机号码或者密码不能为空");
       }
     },
   },
+  components:{
+      Banner
+  }
 };
 </script>
 
 <style lang="less" rel="stylesheet/less" scoped>
 .loginContainerWrap {
   position: relative;
-
+  // z-index: 999;
   .header_fixed {
     position: fixed;
     top: 0px;
@@ -163,53 +169,54 @@ export default {
     margin-top: 100px;
     position: relative;
 
-    .bannerBox {
-      .banner {
-        position: relative;
-        width: 100%;
-        height: 466px;
-        background: green;
+    // .bannerBox {
+    //   .banner {
+    //     position: relative;
+    //     width: 100%;
+    //     height: 466px;
+    //     background: green;
 
-        .bannerImg2 {
-          width: 100%;
-          height: 466px;
-          background-image: url(./images/login2.png);
-          background-position: center center;
-          background-size: 1920px 466px;
-        }
+    //     .bannerImg2 {
+    //       width: 100%;
+    //       height: 466px;
+    //       background-image: url(./images/login2.png);
+    //       background-position: center center;
+    //       background-size: 1920px 466px;
+    //     }
 
-        .button {
-          .pre {
-            position: absolute;
-            left: 0px;
-            top: 185px;
-            width: 56px;
-            height: 100px;
-            line-height: 100px;
-            text-align: center;
-            background-color: rgba(0, 0, 0, 0.5);
-          }
+    //     .button {
+    //       .pre {
+    //         position: absolute;
+    //         left: 0px;
+    //         top: 185px;
+    //         width: 56px;
+    //         height: 100px;
+    //         line-height: 100px;
+    //         text-align: center;
+    //         background-color: rgba(0, 0, 0, 0.5);
+    //       }
 
-          .next {
-            position: absolute;
-            top: 185px;
-            right: 0px;
-            width: 56px;
-            height: 100px;
-            line-height: 100px;
-            text-align: center;
-            background-color: rgba(0, 0, 0, 0.5);
-          }
-        }
-      }
-    }
+    //       .next {
+    //         position: absolute;
+    //         top: 185px;
+    //         right: 0px;
+    //         width: 56px;
+    //         height: 100px;
+    //         line-height: 100px;
+    //         text-align: center;
+    //         background-color: rgba(0, 0, 0, 0.5);
+    //       }
+    //     }
+    //   }
+    // }
 
     .loginBoxWrap {
       position: absolute;
+      z-index: 99;
       top: 58px;
       right: 75px;
       width: 384px;
-      height: 346px;
+      height: 280px;
       border-radius: 6px;
       background: #fff;
 

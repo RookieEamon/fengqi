@@ -1,6 +1,7 @@
 // import Home from '@/pages/Home'
 import Home from '@/pages/Home'
 import Login from '@/pages/Login/login.vue'
+import Register from '@/pages/Register/register.vue'
 import Career from '@/pages/Career/Career.vue'
 import Cart from '@/pages/Cart/cart.vue'
 import Complaint from '@/pages/Complaint/complaint.vue'
@@ -25,6 +26,10 @@ export default [
 	{
 		path: '/login',
 		component: Login
+	},
+	{
+		path: '/register',
+		component: Register
 	},
 	{
 		path: '/career',

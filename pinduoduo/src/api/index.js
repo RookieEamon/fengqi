@@ -11,3 +11,7 @@ export const reqLatestPositionList = (job,page,pageSize) => ajax.post('/careers'
 export const reqJobdetail = (code) => ajax.post('/jobdetail',{code})
 // 发送请求获取首页数据
 export const reqHome = () => ajax.get('/indexData')
+// 发送请求获取登录信息
+export const reqLogin = (username,password)=> ajax.post('/login',{username,password})
+// 注册
+export const reqRegister = (username,password)=>ajax.post('/register',{username,password})
