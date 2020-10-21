@@ -53,14 +53,17 @@ export default [
         path: '/complaint/merchantbackground',
         component: MerchantBackground,
         meta: {
-          isHeaderAndFooter: true
+					isHeaderAndFooter: true,
+          isHeader: true
+					
         },
       },
       {
         path: '/complaint/reportdetail',
         component: ReportDetail,
         meta: {
-          isHeaderAndFooter: true
+					isHeaderAndFooter: true,
+					isHeader: true
         },
       },
       {

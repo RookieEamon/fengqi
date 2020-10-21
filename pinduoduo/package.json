@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
+  "name": "pinduoduo",
+=======
   "name": "pdd",
+>>>>>>> 0c256e1ffcb7aecbec199d245c2cc6622e5b85ca
   "version": "0.1.0",
   "private": true,
   "scripts": {
