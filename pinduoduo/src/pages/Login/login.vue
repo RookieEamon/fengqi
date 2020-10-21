@@ -29,38 +29,44 @@
             </div>
             <!-- 用户登录信息 -->
             <!-- 账号密码登录 -->
-            <!-- <form class="sumbit">
+            <form class="sumbit">
               <div class="userInfo">
-                <div class="userName">
-                  <span class="userName1"
-                    ><input type="text" placeholder="请输入账号名"
-                  /></span>
+                <div class="userName2">
+                  <span class="userName1">
+                    <input
+                      type="text"
+                      placeholder="请输入账号名"
+                      v-model="username"
+                    />
+                  </span>
                 </div>
-                <div class="password">
-                  <span class="passwrod"
-                    ><input
+                <div class="password1">
+                  <span class="passwrod2">
+                    <input
                       type="password"
                       class="password"
                       placeholder="请输入密码"
-                  /></span>
-                </div> -->
-            <!-- 验证码 -->
-            <!-- <div class="security_code">
+                      v-model="password"
+                    />
+                  </span>
+                </div>
+                <!-- 验证码 -->
+                <!-- <div class="security_code">
                   <input
                     type="text"
                     class="left"
                     placeholder="请再次确认密码"
-                  /> -->
-            <!-- <img
+                  />
+            <img
                     ref="code"
                     src="http://182.92.128.115/api/user/passport/code"
                     alt="code"
-                  /> -->
-            <!-- </div>
+                  />
+            </div> -->
               </div>
-            </form> -->
+            </form>
             <!-- 手机号登录 -->
-            <form class="sumbit">
+            <!-- <form class="sumbit">
               <div class="userInfo">
                 <select value="+86中国大陆">
                       
@@ -85,14 +91,16 @@
                       placeholder="请输入密码"
                   /></span>
                 </div>
+
               </div>
-            </form>
+            </form> -->
 
             <!-- 登录按钮  -->
-            <button>登录</button>
+            <button @click="toLogin">登录</button>
             <!-- 立即注册/忘记密码 -->
             <div class="registerBox">
-              <a href="javascript:;" class="left_a">立即注册</a>
+              <!-- <a href="javascript:;" class="left_a">立即注册</a> -->
+              <router-link to="/register" class="left_a">立即注册</router-link>
               <a href="javascript:;" class="right_a">忘记密码</a>
             </div>
           </div>
@@ -104,9 +112,36 @@
 </template>
 
 <script>
-import iconfont from "./iconfont/iconfont.css";
+// import iconfont from "./iconfont/iconfont.css";
+import {reqLogin} from '@/api/index'
 export default {
   name: "Login",
+  data(){
+    return {
+      username: "" ,   //用户名
+      password:""     //密码
+    }
+  },
+  methods: {
+    async toLogin() {
+     // 获取手机号码和密码
+      const { username, password } = this
+      // 判断数据是否存在
+      if (username !== '' && password !== '') {
+       let result = await reqLogin(username,password)
+       console.log(result);
+       if(result.code === 200){
+         localStorage.setItem('USERINFO_TOKEN',result.token)
+         this.$router.replace('/home')
+       }else{
+          alert('登陆失败');
+       }
+      //  console.log(username, password);
+      } else {
+        alert('手机号码或者密码不能为空')
+      }
+    },
+  },
 };
 </script>
 
