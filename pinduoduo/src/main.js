@@ -19,5 +19,5 @@ Vue.use(Pagination)
 new Vue({
   render: h => h(App),
   router,
-  store
+  store,
 }).$mount('#app')
