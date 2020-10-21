@@ -727,15 +727,9 @@
                     <span class="shop-list-item_text">特卖价</span>
                   </div>
                   <div class="shop-list-item_temai2">
-                    <span class="shop-list-item_text2"></span>
-                   给老子跳给老子跳
-                   给老子跳给老子跳
+                    <span class="shop-list-item_text2">给老子跳给老子跳</span>
                   </div>
                 </div>
-              </div>
-              <!-- 介绍商品样式 -->
-              <div class="shop-list-item-content">
-                {{ item.goods_name }}
               </div>
             </div>
           </div>
@@ -764,7 +758,7 @@ export default {
       });
     },
     toMore() {
-      this.$router.push("/more");
+      this.$router.push("/home/more");
     },
   },
   computed: {

@@ -175,13 +175,8 @@
             <div class="shopping-page-right-bottom-Five">
               <!-- 第一个按钮 -->
               <div class="shopping-page-right-bottom-Five-one" @click="toLogin">
-                <span class="Five-spanOne">￥636.8</span>
-                <span class="Five-spanTwo">全网低价</span>
-              </div>
-              <!-- 第二个按钮 -->
-              <div class="shopping-page-right-bottom-Five-Two">
-                <span class="Five-spanOne">￥636.8</span>
-                <span class="Five-spanTwo">全网低价</span>
+           
+                <span class="Five-spanTwo">给老子结算</span>
               </div>
             </div>
             <!-- 客服 -->
@@ -658,8 +653,8 @@ export default {
             .Five-spanTwo {
               font-size: 14px;
               position: absolute;
-              top: 23px;
-              left: 28px;
+              top: 15px;
+              left: 23px;
             }
           }
           //第二个按钮
