@@ -180,7 +180,6 @@ export default {
     // console.log(this.path)
     this.getHotpositionList();
     this.getLatestPositionList("", 1, 10);
-    // this.getMediaReport();
   },
   methods: {
     //获取热招岗位列表和最新发布岗位列表
