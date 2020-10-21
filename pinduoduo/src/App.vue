@@ -7,8 +7,9 @@
     &&path !== '/recruitment/jobinformation/position'
     &&path !== '/recruitment/jobinformation/process'"
     />
+    <Header v-show="!$route.meta.isHeaderAndFooter"/>
     <router-view></router-view>
-    <Footer/>
+    <Footer v-show="!$route.meta.isHeaderAndFooter"/>
   </div>
 </template>
 
