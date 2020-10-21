@@ -720,7 +720,11 @@
             <!-- 这是一个装img的div -->
 
             <div class="shop-list-div">
+<<<<<<< HEAD
               <img class="shop-list-tu" src="" alt="" />
+=======
+              <img class="shop-list-tu" src="l" alt="" />
+>>>>>>> 1b4d95bc938c853d6b8c96f5005e410457b51121
             </div>
 
             <!-- 这是装价格和介绍商品 -->
