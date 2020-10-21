@@ -5,9 +5,13 @@
     && path !== '/recruitment/jobinformation'
     && path !== '/recruitment/intern'
     &&path !== '/recruitment/jobinformation/position'
-    &&path !== '/recruitment/jobinformation/process'"
+    &&path !== '/recruitment/jobinformation/process'
+    &&path !=='/complaint/integrityreport'
+    &&path !=='/complaint/merchantbackground'
+    &&path !=='/complaint/reportdetail'
+    &&path !=='/complaint/contraband'
+    &&path !=='/complaint'"
     />
-    <Header v-show="!$route.meta.isHeaderAndFooter"/>
     <router-view></router-view>
     <Footer v-show="!$route.meta.isHeaderAndFooter"/>
   </div>

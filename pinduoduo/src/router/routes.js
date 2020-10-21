@@ -34,7 +34,7 @@ import Process from '../pages/Recruitment/Jobinformation/Process'
 import Intern from '../pages/Recruitment/Intern'
 
 
-export default [{
+
 export default [
 	{
 		path: '/home',
