@@ -74,7 +74,7 @@ export default {
     }
   },
   methods: {
-    async getDetail(code){
+    async getDetail(){
       let result = await reqJobdetail(this.code)
       this.jobDetail=result
     },

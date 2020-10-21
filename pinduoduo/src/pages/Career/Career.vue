@@ -178,7 +178,6 @@ export default {
       // console.log(this.path)
       this.getHotpositionList();
       this.getLatestPositionList();
-      this.getMediaReport();
     },
   methods: {
     //获取热招岗位列表和最新发布岗位列表
@@ -206,15 +205,16 @@ export default {
 
     //分页器函数
     handleSizeChange(pageSize) {
+      console.log(pageSize)
       this.pageSize = pageSize;
-      this.getMediaReport(this.currentPage, pageSize);
+      this.getLatestPositionList(this.job, this.currentPage, this.pageSizes);
     },
     handleCurrentChange(page) {
+      console.log(page)
       this.currentPage = page;
-      this.getMediaReport(page, this.pageSize);
-    },
-    getMediaReport(){}
-    
+      this.getLatestPositionList(this.job, this.currentPage, this.pageSizes);
+
+    }   
   },
 };
 </script>
