@@ -36,7 +36,47 @@ export default [
 	},
 	{
 		path: '/complaint',
-		component: Complaint
+		component: Complaint,
+		children: [
+      {
+        path: '/complaint/integrityreport',
+        component: IntegrityReport,
+        meta: {
+          isHeaderAndFooter: true
+        },
+      },
+      {
+        path: '/complaint/merchantbackground',
+        component: MerchantBackground,
+        meta: {
+					isHeaderAndFooter: true,
+          isHeader: true
+					
+        },
+      },
+      {
+        path: '/complaint/reportdetail',
+        component: ReportDetail,
+        meta: {
+					isHeaderAndFooter: true,
+					isHeader: true
+        },
+      },
+      {
+        path: '/complaint/contraband',
+        component: Contraband,
+        meta: {
+          isHeaderAndFooter: true
+        },
+      },
+      {
+        path: '/complaint',
+        component: IntegrityReport,
+        meta: {
+          isHeaderAndFooter: true
+        },
+      },
+      ]
 	},
 	{
 		path: '/cooperation',

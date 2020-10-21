@@ -11,4 +11,3 @@ export const reqJobdetail = (code) => ajax.post('/jobdetail',{code})
 export const reqMediaReports=(page,pageSize)=>ajax.get(`/mediareports/${page}/${pageSize}`)
 // 发送请求获取首页数据
 export const reqHome = () => ajax.get('/indexData')
-
