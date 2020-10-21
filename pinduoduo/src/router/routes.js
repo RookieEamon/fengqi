@@ -13,6 +13,10 @@ import JobDetail from '@/pages/Career/JobDetail'
 // 引入home的子组件
 import More from '../pages/Home/More/index'
 import Download from '../pages/Home/Download/index'
+//引入more的子组件
+import Seckill from '@/pages/Home/More/Seckill'
+import Specialsale from '@/pages/Home/More/Specialsale'
+import Supermarket from '@/pages/Home/More/Supermarket'
 export default [
 	{
 		path: '/home',
@@ -100,7 +104,26 @@ export default [
 	},
 	{
 		path: '/home/more',
-		component: More
+		component: More,
+		children :[
+			{
+				path:'/home/more/seckill',
+				component: Seckill
+			},
+			{
+				path:'/home/more/specialsale',
+				component:Specialsale
+			},
+			{
+				path:'/home/more/supermarket',
+				component:Supermarket
+			},
+			// 重定向
+			{
+				path:'/home/more',
+				redirect:'/home/more/seckill'
+			}
+		]
 	},
 	{
 		path: '/home/download',

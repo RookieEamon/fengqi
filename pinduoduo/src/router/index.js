@@ -13,6 +13,7 @@ Vue.use(VueRouter)
 //   return originReplace.call(this, location, onComplete, onAbort)
 // }
 export default new VueRouter({
+    // linkActiveClass:'active',
     mode:'history',
     routes
 })
