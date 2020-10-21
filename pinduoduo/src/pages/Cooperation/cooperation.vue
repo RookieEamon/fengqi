@@ -3,7 +3,7 @@
     <!-- 主体内容 -->
     <div class="cooperationContainer">
       <!-- 轮播图 -->
-      <Banner />
+      <Banner/>
       <!-- 公告 -->
       <Notic />
       <!-- 合作流程 -->
@@ -22,10 +22,13 @@ export default {
     Notic,
     Process,
   },
+  mounted() {
+      // console.log(this.$route.meta.isShowFooterTop);
+  },
 };
 </script>
 <style lang='less' rel='stylesheet/less' scoped>
-@import url("./static//icon_font/iconfont.css");
+@import url("./static/icon_font/iconfont.css");
 .cooperationContainer {
   width: 100%;
   //合作流程

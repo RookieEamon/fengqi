@@ -2,7 +2,7 @@
   <div id="app">
     <Header v-show="!$route.meta.isshowheader" />
     <router-view></router-view>
-    <Footer />
+    <Footer/>
   </div>
 </template>
 

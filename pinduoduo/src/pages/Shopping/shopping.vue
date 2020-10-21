@@ -8,12 +8,9 @@
           <!-- 这个是大图 -->
           <div class="block">
             <!-- <span class="demonstration">默认 Hover 指示器触发</span> -->
-            <el-carousel height="400px" style="width: 400px">
-              <el-carousel-item
-                v-for="item in detGoodsList.goodsList.slice(0, 4)"
-                :key="item"
-              >
-                <img style="width=420px" :src="item.hd_thumb_url" alt="" />
+            <el-carousel height="400px" width="400px">
+              <el-carousel-item v-for="item in 4" :key="item">
+                <img  src="./images/shal.E咖啡.jpg"></img>
               </el-carousel-item>
             </el-carousel>
           </div>
@@ -183,7 +180,61 @@
                 <span class="Five-spanTwo">全网低价</span>
               </div>
             </div>
-            <!-- 客服在线 -->
+            <!-- 客服 -->
+            <div class="shopping-page-right-bottom-Siz">
+              <!--  //第一行 -->
+              <div class="shopping-page-right-bottom-Siz-item">
+                <span>客服</span>
+                 <!-- <span></span> -->
+                  <img src="./atm-away.png" alt="">
+              
+                <a href="##">在线客服</a>
+                （09:00-22:59）
+              </div>
+              <!--  //第二行 -->
+              <div class="shopping-page-right-bottom-Siz-item2">
+                  <div class="shopping-page-right-bottom-Siz-item2-one">
+                    <span>服务</span>
+                  </div>
+                  <div class="shopping-page-right-bottom-Siz-item2-two">
+                     <img src="./images/bussiness-man.png" alt="">
+                  </div>
+                  <div class="shopping-page-right-bottom-Siz-item2-three">
+                  <span>唯品会发货及售后</span>
+                  </div>
+                  <div class="shopping-page-right-bottom-Siz-item2-four">
+                    <img src="./images/bussiness-man.png" alt="">
+                    <span>顺丰发送</span>
+                  </div>
+                  <div class="shopping-page-right-bottom-Siz-item2-six">
+                    <img src="./images/prompt.png" alt="">
+                    <span>不支持7天无理由退货</span>
+                  </div>
+                  <div class="shopping-page-right-bottom-Siz-item2-Seven">
+                    <img src="./images/prompt.png" alt="">
+                    <span>不支持换货</span>
+                  </div>
+                  <div class="shopping-page-right-bottom-Siz-item2-Eight">
+                     <img src="./images/arrow-down.png" alt="">
+                  </div>
+                    <div class="shopping-page-right-bottom-Siz-item2-yin" style="display:none;">
+                       <ul>
+                         <li>
+                           <span></span>
+                         </li>
+                       </ul>
+                    </div>
+                 
+              </div>
+              <!-- 第三行 -->
+              <div class="shopping-page-right-bottom-Siz-item3">
+                <div>提示 <img src="./images/bussiness-man.png" alt=""></div>
+                 
+                 <div class="shopping-page-right-bottom-Siz-item3-one">                  
+                    <span>国家药监局提示您：法规规定的特殊用途化妆品，如祛斑美白、防晒等化妆品，产品标签上应标注“国妆特字”或者“国妆特进字”的批准文号。</span>
+                  </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -194,13 +245,7 @@
 <script>
 export default {
   data() {
-    return {
-      detGoodsList: [],
-    };
-  },
-  mounted() {
-    console.log(this.$route);
-    this.detGoodsList = this.$route.query.item;
+    return {};
   },
   components: {},
 };
@@ -225,8 +270,8 @@ export default {
       width: 420px;
       height: 550px;
       background: #fff;
-      border-bottom: 1px solid #8d8989;
-      // <!-- 这个是大图 -->
+      border-bottom: 1px dashed #dfdfdf;
+      //<!-- 这个是大图 -- >
       .el-carousel__item h3 {
         color: #475669;
         font-size: 14px;
@@ -374,7 +419,8 @@ export default {
     .shopping-page-right {
       float: right;
       width: 550px;
-      height: 530px;
+      height: 500px;
+      border-bottom: 1px dashed #dfdfdf;
       //<!-- 前2行文字的容器 -->
       .shopping-page-right-centent {
         width: 100%;
@@ -407,7 +453,7 @@ export default {
           padding-left: 29px;
           i {
             display: inline-block;
-            margin-right: -4px;
+            margin-right: -13px;
           }
           .shopping-page-right-img-jiage {
             font-size: 15px;
@@ -423,7 +469,6 @@ export default {
         width: 550px;
         height: 330px;
         margin-top: 21px;
-        border-bottom
         //  <!-- 配送行 -->
         .shopping-page-right-bottom-one {
           width: 100%;
@@ -601,6 +646,154 @@ export default {
               position: absolute;
               top: 23px;
               left: 28px;
+            }
+          }
+        }
+        //  客服
+        .shopping-page-right-bottom-Siz {
+          width: 550px;
+          height: 300px;
+          margin-top: 44px;
+
+          //第一行
+          .shopping-page-right-bottom-Siz-item {
+            width: 100%;
+            height: 33px;
+            line-height: 33px;
+            position: relative;
+            span {
+              color: #999;
+              margin-right: 11px;
+            }
+            img {
+              margin-top: 5px;
+              position: absolute;
+              top: 3px;
+            }
+            a {
+              color: #f43499;
+              display: inline-block;
+              margin-left: 20px;
+            }
+          }
+          //第二行
+          .shopping-page-right-bottom-Siz-item2 {
+            width: 550px;
+            height: 33px;
+            line-height: 33px;
+            margin-top: 4px;
+            cursor: pointer;
+            position: relative;
+            .shopping-page-right-bottom-Siz-item2-yin {
+              box-sizing: border-box;
+              width: 538px;
+              height: 307px;
+              background: rgb(233, 243, 253);
+              position: absolute;
+              top: 34px;
+              left: 12px;
+              box-shadow: 0px -1px 3px 2px #bbb8b8;
+            }
+            .shopping-page-right-bottom-Siz-item2-one {
+              float: left;
+              span {
+                color: #999;
+                margin-right: 9px;
+              }
+            }
+
+            .shopping-page-right-bottom-Siz-item2-two {
+              float: left;
+              padding-top: 5px;
+              margin-right: 2px;
+              img {
+                width: 20px;
+                height: 21px;
+              }
+            }
+            .shopping-page-right-bottom-Siz-item2-three {
+              float: left;
+              span {
+                color: #7a7878;
+              }
+            }
+            .shopping-page-right-bottom-Siz-item2-four {
+              float: left;
+              margin-left: 12px;
+              padding-top: 5px;
+              margin-right: 2px;
+              span {
+                color: #7a7878;
+                display: block;
+                float: right;
+                margin-top: -5px;
+              }
+              img {
+                width: 20px;
+                height: 21px;
+              }
+            }
+            .shopping-page-right-bottom-Siz-item2-six {
+              float: left;
+              margin-left: 15px;
+              padding-top: 5px;
+              img {
+                width: 20px;
+                height: 21px;
+              }
+              span {
+                color: #7a7878;
+                display: block;
+                float: right;
+                margin-top: -5px;
+              }
+            }
+            .shopping-page-right-bottom-Siz-item2-Seven {
+              float: left;
+              margin-left: 15px;
+              padding-top: 5px;
+              img {
+                width: 20px;
+                height: 21px;
+              }
+              span {
+                color: #7a7878;
+                display: block;
+                float: right;
+                margin-top: -5px;
+              }
+            }
+            .shopping-page-right-bottom-Siz-item2-Eight {
+              float: right;
+              margin-right: 5px;
+              margin-top: 5px;
+            }
+          }
+          //第三行
+          .shopping-page-right-bottom-Siz-item3 {
+            width: 550px;
+            height: 40px;
+            margin-top: 4px;
+            float: left;
+            div {
+              float: left;
+              margin-right: 31px;
+              position: relative;
+              top: 13px;
+              img {
+                width: 20px;
+                height: 21px;
+                position: absolute;
+                top: -3px;
+                left: 33px;
+                padding-right: 5px;
+              }
+            }
+            .shopping-page-right-bottom-Siz-item3-one {
+              width: 400px;
+              float: left;
+              margin-right: 2px;
+              margin-top: -7px;
             }
           }
         }
