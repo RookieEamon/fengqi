@@ -10,7 +10,7 @@
       <div class="content">
         <div class="content_head">
           <div class="search">
-            <input type="text" />
+            <input type="text" v-model=""/>
             <button>搜索</button>
           </div>
           <div class="hotSearch">
@@ -188,8 +188,7 @@ export default {
     //获取最新的岗位数据列表
     async getLatestPositionList(type) {
       let { job, page, pageSize } = this;
-      const result = await reqLatestPositionList(type, page=1, pageSize=10);
-      console.log(result)
+      const result = await reqLatestPositionList(type, page, pageSize);
       this.latestPositionList = result.list;
       this.total = result.total;
     },
@@ -205,14 +204,12 @@ export default {
 
     //分页器函数
     handleSizeChange(pageSize) {
-      console.log(pageSize)
       this.pageSize = pageSize;
-      this.getLatestPositionList(this.job, this.currentPage, this.pageSizes);
+      this.getLatestPositionList(this.job, this.currentPage, pageSize);
     },
     handleCurrentChange(page) {
-      console.log(page)
-      this.currentPage = page;
-      this.getLatestPositionList(this.job, this.currentPage, this.pageSizes);
+      this.page = page;
+      this.getLatestPositionList(this.job, page, this.pageSize);
 
     }   
   },
