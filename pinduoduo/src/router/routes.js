@@ -10,6 +10,7 @@ import MerchantBackground from '@/pages/Complaint/MerchantBackground';
 import ReportDetail from '@/pages/Complaint/ReportDetail';
 import Cooperation from '@/pages/Cooperation/cooperation.vue'
 import Detail from '@/pages/Detail/detail.vue'
+import Shopping from '../pages/Shopping/shopping.vue'
 import Help from '@/pages/Help/help.vue'
 import Recruitment from '@/pages/Recruitment/recruitment.vue'
 import Hotnews from '@/pages/Hotnews/hotnews.vue'
@@ -17,6 +18,23 @@ import JobDetail from '@/pages/Career/JobDetail'
 // 引入home的子组件
 import More from '../pages/Home/More/index'
 import Download from '../pages/Home/Download/index'
+
+//引入Recruitment的子组件
+import Main from '../pages/Recruitment/Main'
+//招聘信息  应届生招聘
+import Jobinformation from '../pages/Recruitment/Jobinformation'
+
+//引入应届生招聘的路由子组件  应届生招聘-招聘信息
+import Position from '../pages/Recruitment/Jobinformation/Position/index.vue'
+//引入应届生招聘的路由子组件  应届生招聘-招聘流程
+import Process from '../pages/Recruitment/Jobinformation/Process'
+
+
+//实习生招聘通用
+import Intern from '../pages/Recruitment/Intern'
+
+
+
 export default [
 	{
 		path: '/home',
@@ -32,7 +50,7 @@ export default [
 		children: [{
 			path: '/career/jobdetail',
 			component: JobDetail
-		}, ]
+		},]
 	},
 	{
 		path: '/cart',
@@ -42,45 +60,45 @@ export default [
 		path: '/complaint',
 		component: Complaint,
 		children: [
-      {
-        path: '/complaint/integrityreport',
-        component: IntegrityReport,
-        meta: {
-          isHeaderAndFooter: true
-        },
-      },
-      {
-        path: '/complaint/merchantbackground',
-        component: MerchantBackground,
-        meta: {
-					isHeaderAndFooter: true,
-          isHeader: true
-					
-        },
-      },
-      {
-        path: '/complaint/reportdetail',
-        component: ReportDetail,
-        meta: {
+			{
+				path: '/complaint/integrityreport',
+				component: IntegrityReport,
+				meta: {
+					isHeaderAndFooter: true
+				},
+			},
+			{
+				path: '/complaint/merchantbackground',
+				component: MerchantBackground,
+				meta: {
 					isHeaderAndFooter: true,
 					isHeader: true
-        },
-      },
-      {
-        path: '/complaint/contraband',
-        component: Contraband,
-        meta: {
-          isHeaderAndFooter: true
-        },
-      },
-      {
-        path: '/complaint',
-        component: IntegrityReport,
-        meta: {
-          isHeaderAndFooter: true
-        },
-      },
-      ]
+
+				},
+			},
+			{
+				path: '/complaint/reportdetail',
+				component: ReportDetail,
+				meta: {
+					isHeaderAndFooter: true,
+					isHeader: true
+				},
+			},
+			{
+				path: '/complaint/contraband',
+				component: Contraband,
+				meta: {
+					isHeaderAndFooter: true
+				},
+			},
+			{
+				path: '/complaint',
+				component: IntegrityReport,
+				meta: {
+					isHeaderAndFooter: true
+				},
+			},
+		]
 	},
 	{
 		path: '/cooperation',
@@ -91,12 +109,53 @@ export default [
 		component: Detail
 	},
 	{
+		path: '/shopping',
+		component: Shopping
+	},
+	{
 		path: '/help',
 		component: Help
 	},
 	{
 		path: '/recruitment',
-		component: Recruitment
+		component: Recruitment,
+		meta: {
+			hideHead: true,
+		},
+		children: [{ //校园招聘首页
+				path: '/recruitment',
+				component: Main
+			},
+			{
+				// 应届生招聘
+				path: '/recruitment/jobinformation',
+				component: Jobinformation,
+				children: [
+					{
+						//应届生招聘-招聘职位
+						path: '/recruitment/jobinformation/',
+						component: Position,
+					},
+					{
+						//应届生招聘-招聘职位
+						path: '/recruitment/jobinformation/position',
+						component: Position,
+					},
+					{
+						//应届生招聘-招聘流程
+						path: '/recruitment/jobinformation/process',
+						component: Process,
+
+					}
+				]
+			},
+			{
+				// 实习生招聘
+				path: '/recruitment/intern',
+				component: Intern
+			},
+		]
+
 	},
 	{
 		path: '/hotnews',
