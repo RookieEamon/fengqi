@@ -253,15 +253,17 @@ export default {
   data() {
     return {
       shopItem: [], //商品数据
-      skuNum:1, //个数
+      skuNum: 1, //个数
     };
   },
   methods: {
+    //宝贝这个是判断登录跳转带参数页面去购物车结算
     toLogin() {
+      const query = { skuNum: this.skuNum };
       if (!localStorage.getItem("USERINFO_TOKEN")) {
         this.$router.push("/login");
       } else {
-        this.$router.push("/cart");
+        this.$router.push({ path: "/cart", query });
       }
     },
   },
