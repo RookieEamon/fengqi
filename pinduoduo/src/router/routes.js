@@ -20,10 +20,6 @@ import Download from '../pages/Home/Download/index'
 import shopping from '../pages/Shopping/shopping.vue'
 export default [
   {
-    path: '/home',
-    component: Home
-  },
-  {
     path: '/login',
     component: Login
   },
