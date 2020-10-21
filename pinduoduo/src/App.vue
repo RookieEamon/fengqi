@@ -1,6 +1,12 @@
 <template>
   <div id="app">
-    <Header/>
+    <Header 
+    v-show="path !== '/recruitment' 
+    && path !== '/recruitment/jobinformation'
+    && path !== '/recruitment/intern'
+    &&path !== '/recruitment/jobinformation/position'
+    &&path !== '/recruitment/jobinformation/process'"
+    />
     <router-view></router-view>
     <Footer/>
   </div>
@@ -21,6 +27,11 @@ export default {
   },
   mounted() {
     this.$Eventbus.$emit('changeLogin',false)
+  },
+  computed: {
+    path(){
+      return this.$route.path;
+    }
   },
 };
 </script>

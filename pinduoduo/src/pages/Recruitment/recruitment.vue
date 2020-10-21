@@ -1,13 +1,31 @@
 <template>
-  <div>
-      <h1>Recruitment...</h1>
+  <div class="homeContainer">
+      <Myheader/>
+      <router-view></router-view>
+ 
   </div>
 </template>
 <script>
-  export default {
-    name: 'Recruitment',
+import Myheader from './components/Myheader'
+export default {
+  name: "Recruitment",
+  components:{
+      Myheader,
   }
+};
 </script>
 <style lang='less' rel='stylesheet/less' scoped>
- 
+.homeContainer {
+  width: 100%;
+
+  
+
+  //信息容器 展示信息
+  .mainContainer {
+    width: 100%;
+    background-color: rgb(250, 250, 250);
+    overflow: hidden;
+    // margin-bottom:30px;
+  }
+}
 </style>
