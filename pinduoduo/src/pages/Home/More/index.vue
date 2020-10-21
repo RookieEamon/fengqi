@@ -65,7 +65,7 @@ export default {
   },
   mounted() {
     this.goodsItem = this.$route.query.goodsData
-    console.log(this.goodsItem)
+    // console.log(this.goodsItem)
   },
 };
 </script>

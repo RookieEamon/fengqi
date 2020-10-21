@@ -12,6 +12,7 @@ Vue.use(VueRouter)
 // VueRouter.prototype.replace = function (location, onComplete, onAbort = () => { }) {
 //   return originReplace.call(this, location, onComplete, onAbort)
 // }
+
 export default new VueRouter({
     mode:'history',
     routes

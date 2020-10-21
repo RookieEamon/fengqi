@@ -19,6 +19,22 @@ import JobDetail from '@/pages/Career/JobDetail'
 import More from '../pages/Home/More/index'
 import Download from '../pages/Home/Download/index'
 
+//引入Recruitment的子组件
+import Main from '../pages/Recruitment/Main'
+//招聘信息  应届生招聘
+import Jobinformation from '../pages/Recruitment/Jobinformation'
+
+//引入应届生招聘的路由子组件  应届生招聘-招聘信息
+import Position from '../pages/Recruitment/Jobinformation/Position/index.vue'
+//引入应届生招聘的路由子组件  应届生招聘-招聘流程
+import Process from '../pages/Recruitment/Jobinformation/Process'
+
+
+//实习生招聘通用
+import Intern from '../pages/Recruitment/Intern'
+
+
+
 export default [
 	{
 		path: '/home',
@@ -105,7 +121,44 @@ export default [
 	},
 	{
 		path: '/recruitment',
-		component: Recruitment
+		component: Recruitment,
+		meta: {
+			hideHead: true,
+		},
+		children: [{ //校园招聘首页
+				path: '/recruitment',
+				component: Main
+			},
+			{
+				// 应届生招聘
+				path: '/recruitment/jobinformation',
+				component: Jobinformation,
+				children: [
+					{
+						//应届生招聘-招聘职位
+						path: '/recruitment/jobinformation/',
+						component: Position,
+					},
+					{
+						//应届生招聘-招聘职位
+						path: '/recruitment/jobinformation/position',
+						component: Position,
+					},
+					{
+						//应届生招聘-招聘流程
+						path: '/recruitment/jobinformation/process',
+						component: Process,
+
+					}
+				]
+			},
+			{
+				// 实习生招聘
+				path: '/recruitment/intern',
+				component: Intern
+			},
+		]
+
 	},
 	{
 		path: '/hotnews',
