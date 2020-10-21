@@ -90,7 +90,10 @@ export default [
 	},
 	{
 		path: '/detail',
-		component: Detail
+		component: Detail,
+		meta: {
+			isHeaderAndFooter: true
+		}
 	},
 	{
 		path: '/shopping',

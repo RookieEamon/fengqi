@@ -9,8 +9,11 @@
           <div class="block">
             <!-- <span class="demonstration">默认 Hover 指示器触发</span> -->
             <el-carousel height="400px" width="400px">
-              <el-carousel-item v-for="item in 4" :key="item">
-                <h1>3</h1>
+              <el-carousel-item
+                v-for="item in shopItem.goodsList.slice(0, 5)"
+                :key="item.goods_id"
+              >
+                <img :src="item.hd_url" alt="" />
               </el-carousel-item>
             </el-carousel>
           </div>
@@ -18,7 +21,7 @@
             <img src="./images/shal.E咖啡.jpg" alt="" />
           </div> -->
           <!-- 这个是下面4个小图 -->
-          <div class="shopping-page-main">
+          <!-- <div class="shopping-page-main">
             <div class="shopping-page-item">
               <img src="./images/shal.E咖啡.jpg" alt="" />
             </div>
@@ -31,7 +34,7 @@
             <div class="shopping-page-item">
               <img src="./images/shal.E咖啡.jpg" alt="" />
             </div>
-          </div>
+          </div> -->
           <!-- 这是商品编码信息 -->
           <div class="shopping-product-centent">
             <p class="shopping-product-centent-text">商品编码：19851101257</p>
@@ -96,7 +99,7 @@
           <div class="shopping-page-right-img">
             <div class="shopping-page-right-img-qian">
               <i>￥</i>
-              <span>447</span>
+              <span>8888</span>
               <span class="shopping-page-right-img-jiage">1.9折</span>
             </div>
           </div>
@@ -144,21 +147,20 @@
               </ul>
             </div>
             <!-- 数量 -->
-            <div class="shopping-page-right-bottom-Four">
+            <div class="shopping-page-right-bottom-Four" >
               <p>数量</p>
               <!-- 增选价格小容器 -->
               <div class="shopping-page-right-bottom-Four-item">
                 <!-- 减号 -->
                 <div class="shopping-page-right-bottom-Four-item-minus-sign">
-                  <span>-</span>
+                  <span @click="skuNum>1?skuNum--:''">-</span>
                 </div>
                 <!-- 数量 -->
-                <div class="shopping-page-right-bottom-Four-item-number">
-                  <span>1</span>
-                </div>
+                <input class="shopping-page-right-bottom-Four-item-number" v-model="skuNum">
+                </input>
                 <!-- 加号 -->
                 <div class="shopping-page-right-bottom-Four-item-plus">
-                  <span class="plus-span">+</span>
+                  <span class="plus-span" @click="skuNum++">+</span>
                 </div>
               </div>
               <div class="shopping-page-right-bottom-Four-text">
@@ -170,7 +172,7 @@
             <!-- 点击购买 -->
             <div class="shopping-page-right-bottom-Five">
               <!-- 第一个按钮 -->
-              <div class="shopping-page-right-bottom-Five-one">
+              <div class="shopping-page-right-bottom-Five-one" @click="toLogin">
                 <span class="Five-spanOne">￥636.8</span>
                 <span class="Five-spanTwo">全网低价</span>
               </div>
@@ -249,7 +251,23 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      shopItem: [], //商品数据
+      skuNum:1, //个数
+    };
+  },
+  methods: {
+    toLogin() {
+      if (!localStorage.getItem("USERINFO_TOKEN")) {
+        this.$router.push("/login");
+      } else {
+        this.$router.push("/cart");
+      }
+    },
+  },
+  mounted() {
+    this.shopItem = this.$route.query.item;
+    console.log(this.$route);
   },
   components: {},
 };
@@ -275,6 +293,10 @@ export default {
       height: 550px;
       background: #fff;
       border-bottom: 1px dashed #dfdfdf;
+      img {
+        width: 420px;
+        height: 550px;
+      }
       //<!-- 这个是大图 -- >
       .el-carousel__item h3 {
         color: #475669;
@@ -300,26 +322,26 @@ export default {
       //   }
       // }
       //<!-- 这个是下面4个小图 -->
-      .shopping-page-main {
-        width: 100%;
-        height: 64px;
-        margin-top: 10px;
-        float: left;
-        .shopping-page-item {
-          width: 62px;
-          height: 62px;
-          float: left;
-          margin-right: 10px;
-          &:nth-child(1) {
-            margin-left: 37px;
-          }
-          img {
-            width: 62px;
-            height: 62px;
-            background: rgb(27, 26, 26);
-          }
-        }
-      }
+      // .shopping-page-main {
+      //   width: 100%;
+      //   height: 64px;
+      //   margin-top: 10px;
+      //   float: left;
+      //   .shopping-page-item {
+      //     width: 62px;
+      //     height: 62px;
+      //     float: left;
+      //     margin-right: 10px;
+      //     &:nth-child(1) {
+      //       margin-left: 37px;
+      //     }
+      //     img {
+      //       width: 62px;
+      //       height: 62px;
+      //       background: rgb(27, 26, 26);
+      //     }
+      //   }
+      // }
       //<!-- 这是商品编码信息 -->
       .shopping-product-centent {
         width: 420px;
@@ -327,7 +349,7 @@ export default {
         line-height: 48px;
         border-bottom: 1px solid #fafafa;
         // background: slategray;
-        margin-top: 74px;
+        margin-top: 40px;
         .shopping-product-centent-text {
           float: left;
           margin-right: 20px;
@@ -577,6 +599,8 @@ export default {
               float: left;
               width: 31px;
               height: 30px;
+              border: none;
+              box-sizing: border-box;
               text-align: center;
               line-height: 30px;
             }
@@ -608,6 +632,7 @@ export default {
             text-align: center;
             margin-left: 40px;
             position: relative;
+            cursor: pointer;
             .Five-spanOne {
               font-size: 20px;
               display: block;
@@ -625,6 +650,7 @@ export default {
           }
           //第二个按钮
           .shopping-page-right-bottom-Five-Two {
+            cursor: pointer;
             float: left;
             width: 130px;
             height: 46px;

@@ -1,10 +1,10 @@
-import {reqHome} from '@/api'
+import { reqHome } from '@/api'
 const state = {
     goodsList: []
 }
 const mutations = {
-    RECEIVE_GOODS_LIST(state, goosList) {
-        state.goodsList = goosList
+    RECEIVE_GOODS_LIST(state, goodsList) {
+        state.goodsList = goodsList
     }
 }
 const actions = {
