@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- 主体内容区 -->
-   
+
     <div v-if="path==='/career'">
       <!-- 背景图 -->
       <div class="setting">
@@ -79,9 +79,7 @@
                   :key="item.name"
                   @click="toJobDetail(item.code)"
                 >
-                  <router-link to="/career/jobdetail">
-                    <p>{{item.name}}</p>
-                  </router-link>
+                  <p>{{item.name}}</p>
                 </div>
               </div>
             </div>
@@ -110,7 +108,7 @@
               @click="toJobDetail(item.code)"
             >
               <div class="main_list_text">
-                  <p>{{item.name}}</p>
+                <p>{{item.name}}</p>
                 <div class="detail">
                   <div class="detail_item">
                     <img src="./images/1.svg" alt />
@@ -148,11 +146,11 @@
         </div>
       </div>
     </div>
-     <router-view v-else></router-view>
+    <router-view v-else></router-view>
   </div>
 </template>
 <script>
-import { reqHotpositionList, reqLatestPositionList, reqJobdetail } from "@/api";
+import { reqHotpositionList, reqLatestPositionList } from "@/api";
 import { Pagination } from "element-ui";
 export default {
   name: "Career",
@@ -168,13 +166,13 @@ export default {
       pageSize: 10,
       page: 1,
       isShow: false,
-      code: '',
+      code: "",
     };
   },
   computed: {
-    path(){
-      return this.$route.path
-    }
+    path() {
+      return this.$route.path;
+    },
   },
   mounted() {
     // console.log(this.path)
@@ -206,8 +204,8 @@ export default {
     //   this.jobDetail = result;
     // },
     //点击跳转至JobDetail页面
-    toJobDetail(){
-      this.$router.push({path:'/career/jobdetail',query:{code:code}})
+    toJobDetail(code) {
+      this.$router.push({ path: "/career/jobdetail", query: { code:code } });
     },
     //分页器函数
     handleSizeChange(pageSize) {
@@ -218,7 +216,7 @@ export default {
       this.currentPage = page;
       this.getMediaReport(page, this.pageSize);
     },
-    getMediaReport(){}
+    getMediaReport() {},
   },
 };
 </script>
@@ -426,7 +424,7 @@ export default {
             right: 30px;
             top: 60px;
             font-size: 16px;
-            &:hover{
+            &:hover {
               cursor: pointer;
               color: crimson;
             }

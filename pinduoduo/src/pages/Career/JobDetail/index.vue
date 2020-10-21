@@ -74,14 +74,14 @@ export default {
     }
   },
   methods: {
-    async getDetail(){
+    async getDetail(code){
       let result = await reqJobdetail(this.code)
       this.jobDetail=result
     }
   },
   mounted() {
     this.code=this.$route.query.code
-    this.getDetail()
+    this.getDetail(this.code)
   },
 };
 </script>

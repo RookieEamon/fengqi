@@ -14,7 +14,7 @@ Vue.use(ElementUI)
 
 import { Pagination } from 'element-ui';
 Vue.use(Pagination)
-Vue.use(ElementUI)
+// Vue.use(ElementUI)
 
 new Vue({
   render: h => h(App),
