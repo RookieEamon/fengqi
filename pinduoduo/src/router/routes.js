@@ -40,7 +40,7 @@ export default [
 	},
 	{
 		path: '/complaint',
-		component: Complaint
+		component: Complaint,
 		children: [
       {
         path: '/complaint/integrityreport',
