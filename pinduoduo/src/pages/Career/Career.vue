@@ -208,7 +208,7 @@ export default {
     //点击跳转至JobDetail页面
     toJobDetail(code) {
       this.$router.push({path:"/career/jobdetail",query:{code:code}})
-      this.isShow = true;
+      // this.isShow = true;
     },
     //分页器函数
     handleSizeChange(pageSize) {

@@ -13,14 +13,14 @@
 </template>
 <script>
 import Banner from "./components/banner.vue";
-import Notic from "./components/notic.vue";
-import Process from "./components/process.vue";
+// import Notic from "./components/notic.vue";
+// import Process from "./components/process.vue";
 export default {
   name: "Cooperation",
   components: {
     Banner,
-    Notic,
-    Process,
+    // Notic,
+    // Process,
   },
   mounted() {
       // console.log(this.$route.meta.isShowFooterTop);
