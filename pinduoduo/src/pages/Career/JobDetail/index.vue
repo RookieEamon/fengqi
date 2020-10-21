@@ -79,7 +79,7 @@ export default {
       this.jobDetail=result
     },
     deliver(){
-      this.$router.push({path:'769474195@qq.com'})
+      window.open('https://mail.qq.com/cgi-bin/frame_html?sid=xVYWnqBUC9ZZFDlm&r=aba0033fd642660025768b596d21f8a8', "_blank");
     }
   },
   mounted() {

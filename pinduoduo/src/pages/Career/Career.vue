@@ -160,13 +160,13 @@ export default {
       latestPositionList: [], //最新发布岗位列表数组
       jobDetail: {}, //岗位详情对象
       currentPage: 1,
-      pageSizes: [5, 10, 15, 20],
-      total: 0,
-      job: "",
+      pageSizes: [5, 10, 15, 20, 50, 100],
       pageSize: 10,
       page: 1,
-      isShow: false,
+      total: 0,
+      job: "",
       code: "",
+      isShow: false,
     };
   },
   computed: {
@@ -175,10 +175,11 @@ export default {
     },
   },
   mounted() {
-    // console.log(this.path)
-    this.getHotpositionList();
-    this.getLatestPositionList("", 1, 10);
-  },
+      // console.log(this.path)
+      this.getHotpositionList();
+      this.getLatestPositionList();
+      this.getMediaReport();
+    },
   methods: {
     //获取热招岗位列表和最新发布岗位列表
     async getHotpositionList() {
@@ -188,7 +189,8 @@ export default {
     //获取最新的岗位数据列表
     async getLatestPositionList(type) {
       let { job, page, pageSize } = this;
-      const result = await reqLatestPositionList(type, page, pageSize);
+      const result = await reqLatestPositionList(type, page=1, pageSize=10);
+      console.log(result)
       this.latestPositionList = result.list;
       this.total = result.total;
     },
@@ -197,16 +199,11 @@ export default {
       this.job = type;
       this.getLatestPositionList(type);
     },
-    // 获取岗位详情信息
-    // async getJobdetail() {
-    //   let code = data.code
-    //   const result = await reqJobdetail({code});
-    //   this.jobDetail = result;
-    // },
     //点击跳转至JobDetail页面
     toJobDetail(code) {
-      this.$router.push({ path: "/career/jobdetail", query: { code:code } });
+      this.$router.push({ path: "/career/jobdetail", query: { code: code } });
     },
+
     //分页器函数
     handleSizeChange(pageSize) {
       this.pageSize = pageSize;
@@ -216,7 +213,8 @@ export default {
       this.currentPage = page;
       this.getMediaReport(page, this.pageSize);
     },
-    getMediaReport() {},
+    getMediaReport(){}
+    
   },
 };
 </script>

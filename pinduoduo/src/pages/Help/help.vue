@@ -3,7 +3,7 @@
     <!-- 内容区 -->
     <div class="content">
       <!-- 内容区头部图片 -->
-      <div>
+      <div class="logoImg">
         <img src="./images/pdd_help_banner_v2.jpg" alt="内容区头部图片" />
       </div>
       <div class="content_title_nav">
@@ -68,6 +68,9 @@ export default {
   width: 1200px;
   margin: 0 auto;
   margin-top: 118px;
+  .logoImg{
+    margin-top: -7px;
+  }
   .content_title_nav {
     padding-top: 38px;
     // 左侧标题导航
