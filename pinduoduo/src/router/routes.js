@@ -9,9 +9,11 @@ import Detail from '@/pages/Detail/detail.vue'
 import Help from '@/pages/Help/help.vue'
 import Recruitment from '@/pages/Recruitment/recruitment.vue'
 import Hotnews from '@/pages/Hotnews/hotnews.vue'
+import JobDetail from '@/pages/Career/JobDetail'
 // 引入home的子组件
 import More from '../pages/Home/More/index'
 import Download from '../pages/Home/Download/index'
+import shopping from '../pages/Shopping/shopping.vue'
 export default [
     {
         path: '/home',
@@ -51,6 +53,10 @@ export default [
         meta: {
             isshowheader: true
         }
+    },
+    {
+        path: '/shopping',
+        component: shopping
     },
     {
         path: '/help',

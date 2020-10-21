@@ -714,13 +714,13 @@
           <div
             class="shop-list-one"
             @click="shoplist"
-            v-for="item in goodsList"
+            v-for="item in goodslist"
             :key="item.id"
           >
             <!-- 这是一个装img的div -->
 
             <div class="shop-list-div">
-              <img class="shop-list-tu" :src="item.coverImgUrl" alt="" />
+              <img class="shop-list-tu" src="l" alt="" />
             </div>
 
             <!-- 这是装价格和介绍商品 -->
