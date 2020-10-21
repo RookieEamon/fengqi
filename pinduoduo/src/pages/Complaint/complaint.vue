@@ -1,6 +1,6 @@
 <template>
   <div>
-      <router-view ></router-view>
+      <h1>Complaint...</h1>
   </div>
 </template>
 <script>

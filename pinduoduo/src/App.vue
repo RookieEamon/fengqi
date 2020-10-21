@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <Header v-show="!$route.meta.isHeaderAndFooter"/>
+    <Header/>
     <router-view></router-view>
-    <Footer v-show="!$route.meta.isHeaderAndFooter"/>
+    <Footer/>
   </div>
 </template>
 

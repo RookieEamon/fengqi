@@ -3,10 +3,10 @@
     <div class="subject">
       <!-- 导航 -->
       <div class="navList">
-        <ul class="nav"> 
-          <li class="focus" >限时秒杀</li>
-          <li >9.9特卖</li>
-          <li >食品超市</li>
+        <ul class="nav" @click="change">
+          <li>限时秒杀</li>
+          <li>9.9特卖</li>
+          <li>食品超市</li>
         </ul>
       </div>
       <!-- 大图 -->
@@ -62,12 +62,21 @@ export default {
   data() {
     return {
       goodsItem: [],
+      focus:true
     };
   },
   mounted() {
     this.goodsItem = this.$route.query.goodsData
     console.log(this.goodsItem)
   },
+  methods:{
+    change(event){
+      //dom操作写出高亮切换
+      console.log(event.target)
+      event.target.parentNode.children.forEach((item)=>item.className='')
+      event.target.className='focus'
+    }
+  }
 };
 </script>
 <style lang='less' rel='stylesheet/less' scoped>

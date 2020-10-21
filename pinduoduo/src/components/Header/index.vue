@@ -75,23 +75,18 @@ export default {
   name: "Header",
   data() {
     return {
-
+      isLogin: false,
     };
   },
   mounted() {
-    // this.$Eventbus.$on("changeLogin", (data) => {
-    //   this.isLogin = data;
-    // });
+    this.$Eventbus.$on("changeLogin", (data) => {
+      this.isLogin = data;
+    });
   },
   methods: {
     addActive(event) {
       
     },
-  },
-   computed: {
-     isLogin(){
-       return localStorage.getItem('USERINFO_TOKEN')
-     }
   },
 };
 </script>
