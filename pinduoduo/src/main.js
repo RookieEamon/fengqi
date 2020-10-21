@@ -5,11 +5,17 @@ import store from '@/Store'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 Vue.config.productionTip = false
+<<<<<<< HEAD
 
 router.afterEach((to, from, next) => {
 Vue.use(ElementUI)
   window.scrollTo(0, 0);
 });
+=======
+import { Pagination } from 'element-ui';
+Vue.use(Pagination)
+Vue.use(ElementUI)
+>>>>>>> dev
 new Vue({
   render: h => h(App),
   router,

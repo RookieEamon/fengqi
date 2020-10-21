@@ -3,10 +3,10 @@
     <div class="subject">
       <!-- 导航 -->
       <div class="navList">
-        <ul class="nav">
-          <li class="focus">限时秒杀</li>
-          <li>9.9特卖</li>
-          <li>食品超市</li>
+        <ul class="nav"> 
+          <li class="focus" >限时秒杀</li>
+          <li >9.9特卖</li>
+          <li >食品超市</li>
         </ul>
       </div>
       <!-- 大图 -->
