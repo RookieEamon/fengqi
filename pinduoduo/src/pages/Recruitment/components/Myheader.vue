@@ -50,7 +50,9 @@
         </li>
       </ul>
       <!-- 头部登录/注册 -->
-      <div class="loginAndRegister">登录/注册</div>
+      <router-link to="/login">
+        <div class="loginAndRegister">登录/注册</div>
+      </router-link>
     </div>
   </div>
 </template>
