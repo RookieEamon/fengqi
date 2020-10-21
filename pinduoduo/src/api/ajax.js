@@ -44,3 +44,7 @@ ajax.interceptors.response.use(response => {
     return Promise.reject(error) // 改成error即可
 })
 export default ajax
+<<<<<<< HEAD
+=======
+
+>>>>>>> dev
