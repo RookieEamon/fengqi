@@ -93,13 +93,15 @@
             </a>
             <p class="shopping-page-right-centent-title">
               沐兰2019秋冬新款长袖女装半高圆领修身弹力典雅印花衬衫
+              <!-- {{this.detailData.goods_name}} -->
             </p>
           </div>
           <!-- 价格图片 -->
           <div class="shopping-page-right-img">
             <div class="shopping-page-right-img-qian">
               <i>￥</i>
-              <span>8888</span>
+              <!-- <span>{{this.detailData.group_price}}</span> -->
+              <span>999</span>
               <span class="shopping-page-right-img-jiage">1.9折</span>
             </div>
           </div>
@@ -127,22 +129,22 @@
                   <span>黑色</span>
                 </li>
                 <li>
-                  <span>黑色</span>
+                  <span>蓝色</span>
                 </li>
                 <li>
-                  <span>黑色</span>
+                  <span>绿色</span>
                 </li>
                 <li>
-                  <span>黑色</span>
+                  <span>红色</span>
                 </li>
                 <li>
-                  <span>黑色</span>
+                  <span>灰色</span>
                 </li>
                 <li>
-                  <span>黑色</span>
+                  <span>白色</span>
                 </li>
                 <li>
-                  <span>黑色</span>
+                  <span>紫色</span>
                 </li>
               </ul>
             </div>
@@ -254,6 +256,7 @@ export default {
     return {
       shopItem: [], //商品数据
       skuNum: 1, //个数
+      detailId: "", //商品id
     };
   },
   methods: {
@@ -272,6 +275,15 @@ export default {
     console.log(this.$route);
   },
   components: {},
+  computed: {
+    detailData() {
+      if (this.shopItem.goodsList) {
+        return this.shopItem.goodsList.find((item) => {
+          item.cat_id1 === detailId;
+        });
+      }
+    },
+  },
 };
 </script>
 
