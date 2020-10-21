@@ -4,6 +4,10 @@ import Login from '@/pages/Login/login.vue'
 import Career from '@/pages/Career/Career.vue'
 import Cart from '@/pages/Cart/cart.vue'
 import Complaint from '@/pages/Complaint/complaint.vue'
+import Contraband from '@/pages/Complaint/Contraband';
+import IntegrityReport from '@/pages/Complaint/IntegrityReport';
+import MerchantBackground from '@/pages/Complaint/MerchantBackground';
+import ReportDetail from '@/pages/Complaint/ReportDetail';
 import Cooperation from '@/pages/Cooperation/cooperation.vue'
 import Detail from '@/pages/Detail/detail.vue'
 import Help from '@/pages/Help/help.vue'
@@ -36,7 +40,44 @@ export default [
 	},
 	{
 		path: '/complaint',
-		component: Complaint
+		component: Complaint,
+		children: [
+      {
+        path: '/complaint/integrityreport',
+        component: IntegrityReport,
+        meta: {
+          isHeaderAndFooter: true
+        },
+      },
+      {
+        path: '/complaint/merchantbackground',
+        component: MerchantBackground,
+        meta: {
+          isHeaderAndFooter: true
+        },
+      },
+      {
+        path: '/complaint/reportdetail',
+        component: ReportDetail,
+        meta: {
+          isHeaderAndFooter: true
+        },
+      },
+      {
+        path: '/complaint/contraband',
+        component: Contraband,
+        meta: {
+          isHeaderAndFooter: true
+        },
+      },
+      {
+        path: '/complaint',
+        component: IntegrityReport,
+        meta: {
+          isHeaderAndFooter: true
+        },
+      },
+      ]
 	},
 	{
 		path: '/cooperation',

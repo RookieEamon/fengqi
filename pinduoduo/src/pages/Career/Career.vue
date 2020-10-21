@@ -139,7 +139,7 @@
               layout="sizes, prev, pager, next"
               :total="total"
             >
-      </el-pagination>
+            </el-pagination>
           </div>
         </div>
       </div>
