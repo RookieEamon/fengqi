@@ -43,5 +43,5 @@ ajax.interceptors.response.use(response => {
     // 外部处理这个错误,
     return Promise.reject(error) // 改成error即可
 })
-
+export default ajax
 

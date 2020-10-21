@@ -8,7 +8,13 @@ Vue.use(ElementUI);
 Vue.use(Carousel)
 Vue.use(Pagination)
 Vue.config.productionTip = false
+<<<<<<< HEAD
 
+=======
+import { Pagination } from 'element-ui';
+Vue.use(Pagination)
+Vue.use(ElementUI)
+>>>>>>> dev
 new Vue({
   render: h => h(App),
   router,
