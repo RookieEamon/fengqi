@@ -19,92 +19,30 @@ import More from '../pages/Home/More/index'
 import Download from '../pages/Home/Download/index'
 import shopping from '../pages/Shopping/shopping.vue'
 export default [
-<<<<<<< HEAD
-    {
-        path: '/home',
-        component: Home,
-    },
-    {
-        path: '/home/more',
-        component: More
-    },
-    {
-        path: '/home/download',
-        component: Download
-    },
-    {
-        path: '/login',
-        component: Login
-    },
-    {
-        path: '/career',
-        component: Career
-    },
-    {
-        path: '/cart',
-        component: Cart
-    },
-    {
-        path: '/complaint',
-        component: Complaint
-    },
-    {
-        path: '/cooperation',
-        component: Cooperation
-    },
-    {
-        path: '/detail',
-        component: Detail,
-        meta: {
-            isshowheader: true
-        }
-    },
-    {
-        path: '/shopping',
-        component: shopping
-    },
-    {
-        path: '/help',
-        component: Help
-    },
-    {
-        path: '/recruitment',
-        component: Recruitment
-    },
-    {
-        path: '/hotnews',
-        component: Hotnews
-    },
-    {
-        path: '/',
-        redirect: '/home'
-    }
-
-=======
-	{
-		path: '/home',
-		component: Home
-	},
-	{
-		path: '/login',
-		component: Login
-	},
-	{
-		path: '/career',
-		component: Career,
-		children: [{
-			path: '/career/jobdetail',
-			component: JobDetail
-		}, ]
-	},
-	{
-		path: '/cart',
-		component: Cart
-	},
-	{
-		path: '/complaint',
-		component: Complaint,
-		children: [
+  {
+    path: '/home',
+    component: Home
+  },
+  {
+    path: '/login',
+    component: Login
+  },
+  {
+    path: '/career',
+    component: Career,
+    children: [{
+      path: '/career/jobdetail',
+      component: JobDetail
+    },]
+  },
+  {
+    path: '/cart',
+    component: Cart
+  },
+  {
+    path: '/complaint',
+    component: Complaint,
+    children: [
       {
         path: '/complaint/integrityreport',
         component: IntegrityReport,
@@ -140,39 +78,46 @@ export default [
           isHeaderAndFooter: true
         },
       },
-      ]
-	},
-	{
-		path: '/cooperation',
-		component: Cooperation
-	},
-	{
-		path: '/detail',
-		component: Detail
-	},
-	{
-		path: '/help',
-		component: Help
-	},
-	{
-		path: '/recruitment',
-		component: Recruitment
-	},
-	{
-		path: '/hotnews',
-		component: Hotnews
-	},
-	{
-		path: '/home/more',
-		component: More
-	},
-	{
-		path: '/home/download',
-		component: Download
-	},
-	{
-		path: '/',
-		redirect: '/home'
-	}
->>>>>>> dev
+    ]
+  },
+  {
+    path: '/cooperation',
+    component: Cooperation
+  },
+  {
+    path: '/detail',
+    component: Detail,
+    meta: {
+      isshowheader: true
+    }
+  },
+  {
+    path: '/shopping',
+    component: shopping
+  },
+  {
+    path: '/help',
+    component: Help
+  },
+  {
+    path: '/recruitment',
+    component: Recruitment
+  },
+  {
+    path: '/hotnews',
+    component: Hotnews
+  },
+  {
+    path: '/home/more',
+    component: More
+  },
+  {
+    path: '/home/download',
+    component: Download
+  },
+  {
+    path: '/',
+    redirect: '/home'
+  }
+
 ]
