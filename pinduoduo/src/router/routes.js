@@ -10,6 +10,7 @@ import MerchantBackground from '@/pages/Complaint/MerchantBackground';
 import ReportDetail from '@/pages/Complaint/ReportDetail';
 import Cooperation from '@/pages/Cooperation/cooperation.vue'
 import Detail from '@/pages/Detail/detail.vue'
+import Shopping from '../pages/Shopping/shopping.vue'
 import Help from '@/pages/Help/help.vue'
 import Recruitment from '@/pages/Recruitment/recruitment.vue'
 import Hotnews from '@/pages/Hotnews/hotnews.vue'
@@ -17,6 +18,7 @@ import JobDetail from '@/pages/Career/JobDetail'
 // 引入home的子组件
 import More from '../pages/Home/More/index'
 import Download from '../pages/Home/Download/index'
+
 export default [
 	{
 		path: '/home',
@@ -32,7 +34,7 @@ export default [
 		children: [{
 			path: '/career/jobdetail',
 			component: JobDetail
-		}, ]
+		},]
 	},
 	{
 		path: '/cart',
@@ -42,45 +44,45 @@ export default [
 		path: '/complaint',
 		component: Complaint,
 		children: [
-      {
-        path: '/complaint/integrityreport',
-        component: IntegrityReport,
-        meta: {
-          isHeaderAndFooter: true
-        },
-      },
-      {
-        path: '/complaint/merchantbackground',
-        component: MerchantBackground,
-        meta: {
-					isHeaderAndFooter: true,
-          isHeader: true
-					
-        },
-      },
-      {
-        path: '/complaint/reportdetail',
-        component: ReportDetail,
-        meta: {
+			{
+				path: '/complaint/integrityreport',
+				component: IntegrityReport,
+				meta: {
+					isHeaderAndFooter: true
+				},
+			},
+			{
+				path: '/complaint/merchantbackground',
+				component: MerchantBackground,
+				meta: {
 					isHeaderAndFooter: true,
 					isHeader: true
-        },
-      },
-      {
-        path: '/complaint/contraband',
-        component: Contraband,
-        meta: {
-          isHeaderAndFooter: true
-        },
-      },
-      {
-        path: '/complaint',
-        component: IntegrityReport,
-        meta: {
-          isHeaderAndFooter: true
-        },
-      },
-      ]
+
+				},
+			},
+			{
+				path: '/complaint/reportdetail',
+				component: ReportDetail,
+				meta: {
+					isHeaderAndFooter: true,
+					isHeader: true
+				},
+			},
+			{
+				path: '/complaint/contraband',
+				component: Contraband,
+				meta: {
+					isHeaderAndFooter: true
+				},
+			},
+			{
+				path: '/complaint',
+				component: IntegrityReport,
+				meta: {
+					isHeaderAndFooter: true
+				},
+			},
+		]
 	},
 	{
 		path: '/cooperation',
@@ -89,6 +91,10 @@ export default [
 	{
 		path: '/detail',
 		component: Detail
+	},
+	{
+		path: '/shopping',
+		component: Shopping
 	},
 	{
 		path: '/help',
