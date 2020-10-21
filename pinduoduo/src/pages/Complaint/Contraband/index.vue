@@ -1,16 +1,5 @@
 <template>
   <div class="main">
-    <!-- 头部导航 -->
-    <div class="headerBox">
-      <div class="reportHeader">
-        <span class="report">拼多多举报平台</span>
-        <div class="reportNav">
-          <a href="javascript:;">廉正举报</a>
-          <a href="javascript:;" @click="toMerchantBackground">业务投诉</a>
-          <a href="javascript:;">违禁品举报</a>
-        </div>
-      </div>
-    </div>
     <!-- 主体内容 -->
     <div class="compont">
       <!-- 提示框 -->
@@ -99,31 +88,6 @@ export default {
 <style lang="less" rel="stylesheet/less" scoped>
 .main {
   width: 100%;
-  // 头部
-  .headerBox {
-    width: 100%;
-    background-color: #ff5d5e;
-    .reportHeader {
-      width: 1160px;
-      height: 60px;
-      margin: 0 auto;
-      display: flex;
-      text-align: center;
-      line-height: 60px;
-      .report {
-        font-size: 19px;
-        color: #fff;
-        margin: 0 80px;
-      }
-      .reportNav {
-        a {
-          font-size: 15px;
-          color: #fff;
-          margin: 0 20px;
-        }
-      }
-    }
-  }
   // 主体内容
   .compont {
     width: 100%;
