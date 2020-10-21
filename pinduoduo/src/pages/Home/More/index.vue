@@ -3,10 +3,10 @@
     <div class="subject">
       <!-- 导航 -->
       <div class="navList">
-        <ul class="nav">
-          <li class="focus">限时秒杀</li>
-          <li>9.9特卖</li>
-          <li>食品超市</li>
+        <ul class="nav"> 
+          <li class="focus" >限时秒杀</li>
+          <li >9.9特卖</li>
+          <li >食品超市</li>
         </ul>
       </div>
       <!-- 大图 -->
@@ -65,7 +65,7 @@ export default {
   },
   mounted() {
     this.goodsItem = this.$route.query.goodsData
-    console.log(this.goodsItem)
+    // console.log(this.goodsItem)
   },
 };
 </script>
