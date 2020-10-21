@@ -26,25 +26,10 @@ export default {
     };
   },
   mounted() {
-    
-    // this.goodsItem = this.$route.query.goodsData 
-    // console.log('@@@@',this.$route.query.goodsData)
-  //  localStorage.setItem('goodsList',JSON.stringify(this.$route.query.goodsData))
-   this.goodsItem = JSON.parse(localStorage.getItem('goodsList'))
-    // console.log(localStorage.getItem('goodsList'))
-  // methods: {
-  //   change() {
-  //     const { path, query } = this.$route;
-  //     this.$router.push({
-  //       path: "/home/more/seckill",
-  //       query: {
-  //         goodsData: this.goodsItem
-  //       }
-  //     });
-  //   }
-  // }
-  }
-  }
+    this.goodsItem = this.$route.query.goodsData
+    // console.log(this.goodsItem)
+  },
+};
 </script>
 <style lang='less' rel='stylesheet/less' scoped>
 // 主题部分

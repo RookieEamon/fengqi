@@ -88,6 +88,13 @@ export default {
       
     },
   },
+
+ 
+   computed: {
+     isLogin(){
+       return localStorage.getItem('USERINFO_TOKEN')
+     }
+  },
 };
 </script>
 <style lang='less' rel='stylesheet/less'>
