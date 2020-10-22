@@ -229,7 +229,7 @@ export default {
       // console.log(navText)
       this.job = "";
       const _this = this;
-      return (function debounce(...args) {
+      return (function debounce() {
         if (_this.timeId) {
           clearTimeout(_this.timeId);
         }
