@@ -212,7 +212,7 @@ export default {
     searchKey(navText){
       // console.log(navText)
       this.job = '';
-      this.getLatestPositionList(this.job, this.page, this.pageSize, this.navText)
+      this.getLatestPositionList(this.job, this.page, this.pageSize, navText)
     },
 
     //分页器函数
