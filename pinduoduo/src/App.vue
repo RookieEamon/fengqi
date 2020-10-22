@@ -10,7 +10,9 @@
     &&path !=='/complaint/merchantbackground'
     &&path !=='/complaint/reportdetail'
     &&path !=='/complaint/contraband'
-    &&path !=='/complaint'"
+    &&path !=='/complaint'
+    &&path !=='/detail'
+    "
     />
     <router-view></router-view>
     <Footer v-show="!$route.meta.isHeaderAndFooter"/>

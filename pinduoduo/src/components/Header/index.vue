@@ -19,7 +19,7 @@
             </li>
             <li>
               <router-link to="/login">
-                <span>{{ isLogin ? "个人中心" : "登录/注册" }}</span>
+                <span>{{ isLogin ? "退出登录" : "登录/注册" }}</span>
               </router-link>
               <i></i>
             </li>

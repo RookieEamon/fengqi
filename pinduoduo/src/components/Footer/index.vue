@@ -41,6 +41,7 @@ export default {
   // margin-top:60px ;
   position: relative;
   width: 100%;
+  overflow: hidden;
   // 二维码和文字部分
 
   //底部列表部分

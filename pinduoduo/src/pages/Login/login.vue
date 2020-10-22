@@ -24,7 +24,7 @@
             <div class="loginMethodWrap">
               <span class="left">登录</span>
               <div class="loginMethod">
-                <span class="phoneLogin">手机号码登录</span>
+                <span class="phoneLogin" @click="offLogin">退出登录</span>
                 <div class="line"></div>
                 <span class="passwordLogin">账号登录</span>
               </div>
@@ -121,8 +121,8 @@ export default {
   name: "Login",
   data() {
     return {
-      username: "", //用户名
-      password: "", //密码
+      username: "EamonYang", //用户名
+      password: "11111", //密码
     };
   },
   methods: {
@@ -143,6 +143,14 @@ export default {
       } else {
         alert("手机号码或者密码不能为空");
       }
+    },
+    offLogin(){
+      localStorage.removeItem('USERINFO_TOKEN')
+      this.$message({
+          message: '您已退出登录，请重新登录！',
+          type: 'warning'
+        });
+        this.$router.push('/home')
     },
   },
   components:{

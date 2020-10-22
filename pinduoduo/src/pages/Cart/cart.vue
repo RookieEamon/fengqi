@@ -92,8 +92,19 @@
 </template>
 
 <script>
+import {mapState} from 'vuex'
 export default {
   name: "Cart",
+  data() {
+    return {
+      shoppingCart:[]
+    }
+  },
+  mounted() {
+   this.shoppingCart= this.$route.query.shopItem.id
+   console.log(this.$route.query.shopItem)
+  },
+  
 };
 </script>
 
