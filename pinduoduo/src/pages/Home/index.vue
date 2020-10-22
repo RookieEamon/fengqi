@@ -124,7 +124,7 @@ export default {
     }),
     
     goMore(item) {
-      console.log(item)
+      // console.log(item)
       const { path, query } = this.$route;
       this.$router.push({
         path: "/home/more",
