@@ -11,7 +11,7 @@ import MerchantBackground from '@/pages/Complaint/MerchantBackground';
 import ReportDetail from '@/pages/Complaint/ReportDetail';
 import Cooperation from '@/pages/Cooperation/cooperation.vue'
 import Detail from '@/pages/Detail/detail.vue'
-import Shopping from '../pages/Shopping/shopping.vue'
+import Shopping from '../pages/Shopping/shopping'
 import Help from '@/pages/Help/help.vue'
 import Recruitment from '@/pages/Recruitment/recruitment.vue'
 import Hotnews from '@/pages/Hotnews/hotnews.vue'
@@ -19,6 +19,10 @@ import JobDetail from '@/pages/Career/JobDetail'
 // 引入home的子组件
 import More from '../pages/Home/More/index'
 import Download from '../pages/Home/Download/index'
+//引入more的子组件
+import Seckill from '@/pages/Home/More/Seckill'
+import Specialsale from '@/pages/Home/More/Specialsale'
+import Supermarket from '@/pages/Home/More/Supermarket'
 
 //引入Recruitment的子组件
 import Main from '../pages/Recruitment/Main'
@@ -171,7 +175,26 @@ export default [
 	},
 	{
 		path: '/home/more',
-		component: More
+		component: More,
+		children :[
+			{
+				path:'/home/more/seckill',
+				component: Seckill
+			},
+			{
+				path:'/home/more/specialsale',
+				component:Specialsale
+			},
+			{
+				path:'/home/more/supermarket',
+				component:Supermarket
+			},
+			// 重定向
+			{
+				path:'/home/more',
+				redirect:'/home/more/seckill'
+			}
+		]
 	},
 	{
 		path: '/home/download',

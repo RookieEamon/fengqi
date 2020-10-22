@@ -159,7 +159,7 @@
                 </div>
                 <!-- 数量 -->
                 <input class="shopping-page-right-bottom-Four-item-number" v-model="skuNum">
-                </input>
+                <!-- </input> -->
                 <!-- 加号 -->
                 <div class="shopping-page-right-bottom-Four-item-plus">
                   <span class="plus-span" @click="skuNum++">+</span>
@@ -247,11 +247,12 @@
 
 <script>
 export default {
+  name:'Shopping',
   data() {
     return {
       shopItem: [], //商品数据
       skuNum: 1, //个数
-      detailId: "", //商品id
+      detailId: "" //商品id
     };
   },
   methods: {
@@ -263,22 +264,23 @@ export default {
       } else {
         this.$router.push({ path: "/cart", query });
       }
-    },
+    }
   },
   mounted() {
-    this.shopItem = this.$route.query.item;
+    // this.shopItem = this.$route.query.item;
     console.log(this.$route);
+    this.shopItem = JSON.parse(localStorage.getItem('goodsList'))
   },
   components: {},
   computed: {
     detailData() {
       if (this.shopItem.goodsList) {
-        return this.shopItem.goodsList.find((item) => {
+        return this.shopItem.goodsList.find(item => {
           item.cat_id1 === detailId;
         });
       }
-    },
-  },
+    }
+  }
 };
 </script>
 

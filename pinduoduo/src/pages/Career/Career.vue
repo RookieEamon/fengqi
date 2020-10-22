@@ -209,8 +209,7 @@ export default {
     handleCurrentChange(page) {
       this.page = page;
       this.getLatestPositionList(this.job, page, this.pageSize);
-
-    }   
+    },
   },
 };
 </script>

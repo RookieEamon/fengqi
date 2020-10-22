@@ -12,7 +12,7 @@
             </div>
             <div class="detail_item">
               <img src="./images/2.svg" alt />
-              <span>上海</span>
+              <span>{{jobDetail.workLocation}}</span>
             </div>
             <div class="detail_item">
               <img src="./images/3.svg" alt />

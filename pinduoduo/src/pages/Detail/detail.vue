@@ -752,10 +752,11 @@ export default {
     shoplist(item) {
       this.$router.push({
         path: "/shopping",
-        query: {
-          item: item,
-        },
+        // query: {
+        //   item: item,
+        // },
       });
+    // localStorage.setItem('goods-list',JSON.stringify(item))
     },
     toMore() {
       this.$router.push("/home/more");
