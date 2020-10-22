@@ -4,15 +4,15 @@
     <div class="detail_page">
       <div class="main_list">
         <div class="main_list_text">
-          <p>招商运营专家-男装</p>
+          <p>{{jobDetail.name}}</p>
           <div class="detail">
             <div class="detail_item">
               <img src="./images/1.svg" alt />
-              <span>招商运营类</span>
+              <span>{{jobDetail.recruitType}}</span>
             </div>
             <div class="detail_item">
               <img src="./images/2.svg" alt />
-              <span>上海</span>
+              <span>{{jobDetail.workLocation}}</span>
             </div>
             <div class="detail_item">
               <img src="./images/3.svg" alt />
@@ -20,7 +20,7 @@
             </div>
             <div class="detail_item">
               <img src="./images/4.svg" alt />
-              <span>2020-10-18</span>
+              <span>{{jobDetail.updateTime}}</span>
             </div>
           </div>
         </div>
@@ -57,7 +57,7 @@
           <p>Tips: 简历还可投递到：hr@pinduoduo.com</p>
           <p>邮件/简历命名格式：【官网】岗位 - 姓名</p>
         </div>
-        <button>简历投递</button>
+        <button @click="deliver">简历投递</button>
       </div>
     </div>
   </div>
@@ -74,9 +74,12 @@ export default {
     }
   },
   methods: {
-    async getDetail(code){
+    async getDetail(){
       let result = await reqJobdetail(this.code)
       this.jobDetail=result
+    },
+    deliver(){
+      window.open('https://mail.qq.com/cgi-bin/frame_html?sid=xVYWnqBUC9ZZFDlm&r=aba0033fd642660025768b596d21f8a8', "_blank");
     }
   },
   mounted() {
@@ -170,6 +173,10 @@ export default {
       margin-bottom: 66px;
       background-color: #f04055;
       color: white;
+      outline: none;
+      &:hover{
+        background: crimson;
+      }
     }
   }
 }

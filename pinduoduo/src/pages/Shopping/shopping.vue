@@ -19,6 +19,7 @@
                   <img :src="item.hd_url" alt="" ref="bigImg">
                 </div>
                 <div class="mask" ref="mask"></div>
+                <img :src="item.hd_url" alt="" />
               </el-carousel-item>
             </el-carousel>
           </div>
@@ -98,6 +99,7 @@
             </a>
             <p class="shopping-page-right-centent-title">
               沐兰2019秋冬新款长袖女装半高圆领修身弹力典雅印花衬衫
+              <!-- {{this.detailData.goods_name}} -->
             </p>
           </div>
           <!-- 价格图片 -->
@@ -105,6 +107,8 @@
             <div class="shopping-page-right-img-qian">
               <i>￥</i>
               <span >{{skuNum*400}}</span>
+              <!-- <span>{{this.detailData.group_price}}</span> -->
+              <span>999</span>
               <span class="shopping-page-right-img-jiage">1.9折</span>
             </div>
           </div>
@@ -173,11 +177,11 @@
               <div class="shopping-page-right-bottom-Four-item">
                 <!-- 减号 -->
                 <div class="shopping-page-right-bottom-Four-item-minus-sign">
-                  <span @click="skuNum>=1?skuNum--:''">-</span>
+                  <span @click="skuNum>1?skuNum--:''">-</span>
                 </div>
                 <!-- 数量 -->
                 <input class="shopping-page-right-bottom-Four-item-number" v-model="skuNum">
-                </input>
+                <!-- </input> -->
                 <!-- 加号 -->
                 <div class="shopping-page-right-bottom-Four-item-plus">
                   <span class="plus-span" @click="skuNum++">+</span>
@@ -265,12 +269,14 @@
 
 <script>
 export default {
+  name:'Shopping',
   data() {
     return {
       shopItem: [], //商品数据
       skuNum: 1, //个数
       detailId: "", //商品id
       count: 400, //商品价格
+      detailId: "" //商品id
     };
   },
   methods: {

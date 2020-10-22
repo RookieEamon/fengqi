@@ -10,20 +10,20 @@
       <div class="content">
         <div class="content_head">
           <div class="search">
-            <input type="text" />
+            <input type="text" v-model="navText"/>
             <button>搜索</button>
           </div>
           <div class="hotSearch">
             <span>热门搜索:</span>
             <ul>
-              <li>JAVA</li>
-              <li>算法</li>
-              <li>数据</li>
-              <li>前端</li>
-              <li>产品经理</li>
-              <li>运营</li>
-              <li>交互</li>
-              <li>服务专家</li>
+              <li @click="changNavText" ref="nav1">JAVA</li>
+              <li @click="changNavText" >算法</li>
+              <li @click="changNavText" >数据</li>
+              <li @click="changNavText" >前端</li>
+              <li @click="changNavText" >产品经理</li>
+              <li @click="changNavText" >运营</li>
+              <li @click="changNavText" >交互</li>
+              <li @click="changNavText" >服务专家</li>
             </ul>
           </div>
         </div>
@@ -160,13 +160,13 @@ export default {
       latestPositionList: [], //最新发布岗位列表数组
       jobDetail: {}, //岗位详情对象
       currentPage: 1,
-      pageSizes: [5, 10, 15, 20],
-      total: 0,
-      job: "",
+      pageSizes: [5, 10, 15, 20, 50, 100],
       pageSize: 10,
       page: 1,
-      isShow: false,
+      total: 0,
+      job: "",
       code: "",
+      navText: '',
     };
   },
   computed: {
@@ -175,11 +175,15 @@ export default {
     },
   },
   mounted() {
-    // console.log(this.path)
-    this.getHotpositionList();
-    this.getLatestPositionList("", 1, 10);
-  },
+      this.getHotpositionList();
+      this.getLatestPositionList();
+    },
   methods: {
+    //点击导航分类
+    changNavText(){
+      // console.log(this.$refs.nav1.innerHTML)
+      this.navText = this.$refs.nav1.innerHTML
+    },
     //获取热招岗位列表和最新发布岗位列表
     async getHotpositionList() {
       const { hottestPositionList } = await reqHotpositionList();
@@ -197,26 +201,20 @@ export default {
       this.job = type;
       this.getLatestPositionList(type);
     },
-    // 获取岗位详情信息
-    // async getJobdetail() {
-    //   let code = data.code
-    //   const result = await reqJobdetail({code});
-    //   this.jobDetail = result;
-    // },
     //点击跳转至JobDetail页面
     toJobDetail(code) {
-      this.$router.push({ path: "/career/jobdetail", query: { code:code } });
+      this.$router.push({ path: "/career/jobdetail", query: { code: code } });
     },
+
     //分页器函数
     handleSizeChange(pageSize) {
       this.pageSize = pageSize;
-      this.getMediaReport(this.currentPage, pageSize);
+      this.getLatestPositionList(this.job, this.currentPage, pageSize);
     },
     handleCurrentChange(page) {
-      this.currentPage = page;
-      this.getMediaReport(page, this.pageSize);
+      this.page = page;
+      this.getLatestPositionList(this.job, page, this.pageSize);
     },
-    getMediaReport() {},
   },
 };
 </script>

@@ -15,7 +15,7 @@
     "
     />
     <router-view></router-view>
-    <Footer v-show="!$route.meta.isHeaderAndFooter"/>
+    <Footer v-show="!$route.meta.isHeaderAndFooter" />
   </div>
 </template>
 
@@ -29,16 +29,16 @@ export default {
     Header,
     Footer,
   },
-  beforeCreate() { 
-    Vue.prototype.$Eventbus = new Vue()
+  beforeCreate() {
+    Vue.prototype.$Eventbus = new Vue();
   },
   mounted() {
-    this.$Eventbus.$emit('changeLogin',false)
+    this.$Eventbus.$emit("changeLogin", false);
   },
   computed: {
-    path(){
+    path() {
       return this.$route.path;
-    }
+    },
   },
 };
 </script>

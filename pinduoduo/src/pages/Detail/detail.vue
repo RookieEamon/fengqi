@@ -6,7 +6,7 @@
         <div class="nav-top">
           <!-- logo -->
           <div class="LOGO">
-            <img src="./images/~BEY]_YYB2(M78~WKO2BGYQ.jpg" alt="" />
+            <img src="./images/LOGO.5a06cbea.png" alt="" />
           </div>
           <!-- logo旁边三个东西 -->
           <div class="nav-list">
@@ -756,6 +756,7 @@ export default {
           item: item,
         },
       });
+    // localStorage.setItem('goods-list',JSON.stringify(item))
     },
     toMore() {
       this.$router.push("/home/more");
