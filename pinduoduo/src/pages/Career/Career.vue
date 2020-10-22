@@ -17,10 +17,11 @@
             <span>热门搜索:</span>
             <ul>
               <li
-                v-for="(item, index) in navTextList" :key="index" 
-                @click="changNavText(index)" 
-                ref = item
-                >{{item}}</li>
+                v-for="(item, index) in navTextList"
+                :key="index"
+                @click="changNavText(index)"
+                ref="item"
+              >{{item}}</li>
             </ul>
           </div>
         </div>
@@ -153,7 +154,16 @@ export default {
   name: "Career",
   data() {
     return {
-      navTextList: ["JAVA","算法","数据","前端","产品经理","运营","交互","服务专家"], //导航文本列表
+      navTextList: [
+        "JAVA",
+        "算法",
+        "数据",
+        "前端",
+        "产品经理",
+        "运营",
+        "交互",
+        "服务专家",
+      ], //导航文本列表
       hottestPositionList: [], //热招岗位列表数组
       latestPositionList: [], //最新发布岗位列表数组
       jobDetail: {}, //岗位详情对象
@@ -173,17 +183,22 @@ export default {
     },
   },
   mounted() {
-      this.getHotpositionList();
-      this.getLatestPositionList(this.job, this.page, this.pageSize);
-    },
+    this.getHotpositionList();
+    this.getLatestPositionList(this.job, this.page, this.pageSize);
+  },
   methods: {
     //点击导航分类
-    changNavText(index){
+    changNavText(index) {
       // console.log(this.$refs.item[index].innerHTML)
       this.navText = this.$refs.item[index].innerHTML;
-      this.job = '';
+      this.job = "";
       // console.log(this.navText)
-      this.getLatestPositionList(this.job, this.page, this.pageSize, this.navText)
+      this.getLatestPositionList(
+        this.job,
+        this.page,
+        this.pageSize,
+        this.navText
+      );
     },
     //获取热招岗位列表和最新发布岗位列表
     async getHotpositionList() {
@@ -201,7 +216,7 @@ export default {
     //点击job更新最新岗位数据
     changLatestPositionList(type) {
       this.job = type;
-      this.navText = '';
+      this.navText = "";
       this.getLatestPositionList(this.job, this.page, this.pageSize);
     },
     //点击跳转至JobDetail页面
@@ -209,10 +224,20 @@ export default {
       this.$router.push({ path: "/career/jobdetail", query: { code: code } });
     },
     //点击搜索按钮函数
-    searchKey(navText){
+    // 防抖
+    searchKey(navText) {
       // console.log(navText)
-      this.job = '';
-      this.getLatestPositionList(this.job, this.page, this.pageSize, navText)
+      this.job = "";
+      const _this = this;
+      return (function debounce(...args) {
+        if (_this.timeId) {
+          clearTimeout(_this.timeId);
+        }
+        _this.timeId = setTimeout(() => {
+          delete _this.timeId;
+          _this.getLatestPositionList(_this.job,_this.page, _this.pageSize, navText);
+        }, 300);
+      })();
     },
 
     //分页器函数
