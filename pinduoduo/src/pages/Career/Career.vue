@@ -10,20 +10,20 @@
       <div class="content">
         <div class="content_head">
           <div class="search">
-            <input type="text"/>
+            <input type="text" v-model="navText"/>
             <button>搜索</button>
           </div>
           <div class="hotSearch">
             <span>热门搜索:</span>
             <ul>
-              <li>JAVA</li>
-              <li>算法</li>
-              <li>数据</li>
-              <li>前端</li>
-              <li>产品经理</li>
-              <li>运营</li>
-              <li>交互</li>
-              <li>服务专家</li>
+              <li @click="changNavText" ref="nav1">JAVA</li>
+              <li @click="changNavText" >算法</li>
+              <li @click="changNavText" >数据</li>
+              <li @click="changNavText" >前端</li>
+              <li @click="changNavText" >产品经理</li>
+              <li @click="changNavText" >运营</li>
+              <li @click="changNavText" >交互</li>
+              <li @click="changNavText" >服务专家</li>
             </ul>
           </div>
         </div>
@@ -166,7 +166,7 @@ export default {
       total: 0,
       job: "",
       code: "",
-      isShow: false,
+      navText: '',
     };
   },
   computed: {
@@ -179,6 +179,11 @@ export default {
       this.getLatestPositionList();
     },
   methods: {
+    //点击导航分类
+    changNavText(){
+      // console.log(this.$refs.nav1.innerHTML)
+      this.navText = this.$refs.nav1.innerHTML
+    },
     //获取热招岗位列表和最新发布岗位列表
     async getHotpositionList() {
       const { hottestPositionList } = await reqHotpositionList();
