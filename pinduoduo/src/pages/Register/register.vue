@@ -44,7 +44,7 @@
 </template>
 
 <script>
-import {reqRegister} from '@/api/index'
+import {reqRegister} from '@/api'
 export default {
   name: "Register",
   data() {

@@ -1,44 +1,37 @@
-// import Home from '@/pages/Home'
 import Home from '@/pages/Home'
-import Login from '@/pages/Login/login.vue'
-import Register from '@/pages/Register/register.vue'
-import Career from '@/pages/Career/Career.vue'
-import Cart from '@/pages/Cart/cart.vue'
-import Complaint from '@/pages/Complaint/complaint.vue'
-import Contraband from '@/pages/Complaint/Contraband';
-import IntegrityReport from '@/pages/Complaint/IntegrityReport';
-import MerchantBackground from '@/pages/Complaint/MerchantBackground';
-import ReportDetail from '@/pages/Complaint/ReportDetail';
-import Cooperation from '@/pages/Cooperation/cooperation.vue'
-import Detail from '@/pages/Detail/detail.vue'
-import Shopping from '../pages/Shopping/shopping'
-import Help from '@/pages/Help/help.vue'
-import Recruitment from '@/pages/Recruitment/recruitment.vue'
-import Hotnews from '@/pages/Hotnews/hotnews.vue'
-import JobDetail from '@/pages/Career/JobDetail'
+const Login = ()=>import('@/pages/Login/login.vue')
+const Register = ()=>import('@/pages/Register/register.vue')
+const Career = ()=>import('@/pages/Career/Career.vue')
+const Cart = ()=>import('@/pages/Cart/cart.vue')
+const Complaint = ()=>import('@/pages/Complaint/complaint.vue')
+const Contraband = ()=> import('@/pages/Complaint/Contraband')
+const IntegrityReport = () => import('@/pages/Complaint/IntegrityReport')
+const MerchantBackground = () => import('@/pages/Complaint/MerchantBackground')
+const ReportDetail = () => import('@/pages/Complaint/ReportDetail') ;
+const Cooperation = () => import('@/pages/Cooperation/cooperation.vue') 
+const Detail = () => import('@/pages/Detail/detail.vue') 
+const Shopping = () => import('../pages/Shopping/shopping') 
+const Help = () => import('@/pages/Help/help.vue') 
+const Recruitment = () => import('@/pages/Recruitment/recruitment.vue') 
+const Hotnews = () => import('@/pages/Hotnews/hotnews.vue') 
+const JobDetail = () => import('@/pages/Career/JobDetail') 
 // 引入home的子组件
-import More from '../pages/Home/More/index'
-import Download from '../pages/Home/Download/index'
+const More = () => import('../pages/Home/More/index') 
+const Download = () => import('../pages/Home/Download/index') 
 //引入more的子组件
-import Seckill from '@/pages/Home/More/Seckill'
-import Specialsale from '@/pages/Home/More/Specialsale'
-import Supermarket from '@/pages/Home/More/Supermarket'
-
+const Seckill = () => import('@/pages/Home/More/Seckill') 
+const Specialsale = () => import('@/pages/Home/More/Specialsale') 
+const Supermarket = () => import('@/pages/Home/More/Supermarket') 
 //引入Recruitment的子组件
-import Main from '../pages/Recruitment/Main'
+const Main = () => import('../pages/Recruitment/Main') 
 //招聘信息  应届生招聘
-import Jobinformation from '../pages/Recruitment/Jobinformation'
-
+const Jobinformation = () => import('../pages/Recruitment/Jobinformation') 
 //引入应届生招聘的路由子组件  应届生招聘-招聘信息
-import Position from '../pages/Recruitment/Jobinformation/Position/index.vue'
+const Position = () => import('../pages/Recruitment/Jobinformation/Position/index.vue') 
 //引入应届生招聘的路由子组件  应届生招聘-招聘流程
-import Process from '../pages/Recruitment/Jobinformation/Process'
-
-
+const Process = () => import('../pages/Recruitment/Jobinformation/Process') 
 //实习生招聘通用
-import Intern from '../pages/Recruitment/Intern'
-
-
+const Intern = () => import('../pages/Recruitment/Intern') 
 
 export default [
 	{
