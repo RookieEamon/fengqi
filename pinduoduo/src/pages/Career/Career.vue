@@ -10,8 +10,8 @@
       <div class="content">
         <div class="content_head">
           <div class="search">
-            <input type="text" v-model="navText"/>
-            <button >搜索</button>
+            <input type="text" v-model="navText" />
+            <button @click="searchKey(navText)">搜索</button>
           </div>
           <div class="hotSearch">
             <span>热门搜索:</span>
@@ -182,7 +182,7 @@ export default {
       // console.log(this.$refs.item[index].innerHTML)
       this.navText = this.$refs.item[index].innerHTML;
       this.job = '';
-      console.log(this.navText)
+      // console.log(this.navText)
       this.getLatestPositionList(this.job, this.page, this.pageSize, this.navText)
     },
     //获取热招岗位列表和最新发布岗位列表
@@ -194,7 +194,7 @@ export default {
     async getLatestPositionList(type, page, pageSize, name) {
       // let { job, page, pageSize} = this;
       const result = await reqLatestPositionList(type, page, pageSize, name);
-      console.log(result)
+      // console.log(result)
       this.latestPositionList = result.list;
       this.total = result.total;
     },
@@ -207,6 +207,12 @@ export default {
     //点击跳转至JobDetail页面
     toJobDetail(code) {
       this.$router.push({ path: "/career/jobdetail", query: { code: code } });
+    },
+    //点击搜索按钮函数
+    searchKey(navText){
+      // console.log(navText)
+      this.job = '';
+      this.getLatestPositionList(this.job, this.page, this.pageSize, this.navText)
     },
 
     //分页器函数
