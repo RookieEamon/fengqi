@@ -6,7 +6,7 @@ export const reqMediaReports = (page, pageSize) => ajax.get(`/mediareports/${pag
 //发送请求获取热招岗位列表
 export const reqHotpositionList = () => ajax.get('/hotposition')
 //发送请求获取最新的职位列表
-export const reqLatestPositionList = (job, page, pageSize) => ajax.post('/careers', { job, page, pageSize })
+export const reqLatestPositionList = (job, page, pageSize, name) => ajax.post('/careers', { job, page, pageSize, name })
 //发送请求获取招聘详情列表
 export const reqJobdetail = (code) => ajax.post('/jobdetail', { code })
 // 发送请求获取首页数据

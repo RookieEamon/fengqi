@@ -11,19 +11,16 @@
         <div class="content_head">
           <div class="search">
             <input type="text" v-model="navText"/>
-            <button>搜索</button>
+            <button >搜索</button>
           </div>
           <div class="hotSearch">
             <span>热门搜索:</span>
             <ul>
-              <li @click="changNavText" ref="nav1">JAVA</li>
-              <li @click="changNavText" >算法</li>
-              <li @click="changNavText" >数据</li>
-              <li @click="changNavText" >前端</li>
-              <li @click="changNavText" >产品经理</li>
-              <li @click="changNavText" >运营</li>
-              <li @click="changNavText" >交互</li>
-              <li @click="changNavText" >服务专家</li>
+              <li
+                v-for="(item, index) in navTextList" :key="index" 
+                @click="changNavText(index)" 
+                ref = item
+                >{{item}}</li>
             </ul>
           </div>
         </div>
@@ -156,6 +153,7 @@ export default {
   name: "Career",
   data() {
     return {
+      navTextList: ["JAVA","算法","数据","前端","产品经理","运营","交互","服务专家"], //导航文本列表
       hottestPositionList: [], //热招岗位列表数组
       latestPositionList: [], //最新发布岗位列表数组
       jobDetail: {}, //岗位详情对象
@@ -166,7 +164,7 @@ export default {
       total: 0,
       job: "",
       code: "",
-      navText: '',
+      navText: "",
     };
   },
   computed: {
@@ -176,13 +174,16 @@ export default {
   },
   mounted() {
       this.getHotpositionList();
-      this.getLatestPositionList();
+      this.getLatestPositionList(this.job, this.page, this.pageSize);
     },
   methods: {
     //点击导航分类
-    changNavText(){
-      // console.log(this.$refs.nav1.innerHTML)
-      this.navText = this.$refs.nav1.innerHTML
+    changNavText(index){
+      // console.log(this.$refs.item[index].innerHTML)
+      this.navText = this.$refs.item[index].innerHTML;
+      this.job = '';
+      console.log(this.navText)
+      this.getLatestPositionList(this.job, this.page, this.pageSize, this.navText)
     },
     //获取热招岗位列表和最新发布岗位列表
     async getHotpositionList() {
@@ -190,16 +191,18 @@ export default {
       this.hottestPositionList = hottestPositionList;
     },
     //获取最新的岗位数据列表
-    async getLatestPositionList(type) {
-      let { job, page, pageSize } = this;
-      const result = await reqLatestPositionList(type, page, pageSize);
+    async getLatestPositionList(type, page, pageSize, name) {
+      // let { job, page, pageSize} = this;
+      const result = await reqLatestPositionList(type, page, pageSize, name);
+      console.log(result)
       this.latestPositionList = result.list;
       this.total = result.total;
     },
     //点击job更新最新岗位数据
     changLatestPositionList(type) {
       this.job = type;
-      this.getLatestPositionList(type);
+      this.navText = '';
+      this.getLatestPositionList(this.job, this.page, this.pageSize);
     },
     //点击跳转至JobDetail页面
     toJobDetail(code) {
