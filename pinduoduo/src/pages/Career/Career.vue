@@ -175,7 +175,6 @@ export default {
     },
   },
   mounted() {
-      // console.log(this.path)
       this.getHotpositionList();
       this.getLatestPositionList();
     },
