@@ -4,15 +4,15 @@
     <div class="detail_page">
       <div class="main_list">
         <div class="main_list_text">
-          <p>招商运营专家-男装</p>
+          <p>{{jobDetail.name}}</p>
           <div class="detail">
             <div class="detail_item">
               <img src="./images/1.svg" alt />
-              <span>招商运营类</span>
+              <span>{{jobDetail.recruitType}}</span>
             </div>
             <div class="detail_item">
               <img src="./images/2.svg" alt />
-              <span>上海</span>
+              <span>{{jobDetail.workLocation}}</span>
             </div>
             <div class="detail_item">
               <img src="./images/3.svg" alt />
@@ -20,7 +20,7 @@
             </div>
             <div class="detail_item">
               <img src="./images/4.svg" alt />
-              <span>2020-10-18</span>
+              <span>{{jobDetail.updateTime}}</span>
             </div>
           </div>
         </div>
@@ -64,8 +64,25 @@
 </template>
 
 <script>
+import {reqJobdetail} from '@/api'
 export default {
   name: "JobDetail",
+  data() {
+    return {
+      jobDetail:{},
+      code:''
+    }
+  },
+  methods: {
+    async getDetail(code){
+      let result = await reqJobdetail(this.code)
+      this.jobDetail=result
+    }
+  },
+  mounted() {
+    this.code=this.$route.query.code
+    this.getDetail(this.code)
+  },
 };
 </script>
 
