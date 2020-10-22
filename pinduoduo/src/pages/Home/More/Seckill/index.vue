@@ -72,7 +72,7 @@ export default {
   methods: {
     goShopping() {
       // const { path } = this.$route;
-      this.$router.push("/shopping")
+      this.$router.push("/detail")
   }
   }
 }

@@ -124,7 +124,7 @@ export default {
     }),
     
     goMore(item) {
-      // console.log(item)
+      console.log(item)
     localStorage.setItem('goodsList',JSON.stringify(item))
 
       const { path, query } = this.$route;

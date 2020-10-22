@@ -64,7 +64,7 @@ export default {
   },
     methods: {
     goShopping() {
-     this.$router.push("/shopping")
+     this.$router.push("/detail")
     }
   }
 };

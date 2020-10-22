@@ -31,7 +31,7 @@ export default {
     // console.log('@@@@',this.$route.query.goodsData)
   //  localStorage.setItem('goodsList',JSON.stringify(this.$route.query.goodsData))
    this.goodsItem = JSON.parse(localStorage.getItem('goodsList'))
-    // console.log(localStorage.getItem('goodsList'))
+    console.log(this.goodsItem)
   // methods: {
   //   change() {
   //     const { path, query } = this.$route;
