@@ -111,7 +111,10 @@ export default [
 	},
 	{
 		path: '/detail',
-		component: Detail
+		component: Detail,
+		meta: {
+			isHeaderAndFooter: true
+		}
 	},
 	{
 		path: '/shopping',
@@ -128,37 +131,37 @@ export default [
 			hideHead: true,
 		},
 		children: [{ //校园招聘首页
-				path: '/recruitment',
-				component: Main
-			},
-			{
-				// 应届生招聘
-				path: '/recruitment/jobinformation',
-				component: Jobinformation,
-				children: [
-					{
-						//应届生招聘-招聘职位
-						path: '/recruitment/jobinformation/',
-						component: Position,
-					},
-					{
-						//应届生招聘-招聘职位
-						path: '/recruitment/jobinformation/position',
-						component: Position,
-					},
-					{
-						//应届生招聘-招聘流程
-						path: '/recruitment/jobinformation/process',
-						component: Process,
+			path: '/recruitment',
+			component: Main
+		},
+		{
+			// 应届生招聘
+			path: '/recruitment/jobinformation',
+			component: Jobinformation,
+			children: [
+				{
+					//应届生招聘-招聘职位
+					path: '/recruitment/jobinformation/',
+					component: Position,
+				},
+				{
+					//应届生招聘-招聘职位
+					path: '/recruitment/jobinformation/position',
+					component: Position,
+				},
+				{
+					//应届生招聘-招聘流程
+					path: '/recruitment/jobinformation/process',
+					component: Process,
 
-					}
-				]
-			},
-			{
-				// 实习生招聘
-				path: '/recruitment/intern',
-				component: Intern
-			},
+				}
+			]
+		},
+		{
+			// 实习生招聘
+			path: '/recruitment/intern',
+			component: Intern
+		},
 		]
 
 	},

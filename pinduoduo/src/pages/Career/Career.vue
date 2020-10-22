@@ -10,7 +10,7 @@
       <div class="content">
         <div class="content_head">
           <div class="search">
-            <input type="text" />
+            <input type="text" v-model=""/>
             <button>搜索</button>
           </div>
           <div class="hotSearch">
