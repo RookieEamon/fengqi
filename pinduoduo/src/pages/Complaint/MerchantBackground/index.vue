@@ -3,21 +3,29 @@
     <!-- 头部logo -->
     <div class="header">
       <div class="logo">
-        <img src="./images/background_logo.png" alt="" />
+        <img src="./images/background_logo.png" alt="拼多多LoGo" @click="toHome"/>
       </div>
     </div>
     <!-- 主体内容 -->
     <div class="comtent">
       <div class="merchantBackground">
-        <!-- 登陆方式 -->
-        <div class="merchantBackgroundLogin">
+        <!-- 登陆 -->
+        <div v-if="isShowLogin" class="merchantBackgroundLogin">
           <div class="loginMethodtext">
-            <span :class="{'loginMethodtextActive':isActive == 1}" @click="scanCode()">扫码登录</span>
+            <span
+              :class="{ loginMethodtextActive: isActive == 1 }"
+              @click="scanCode()"
+              >扫码登录</span
+            >
             <span class="line"></span>
-            <span :class="{'loginMethodtextActive':isActive == -1}" @click="account()">账号登录</span>
+            <span
+              :class="{ loginMethodtextActive: isActive == -1 }"
+              @click="account()"
+              >账号登录</span
+            >
           </div>
           <!-- 登录界面 -->
-          <div  class="loginInterface">
+          <div class="loginInterface">
             <!-- 扫码登陆界面 -->
             <div v-if="isloginInterface" class="scanCodeLogin">
               <div class="scanCodeLogin_left">
@@ -29,9 +37,9 @@
               </div>
               <div class="scanCodeLoginText">
                 <div class="scanCodeLoginCompont">打开商家版APP扫一扫登录</div>
-                <div>
+                <div class="scanCodeLoginRegister">
                   <span>还没有账号？</span>
-                  <a href="javascript:;">立即注册</a>
+                  <a @click="toMerchantBackgroundRegister">立即注册</a>
                 </div>
               </div>
             </div>
@@ -43,9 +51,43 @@
               <button class="accountLoginBtn">登录</button>
               <div class="accountLoginFooter">
                 还没有账号?
-                <a class="register" href="javascript:;">立即注册</a>
+                <a class="register" @click="toMerchantBackgroundRegister"
+                  >立即注册</a
+                >
                 <a class="forget" href="javascript:;">忘记密码</a>
               </div>
+            </div>
+          </div>
+        </div>
+        <!-- 注册 -->
+        <div v-else class="merchantBackgroundRegister">
+          <div class="registerMethodtext">
+            <span>扫码登录</span>
+          </div>
+          <!-- 注册界面 -->
+          <div class="registerInterface">
+            <!-- 手机号 -->
+            <div>
+              <!-- <span class="iconfont icon-mygroup"></span> -->
+              <input class="accountRegister " type="text" />
+            </div>
+            <!-- 密码 -->
+            <div>
+              <!-- <span class="iconfont icon-mygroup"></span> -->
+              <input class="accountRegister" type="password" />
+            </div>
+             <!-- 验证码 -->
+            <div>
+              <!-- <span class="iconfont icon-mygroup"></span> -->
+              <input class="accountRegister " type="text" />
+              <div></div>
+            </div>
+            <!-- 注册按钮 -->
+            <button class="accountRegisterBtn">注册</button>
+            <!-- 底部文字 -->
+            <div class="accountRegisterFooter">
+              <span>已有账户</span>
+              <a @click="toLoginInterface">立即登录</a>
             </div>
           </div>
         </div>
@@ -86,22 +128,34 @@
 <script>
 export default {
   name: "MerchantBackground",
-   data() {
-      return {
-        isloginInterface:true,
-        isActive:0
-      };
+  data() {
+    return {
+      isloginInterface: true,
+      isActive: 0,
+      isShowLogin: true,
+    };
+  },
+  methods: {
+    scanCode() {
+      this.isloginInterface = true;
+      this.isActive = 1;
     },
-    methods: {
-      scanCode(){
-        this.isloginInterface = true
-        this.isActive = 1
-      },
-      account(){
-        this.isActive =-1
-        this.isloginInterface = false
-      }
-    }
+    account() {
+      this.isActive = -1;
+      this.isloginInterface = false;
+    },
+    toHome(){
+      this.$router.push('/home')
+    },
+    // 去登陆
+    toLoginInterface() {
+      this.isShowLogin = true;
+    },
+    // 去注册
+    toMerchantBackgroundRegister() {
+      this.isShowLogin = false;
+    },
+  },
 };
 </script>
 
@@ -138,7 +192,7 @@ export default {
       height: 100%;
       margin: 0 auto;
       background: url(./images/merchant_background.png);
-      // 登陆方式
+      // 登陆
       .merchantBackgroundLogin {
         width: 320px;
         height: 320px;
@@ -160,8 +214,8 @@ export default {
             font-size: 16px;
             font-weight: 700;
           }
-          .loginMethodtextActive{
-            color:red;
+          .loginMethodtextActive {
+            color: red;
           }
           .line {
             display: inline-block;
@@ -174,87 +228,180 @@ export default {
         .loginInterface {
           margin-top: 30px;
           // 扫码登陆界面
-          .scanCodeLogin{
+          .scanCodeLogin {
             .scanCodeLogin_left {
-            position: relative;
-            &:hover .QR_code {
-              margin-left: 25px;
-              transition: all 0.3s;
-            }
-            &:hover .QR-scan {
-              opacity: 1;
-              transition: all 0.4s;
-            }
-            // 二维码
-            .QR_code {
-              width: 120px;
-              height: 120px;
-              margin: 40px 100px 20px;
-              background: red;
-              img {
-                width: 100%;
+              position: relative;
+              &:hover .QR_code {
+                margin-left: 25px;
+                transition: all 0.3s;
+              }
+              &:hover .QR-scan {
+                opacity: 1;
+                transition: all 0.4s;
+              }
+              // 二维码
+              .QR_code {
+                width: 120px;
+                height: 120px;
+                margin: 40px 100px 20px;
+                background: red;
+                img {
+                  width: 100%;
+                }
+              }
+              .QR-scan {
+                position: absolute;
+                right: 25px;
+                top: 0px;
+                width: 132px;
+                height: 120px;
+                background: url(./images/QR-scan.png) 0 0 / cover;
+                border-radius: 20px 20px 0 0;
+                opacity: 0;
               }
             }
-            .QR-scan {
-              position: absolute;
-              right: 25px;
-              top: 0px;
-              width: 132px;
-              height: 120px;
-              background: url(./images/QR-scan.png) 0 0 / cover;
-              border-radius: 20px 20px 0 0;
-              opacity: 0;
+            .scanCodeLoginText {
+              .scanCodeLoginCompont {
+                font-size: 14px;
+                margin-bottom: 30px;
+              }
+              .scanCodeLoginRegister {
+                a {
+                  color: blue;
+                  margin: 0 10px;
+                  &:hover {
+                    cursor: pointer;
+                    color: rgb(16, 57, 180);
+                  }
+                }
+              }
             }
-          }
-          .scanCodeLoginText {
-            .scanCodeLoginCompont {
-              font-size: 14px;
-              margin-bottom: 30px;
-            }
-          }
           }
           // 账户登录界面
-          .accountLogin{
+          .accountLogin {
             margin-top: 10px;
-            .accountLoginText
-            {
+            .accountLoginText {
               outline: none;
-              border: 1px solid #DBDBDB;
+              border: 1px solid #dbdbdb;
               border-radius: 3px;
               width: 290px;
               height: 40px;
               box-sizing: border-box;
               margin: 10px auto;
-              &:hover{
-                border: 1px solid #999
+              &:hover {
+                border: 1px solid #999;
               }
             }
             // 登录按钮
-            .accountLoginBtn{
+            .accountLoginBtn {
               outline: none;
               border: none;
               border-radius: 3px;
               width: 290px;
               height: 40px;
               box-sizing: border-box;
-              background: #FF5454;
+              background: #ff5454;
               font-size: 14px;
-              color:#fff;
-              &:hover{
+              color: #fff;
+              &:hover {
                 background: red;
               }
             }
-            .accountLoginFooter{
+            .accountLoginFooter {
               margin-top: 10px;
               font-size: 12px;
-              color:#DBDBDB ;
-              a{
+              text-align: left;
+              margin-left: 15px;
+              color: #dbdbdb;
+              .register {
                 color: blue;
+                margin: 0 10px;
+                &:hover {
+                  cursor: pointer;
+                  color: rgb(16, 57, 180);
+                }
+              }
+              .forget {
+                float: right;
+                color: blue;
+                margin-right: 15px;
+                &:hover {
+                  cursor: pointer;
+                  color: rgb(16, 57, 180);
+                }
               }
             }
-            
           }
-          
+        }
+      }
+      // 注册
+      .merchantBackgroundRegister {
+        width: 320px;
+        height: 320px;
+        box-sizing: border-box;
+        padding: 30px 0;
+        border-radius: 8px;
+        background: #fff;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        right: 160px;
+        text-align: center;
+        .registerMethodtext {
+          height: 16px;
+          width: 100%;
+          text-align: center;
+          span {
+            font-size: 16px;
+            font-weight: 700;
+          }
+        }
+        // 文本框
+        .registerInterface {
+          margin-top: 10px;
+          .accountRegister {
+            outline: none;
+            border: 1px solid #dbdbdb;
+            border-radius: 3px;
+            padding-left: 10px;
+            width: 290px;
+            height: 40px;
+            box-sizing: border-box;
+            margin: 10px auto;
+            &:hover {
+              border: 1px solid #999;
+            }
+          }
+        }
+        // 注册按钮
+        .accountRegisterBtn {
+          outline: none;
+          border: none;
+          border-radius: 3px;
+          width: 290px;
+          height: 40px;
+          box-sizing: border-box;
+          background: #ff5454;
+          font-size: 15px;
+          color: #fff;
+          &:hover {
+            background: red;
+          }
+        }
+        .accountRegisterFooter {
+          margin: 10px 15px;
+          text-align: left;
+          font-size: 12px;
+          color: #dbdbdb;
+          a {
+            color: blue;
+            margin-left: 10px;
+            &:hover {
+              cursor: pointer;
+              color: rgb(16, 57, 180)
+            }
+          }
         }
       }
     }

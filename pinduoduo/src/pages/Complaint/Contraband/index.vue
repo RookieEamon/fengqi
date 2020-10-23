@@ -16,7 +16,18 @@
           label-width="150px"
         >
           <!-- 要举报的商品链接 -->
-          <el-form-item label="要举报的商品链接" prop="name">
+          <el-form-item
+            :rules="[
+              { required: true, message: '请输入举报的链接', trigger: 'blur' },
+              {
+                type: 'text',
+                message: '请输入举报的链接',
+                trigger: ['blur', 'change'],
+              },
+            ]"
+            label="要举报的商品链接"
+            prop="name"
+          >
             <el-input></el-input>
           </el-form-item>
           <!-- 举报的商品详情 -->
@@ -28,7 +39,11 @@
             </div>
           </el-form-item>
           <!-- 举报原因 -->
-          <el-form-item label="举报原因" prop="region">
+          <el-form-item label="举报原因" prop="region"
+           :rules="[
+              { required: true, message: '举报原因', trigger: 'blur' },
+              
+            ]">
             <el-select v-model="ruleForm.region" placeholder="请选择举报原因">
               <el-option label="毒品类" value="shanghai"></el-option>
               <el-option label="管制刀具类" value="beijing"></el-option>
@@ -58,7 +73,9 @@
           </el-form-item>
           <!-- 按钮 -->
           <el-form-item>
-            <el-button @click="reportComit = true" type="danger">提交</el-button>
+            <el-button @click="reportComit = true" type="danger"
+              >提交</el-button
+            >
             <el-dialog
               title="提示"
               :visible.sync="reportComit"
@@ -85,20 +102,15 @@ export default {
   name: "Contraband",
   data() {
     return {
-      reportComit:false,
+      reportComit: false,
       ruleForm: {
         name: "",
         region: "",
-
       },
       fileList: [],
       rules: {
-        name: [
-          { required: true, message: "要举报的商品链接",  },
-        ],
-        region: [
-          { required: true, message: "举报原因", trigger: "change" },
-        ],
+        name: [{ required: true, message: "要举报的商品链接" }],
+        region: [{ required: true, message: "举报原因", trigger: "change" }],
       },
     };
   },
@@ -141,13 +153,13 @@ export default {
       }
       return extension || (extension2 && isLt2M);
     },
-     handleClose(done) {
-        this.$confirm('确认关闭？')
-          .then(_ => {
-            done();
-          })
-          .catch(_ => {});
-      }
+    handleClose(done) {
+      this.$confirm("确认关闭？")
+        .then((_) => {
+          done();
+        })
+        .catch((_) => {});
+    },
   },
 };
 </script>

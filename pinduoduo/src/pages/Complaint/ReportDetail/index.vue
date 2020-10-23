@@ -17,14 +17,21 @@
           prop="name"
           class="reportInformationFormList"
         >
-        <template >
-          <div class="reportInformationFormItem">
-          <input type="checkbox" @click = "isChecked" checked = "ischecked"> 员工
-          <button v-show = "isChecke==ischecked">+添加</button>
-          <input type="checkbox" name="" id=""> 商家
-          </div>
-        </template>
-         
+          <template>
+            <div class="reportInformationFormItem">
+              <!-- 添加员工 -->
+              <div>
+                <input type="checkbox" @click="isShowStaff"  /> 员工
+                <div class="addStaff" v-show="isChecked">+添加</div>
+              </div>
+              <!-- 添加商家 -->
+              <div>
+                <input type="checkbox" @click="isShowMerchant" /> 商家
+                <div class="addStaff" v-show="isChecked2">+添加</div>
+              </div>
+              
+            </div>
+          </template>
         </el-form-item>
         <!-- 举报主题 -->
         <el-form-item label="举报主题" prop="region">
@@ -179,9 +186,9 @@ export default {
         desc: "",
         fileList: [],
         text: "",
-        
       },
-      isChecke:false,
+      isChecked: false,
+      isChecked2:false,
       rules: {
         name: [{ required: true, trigger: "change" }],
         region: [{ required: true, message: "选择主题", trigger: "change" }],
@@ -196,8 +203,11 @@ export default {
     handlePreview(file) {
       this.fileList.splice(file);
     },
-    isChecked(){
-      this.isChecke = true
+    isShowStaff() {
+      this.isChecked = !this.isChecked;
+    },
+    isShowMerchant(){
+      this.isChecked2 = !this.isChecked2
     }
   },
 };
@@ -226,6 +236,11 @@ export default {
       .reportInformationFormList {
         flex-direction: column;
         .reportInformationFormItem {
+          .addStaff{
+            line-height: 30px;
+            font-size: 12px;
+            color: #2DB7F5;
+          }
         }
       }
     }

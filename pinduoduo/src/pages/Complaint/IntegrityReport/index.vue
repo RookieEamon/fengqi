@@ -31,7 +31,7 @@
       <!-- 业务投诉 -->
       <div class="reportComplaint">
         廉正合规部职能只受理符合以上特征的举报，业务问题可以通过
-        <a href="javascript:;">业务投诉</a>
+        <a @click="MerchantBackground">业务投诉</a>
         渠道获得更快的解决。
       </div>
     </div>
@@ -62,6 +62,9 @@ export default {
     toReportDetail() {
       this.$router.push("/complaint/reportdetail");
     },
+    MerchantBackground(){
+      this.$router.push('/complaint/merchantbackground')
+    }
   },
 };
 </script>
@@ -129,6 +132,9 @@ body {
       color: #999;
       a {
         color: #ff5d5e;
+      }
+      &:hover{
+        cursor: pointer;
       }
     }
   }
