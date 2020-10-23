@@ -48,66 +48,1783 @@
         <!-- 商品分类中心层 -->
         <div class="head-inner">
           <!-- 这个是商品分类 -->
-          <div class="shop-category">
-            <a href="###">
-              <i class="fa fa-tasks" aria-hidden="true"></i>
-              商品分类
-            </a>
-            <div class="shop-category-he">
-              <ul id="shop-category-yin">
-                <li>
-                  <span class="menu-item-tit">女装/男装/内衣</span>
-                  <div class="sort" style="background: seagreen"></div>
-                </li>
+          <div class="type-nav">
+            <div class="container">
+              <div>
+                <h2 class="all">商品分类</h2>
+                <div class="sort">
+                  <div class="all-sort-list2">
+                    <div class="item bo">
+                      <h3>
+                        <a href="">女装/男装/内衣</a>
+                      </h3>
+                      <div class="item-list clearfix">
+                        <div class="subitem">
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">防嗮衣</a>
+                              </em>
+                              <em>
+                                <a href="">短裤</a>
+                              </em>
+                              <em>
+                                <a href="">牛仔裤</a>
+                              </em>
+                              <em>
+                                <a href="">妈装</a>
+                              </em>
+                            </dd>
+                          </dl>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="item">
+                      <h3>
+                        <a href="">女鞋/男鞋/箱包</a>
+                      </h3>
+                      <div class="item-list clearfix">
+                        <div class="subitem">
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">美裙衣橱</a>
+                              </em>
+                              <em>
+                                <a href="">连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">半身裙</a>
+                              </em>
+                              <em>
+                                <a href="">修身套装</a>
+                              </em>
+                              <em>
+                                <a href="">白色连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">旗袍</a>
+                              </em>
+                            </dd>
+                          </dl>
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">美裙衣橱</a>
+                              </em>
+                              <em>
+                                <a href="">连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">半身裙</a>
+                              </em>
+                              <em>
+                                <a href="">修身套装</a>
+                              </em>
+                              <em>
+                                <a href="">白色连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">旗袍</a>
+                              </em>
+                            </dd>
+                          </dl>
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">美裙衣橱</a>
+                              </em>
+                              <em>
+                                <a href="">连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">半身裙</a>
+                              </em>
+                              <em>
+                                <a href="">修身套装</a>
+                              </em>
+                              <em>
+                                <a href="">白色连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">旗袍</a>
+                              </em>
+                            </dd>
+                          </dl>
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">美裙衣橱</a>
+                              </em>
+                              <em>
+                                <a href="">连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">半身裙</a>
+                              </em>
+                              <em>
+                                <a href="">修身套装</a>
+                              </em>
+                              <em>
+                                <a href="">白色连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">旗袍</a>
+                              </em>
+                            </dd>
+                          </dl>
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">美裙衣橱</a>
+                              </em>
+                              <em>
+                                <a href="">连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">半身裙</a>
+                              </em>
+                              <em>
+                                <a href="">修身套装</a>
+                              </em>
+                              <em>
+                                <a href="">白色连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">旗袍</a>
+                              </em>
+                            </dd>
+                          </dl>
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">美裙衣橱</a>
+                              </em>
+                              <em>
+                                <a href="">连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">半身裙</a>
+                              </em>
+                              <em>
+                                <a href="">修身套装</a>
+                              </em>
+                              <em>
+                                <a href="">白色连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">旗袍</a>
+                              </em>
+                            </dd>
+                          </dl>
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">美裙衣橱</a>
+                              </em>
+                              <em>
+                                <a href="">连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">半身裙</a>
+                              </em>
+                              <em>
+                                <a href="">修身套装</a>
+                              </em>
+                              <em>
+                                <a href="">白色连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">旗袍</a>
+                              </em>
+                            </dd>
+                          </dl>
 
-                <li>
-                  <span class="menu-item-tit">女鞋/男鞋/箱包</span>
-                  <div class="sort" style="background: rgb(32, 34, 33)">
-                    sss
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">美裙衣橱</a>
+                              </em>
+                              <em>
+                                <a href="">连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">半身裙</a>
+                              </em>
+                              <em>
+                                <a href="">修身套装</a>
+                              </em>
+                              <em>
+                                <a href="">白色连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">旗袍</a>
+                              </em>
+                            </dd>
+                          </dl>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="item">
+                      <h3>
+                        <a href="">护肤彩妆/个护</a>
+                      </h3>
+                      <div class="item-list clearfix">
+                        <div class="subitem">
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">美裙衣橱</a>
+                              </em>
+                              <em>
+                                <a href="">连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">半身裙</a>
+                              </em>
+                              <em>
+                                <a href="">修身套装</a>
+                              </em>
+                              <em>
+                                <a href="">白色连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">旗袍</a>
+                              </em>
+                            </dd>
+                          </dl>
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">美裙衣橱</a>
+                              </em>
+                              <em>
+                                <a href="">连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">半身裙</a>
+                              </em>
+                              <em>
+                                <a href="">修身套装</a>
+                              </em>
+                              <em>
+                                <a href="">白色连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">旗袍</a>
+                              </em>
+                            </dd>
+                          </dl>
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">美裙衣橱</a>
+                              </em>
+                              <em>
+                                <a href="">连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">半身裙</a>
+                              </em>
+                              <em>
+                                <a href="">修身套装</a>
+                              </em>
+                              <em>
+                                <a href="">白色连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">旗袍</a>
+                              </em>
+                            </dd>
+                          </dl>
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">美裙衣橱</a>
+                              </em>
+                              <em>
+                                <a href="">连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">半身裙</a>
+                              </em>
+                              <em>
+                                <a href="">修身套装</a>
+                              </em>
+                              <em>
+                                <a href="">白色连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">旗袍</a>
+                              </em>
+                            </dd>
+                          </dl>
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">美裙衣橱</a>
+                              </em>
+                              <em>
+                                <a href="">连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">半身裙</a>
+                              </em>
+                              <em>
+                                <a href="">修身套装</a>
+                              </em>
+                              <em>
+                                <a href="">白色连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">旗袍</a>
+                              </em>
+                            </dd>
+                          </dl>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="item">
+                      <h3>
+                        <a href="">运动户外</a>
+                      </h3>
+                      <div class="item-list clearfix">
+                        <div class="subitem">
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">美裙衣橱</a>
+                              </em>
+                              <em>
+                                <a href="">连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">半身裙</a>
+                              </em>
+                              <em>
+                                <a href="">修身套装</a>
+                              </em>
+                              <em>
+                                <a href="">白色连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">旗袍</a>
+                              </em>
+                            </dd>
+                          </dl>
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">美裙衣橱</a>
+                              </em>
+                              <em>
+                                <a href="">连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">半身裙</a>
+                              </em>
+                              <em>
+                                <a href="">修身套装</a>
+                              </em>
+                              <em>
+                                <a href="">白色连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">旗袍</a>
+                              </em>
+                            </dd>
+                          </dl>
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">美裙衣橱</a>
+                              </em>
+                              <em>
+                                <a href="">连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">半身裙</a>
+                              </em>
+                              <em>
+                                <a href="">修身套装</a>
+                              </em>
+                              <em>
+                                <a href="">白色连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">旗袍</a>
+                              </em>
+                            </dd>
+                          </dl>
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">美裙衣橱</a>
+                              </em>
+                              <em>
+                                <a href="">连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">半身裙</a>
+                              </em>
+                              <em>
+                                <a href="">修身套装</a>
+                              </em>
+                              <em>
+                                <a href="">白色连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">旗袍</a>
+                              </em>
+                            </dd>
+                          </dl>
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">美裙衣橱</a>
+                              </em>
+                              <em>
+                                <a href="">连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">半身裙</a>
+                              </em>
+                              <em>
+                                <a href="">修身套装</a>
+                              </em>
+                              <em>
+                                <a href="">白色连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">旗袍</a>
+                              </em>
+                            </dd>
+                          </dl>
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">美裙衣橱</a>
+                              </em>
+                              <em>
+                                <a href="">连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">半身裙</a>
+                              </em>
+                              <em>
+                                <a href="">修身套装</a>
+                              </em>
+                              <em>
+                                <a href="">白色连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">旗袍</a>
+                              </em>
+                            </dd>
+                          </dl>
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">美裙衣橱</a>
+                              </em>
+                              <em>
+                                <a href="">连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">半身裙</a>
+                              </em>
+                              <em>
+                                <a href="">修身套装</a>
+                              </em>
+                              <em>
+                                <a href="">白色连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">旗袍</a>
+                              </em>
+                            </dd>
+                          </dl>
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">美裙衣橱</a>
+                              </em>
+                              <em>
+                                <a href="">连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">半身裙</a>
+                              </em>
+                              <em>
+                                <a href="">修身套装</a>
+                              </em>
+                              <em>
+                                <a href="">白色连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">旗袍</a>
+                              </em>
+                            </dd>
+                          </dl>
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">美裙衣橱</a>
+                              </em>
+                              <em>
+                                <a href="">连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">半身裙</a>
+                              </em>
+                              <em>
+                                <a href="">修身套装</a>
+                              </em>
+                              <em>
+                                <a href="">白色连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">旗袍</a>
+                              </em>
+                            </dd>
+                          </dl>
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">美裙衣橱</a>
+                              </em>
+                              <em>
+                                <a href="">连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">半身裙</a>
+                              </em>
+                              <em>
+                                <a href="">修身套装</a>
+                              </em>
+                              <em>
+                                <a href="">白色连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">旗袍</a>
+                              </em>
+                            </dd>
+                          </dl>
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">美裙衣橱</a>
+                              </em>
+                              <em>
+                                <a href="">连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">半身裙</a>
+                              </em>
+                              <em>
+                                <a href="">修身套装</a>
+                              </em>
+                              <em>
+                                <a href="">白色连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">旗袍</a>
+                              </em>
+                            </dd>
+                          </dl>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="item">
+                      <h3>
+                        <a href="">家电数码</a>
+                      </h3>
+                      <div class="item-list clearfix">
+                        <div class="subitem">
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">美裙衣橱</a>
+                              </em>
+                              <em>
+                                <a href="">连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">半身裙</a>
+                              </em>
+                              <em>
+                                <a href="">修身套装</a>
+                              </em>
+                              <em>
+                                <a href="">白色连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">旗袍</a>
+                              </em>
+                            </dd>
+                          </dl>
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">美裙衣橱</a>
+                              </em>
+                              <em>
+                                <a href="">连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">半身裙</a>
+                              </em>
+                              <em>
+                                <a href="">修身套装</a>
+                              </em>
+                              <em>
+                                <a href="">白色连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">旗袍</a>
+                              </em>
+                            </dd>
+                          </dl>
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">美裙衣橱</a>
+                              </em>
+                              <em>
+                                <a href="">连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">半身裙</a>
+                              </em>
+                              <em>
+                                <a href="">修身套装</a>
+                              </em>
+                              <em>
+                                <a href="">白色连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">旗袍</a>
+                              </em>
+                            </dd>
+                          </dl>
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">美裙衣橱</a>
+                              </em>
+                              <em>
+                                <a href="">连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">半身裙</a>
+                              </em>
+                              <em>
+                                <a href="">修身套装</a>
+                              </em>
+                              <em>
+                                <a href="">白色连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">旗袍</a>
+                              </em>
+                            </dd>
+                          </dl>
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">美裙衣橱</a>
+                              </em>
+                              <em>
+                                <a href="">连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">半身裙</a>
+                              </em>
+                              <em>
+                                <a href="">修身套装</a>
+                              </em>
+                              <em>
+                                <a href="">白色连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">旗袍</a>
+                              </em>
+                            </dd>
+                          </dl>
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">美裙衣橱</a>
+                              </em>
+                              <em>
+                                <a href="">连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">半身裙</a>
+                              </em>
+                              <em>
+                                <a href="">修身套装</a>
+                              </em>
+                              <em>
+                                <a href="">白色连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">旗袍</a>
+                              </em>
+                            </dd>
+                          </dl>
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">美裙衣橱</a>
+                              </em>
+                              <em>
+                                <a href="">连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">半身裙</a>
+                              </em>
+                              <em>
+                                <a href="">修身套装</a>
+                              </em>
+                              <em>
+                                <a href="">白色连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">旗袍</a>
+                              </em>
+                            </dd>
+                          </dl>
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">美裙衣橱</a>
+                              </em>
+                              <em>
+                                <a href="">连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">半身裙</a>
+                              </em>
+                              <em>
+                                <a href="">修身套装</a>
+                              </em>
+                              <em>
+                                <a href="">白色连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">旗袍</a>
+                              </em>
+                            </dd>
+                          </dl>
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">美裙衣橱</a>
+                              </em>
+                              <em>
+                                <a href="">连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">半身裙</a>
+                              </em>
+                              <em>
+                                <a href="">修身套装</a>
+                              </em>
+                              <em>
+                                <a href="">白色连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">旗袍</a>
+                              </em>
+                            </dd>
+                          </dl>
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">美裙衣橱</a>
+                              </em>
+                              <em>
+                                <a href="">连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">半身裙</a>
+                              </em>
+                              <em>
+                                <a href="">修身套装</a>
+                              </em>
+                              <em>
+                                <a href="">白色连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">旗袍</a>
+                              </em>
+                            </dd>
+                          </dl>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="item">
+                      <h3>
+                        <a href="">女婴童装</a>
+                      </h3>
+                      <div class="item-list clearfix">
+                        <div class="subitem">
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">美裙衣橱</a>
+                              </em>
+                              <em>
+                                <a href="">连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">半身裙</a>
+                              </em>
+                              <em>
+                                <a href="">修身套装</a>
+                              </em>
+                              <em>
+                                <a href="">白色连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">旗袍</a>
+                              </em>
+                            </dd>
+                          </dl>
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">美裙衣橱</a>
+                              </em>
+                              <em>
+                                <a href="">连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">半身裙</a>
+                              </em>
+                              <em>
+                                <a href="">修身套装</a>
+                              </em>
+                              <em>
+                                <a href="">白色连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">旗袍</a>
+                              </em>
+                            </dd>
+                          </dl>
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">美裙衣橱</a>
+                              </em>
+                              <em>
+                                <a href="">连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">半身裙</a>
+                              </em>
+                              <em>
+                                <a href="">修身套装</a>
+                              </em>
+                              <em>
+                                <a href="">白色连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">旗袍</a>
+                              </em>
+                            </dd>
+                          </dl>
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">美裙衣橱</a>
+                              </em>
+                              <em>
+                                <a href="">连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">半身裙</a>
+                              </em>
+                              <em>
+                                <a href="">修身套装</a>
+                              </em>
+                              <em>
+                                <a href="">白色连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">旗袍</a>
+                              </em>
+                            </dd>
+                          </dl>
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">美裙衣橱</a>
+                              </em>
+                              <em>
+                                <a href="">连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">半身裙</a>
+                              </em>
+                              <em>
+                                <a href="">修身套装</a>
+                              </em>
+                              <em>
+                                <a href="">白色连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">旗袍</a>
+                              </em>
+                            </dd>
+                          </dl>
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">美裙衣橱</a>
+                              </em>
+                              <em>
+                                <a href="">连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">半身裙</a>
+                              </em>
+                              <em>
+                                <a href="">修身套装</a>
+                              </em>
+                              <em>
+                                <a href="">白色连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">旗袍</a>
+                              </em>
+                            </dd>
+                          </dl>
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">美裙衣橱</a>
+                              </em>
+                              <em>
+                                <a href="">连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">半身裙</a>
+                              </em>
+                              <em>
+                                <a href="">修身套装</a>
+                              </em>
+                              <em>
+                                <a href="">白色连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">旗袍</a>
+                              </em>
+                            </dd>
+                          </dl>
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">美裙衣橱</a>
+                              </em>
+                              <em>
+                                <a href="">连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">半身裙</a>
+                              </em>
+                              <em>
+                                <a href="">修身套装</a>
+                              </em>
+                              <em>
+                                <a href="">白色连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">旗袍</a>
+                              </em>
+                            </dd>
+                          </dl>
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">美裙衣橱</a>
+                              </em>
+                              <em>
+                                <a href="">连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">半身裙</a>
+                              </em>
+                              <em>
+                                <a href="">修身套装</a>
+                              </em>
+                              <em>
+                                <a href="">白色连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">旗袍</a>
+                              </em>
+                            </dd>
+                          </dl>
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">美裙衣橱</a>
+                              </em>
+                              <em>
+                                <a href="">连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">半身裙</a>
+                              </em>
+                              <em>
+                                <a href="">修身套装</a>
+                              </em>
+                              <em>
+                                <a href="">白色连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">旗袍</a>
+                              </em>
+                            </dd>
+                          </dl>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="item">
+                      <h3>
+                        <a href="">手表配饰</a>
+                      </h3>
+                      <div class="item-list clearfix">
+                        <div class="subitem">
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">美裙衣橱</a>
+                              </em>
+                              <em>
+                                <a href="">连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">半身裙</a>
+                              </em>
+                              <em>
+                                <a href="">修身套装</a>
+                              </em>
+                              <em>
+                                <a href="">白色连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">旗袍</a>
+                              </em>
+                            </dd>
+                          </dl>
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">美裙衣橱</a>
+                              </em>
+                              <em>
+                                <a href="">连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">半身裙</a>
+                              </em>
+                              <em>
+                                <a href="">修身套装</a>
+                              </em>
+                              <em>
+                                <a href="">白色连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">旗袍</a>
+                              </em>
+                            </dd>
+                          </dl>
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">美裙衣橱</a>
+                              </em>
+                              <em>
+                                <a href="">连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">半身裙</a>
+                              </em>
+                              <em>
+                                <a href="">修身套装</a>
+                              </em>
+                              <em>
+                                <a href="">白色连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">旗袍</a>
+                              </em>
+                            </dd>
+                          </dl>
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">美裙衣橱</a>
+                              </em>
+                              <em>
+                                <a href="">连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">半身裙</a>
+                              </em>
+                              <em>
+                                <a href="">修身套装</a>
+                              </em>
+                              <em>
+                                <a href="">白色连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">旗袍</a>
+                              </em>
+                            </dd>
+                          </dl>
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">美裙衣橱</a>
+                              </em>
+                              <em>
+                                <a href="">连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">半身裙</a>
+                              </em>
+                              <em>
+                                <a href="">修身套装</a>
+                              </em>
+                              <em>
+                                <a href="">白色连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">旗袍</a>
+                              </em>
+                            </dd>
+                          </dl>
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">美裙衣橱</a>
+                              </em>
+                              <em>
+                                <a href="">连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">半身裙</a>
+                              </em>
+                              <em>
+                                <a href="">修身套装</a>
+                              </em>
+                              <em>
+                                <a href="">白色连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">旗袍</a>
+                              </em>
+                            </dd>
+                          </dl>
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">美裙衣橱</a>
+                              </em>
+                              <em>
+                                <a href="">连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">半身裙</a>
+                              </em>
+                              <em>
+                                <a href="">修身套装</a>
+                              </em>
+                              <em>
+                                <a href="">白色连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">旗袍</a>
+                              </em>
+                            </dd>
+                          </dl>
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">美裙衣橱</a>
+                              </em>
+                              <em>
+                                <a href="">连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">半身裙</a>
+                              </em>
+                              <em>
+                                <a href="">修身套装</a>
+                              </em>
+                              <em>
+                                <a href="">白色连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">旗袍</a>
+                              </em>
+                            </dd>
+                          </dl>
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">美裙衣橱</a>
+                              </em>
+                              <em>
+                                <a href="">连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">半身裙</a>
+                              </em>
+                              <em>
+                                <a href="">修身套装</a>
+                              </em>
+                              <em>
+                                <a href="">白色连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">旗袍</a>
+                              </em>
+                            </dd>
+                          </dl>
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">美裙衣橱</a>
+                              </em>
+                              <em>
+                                <a href="">连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">半身裙</a>
+                              </em>
+                              <em>
+                                <a href="">修身套装</a>
+                              </em>
+                              <em>
+                                <a href="">白色连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">旗袍</a>
+                              </em>
+                            </dd>
+                          </dl>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="item">
+                      <h3>
+                        <a href="">居家用品</a>
+                      </h3>
+                      <div class="item-list clearfix">
+                        <div class="subitem">
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">美裙衣橱</a>
+                              </em>
+                              <em>
+                                <a href="">连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">半身裙</a>
+                              </em>
+                              <em>
+                                <a href="">修身套装</a>
+                              </em>
+                              <em>
+                                <a href="">白色连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">旗袍</a>
+                              </em>
+                            </dd>
+                          </dl>
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">美裙衣橱</a>
+                              </em>
+                              <em>
+                                <a href="">连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">半身裙</a>
+                              </em>
+                              <em>
+                                <a href="">修身套装</a>
+                              </em>
+                              <em>
+                                <a href="">白色连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">旗袍</a>
+                              </em>
+                            </dd>
+                          </dl>
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">美裙衣橱</a>
+                              </em>
+                              <em>
+                                <a href="">连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">半身裙</a>
+                              </em>
+                              <em>
+                                <a href="">修身套装</a>
+                              </em>
+                              <em>
+                                <a href="">白色连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">旗袍</a>
+                              </em>
+                            </dd>
+                          </dl>
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">美裙衣橱</a>
+                              </em>
+                              <em>
+                                <a href="">连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">半身裙</a>
+                              </em>
+                              <em>
+                                <a href="">修身套装</a>
+                              </em>
+                              <em>
+                                <a href="">白色连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">旗袍</a>
+                              </em>
+                            </dd>
+                          </dl>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="item">
+                      <h3>
+                        <a href="">汽车用品</a>
+                      </h3>
+                      <div class="item-list clearfix">
+                        <div class="subitem">
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">美裙衣橱</a>
+                              </em>
+                              <em>
+                                <a href="">连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">半身裙</a>
+                              </em>
+                              <em>
+                                <a href="">修身套装</a>
+                              </em>
+                              <em>
+                                <a href="">白色连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">旗袍</a>
+                              </em>
+                            </dd>
+                          </dl>
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">美裙衣橱</a>
+                              </em>
+                              <em>
+                                <a href="">连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">半身裙</a>
+                              </em>
+                              <em>
+                                <a href="">修身套装</a>
+                              </em>
+                              <em>
+                                <a href="">白色连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">旗袍</a>
+                              </em>
+                            </dd>
+                          </dl>
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">美裙衣橱</a>
+                              </em>
+                              <em>
+                                <a href="">连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">半身裙</a>
+                              </em>
+                              <em>
+                                <a href="">修身套装</a>
+                              </em>
+                              <em>
+                                <a href="">白色连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">旗袍</a>
+                              </em>
+                            </dd>
+                          </dl>
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">美裙衣橱</a>
+                              </em>
+                              <em>
+                                <a href="">连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">半身裙</a>
+                              </em>
+                              <em>
+                                <a href="">修身套装</a>
+                              </em>
+                              <em>
+                                <a href="">白色连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">旗袍</a>
+                              </em>
+                            </dd>
+                          </dl>
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">美裙衣橱</a>
+                              </em>
+                              <em>
+                                <a href="">连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">半身裙</a>
+                              </em>
+                              <em>
+                                <a href="">修身套装</a>
+                              </em>
+                              <em>
+                                <a href="">白色连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">旗袍</a>
+                              </em>
+                            </dd>
+                          </dl>
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">美裙衣橱</a>
+                              </em>
+                              <em>
+                                <a href="">连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">半身裙</a>
+                              </em>
+                              <em>
+                                <a href="">修身套装</a>
+                              </em>
+                              <em>
+                                <a href="">白色连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">旗袍</a>
+                              </em>
+                            </dd>
+                          </dl>
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">美裙衣橱</a>
+                              </em>
+                              <em>
+                                <a href="">连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">半身裙</a>
+                              </em>
+                              <em>
+                                <a href="">修身套装</a>
+                              </em>
+                              <em>
+                                <a href="">白色连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">旗袍</a>
+                              </em>
+                            </dd>
+                          </dl>
+                          <dl class="fore">
+                            <dt>
+                              <a href="">人气美女</a>
+                            </dt>
+                            <dd>
+                              <em>
+                                <a href="">美裙衣橱</a>
+                              </em>
+                              <em>
+                                <a href="">连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">半身裙</a>
+                              </em>
+                              <em>
+                                <a href="">修身套装</a>
+                              </em>
+                              <em>
+                                <a href="">白色连衣裙</a>
+                              </em>
+                              <em>
+                                <a href="">旗袍</a>
+                              </em>
+                            </dd>
+                          </dl>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="item"></div>
                   </div>
-                </li>
-                <li>
-                  <span class="menu-item-tit">护肤彩妆/个护</span>
-                  <div class="sort" style="background: rgb(46, 60, 139)"></div>
-                </li>
-                <li>
-                  <span class="menu-item-tit">运动户外</span>
-                  <div class="sort">hh</div>
-                </li>
-                <li>
-                  <span class="menu-item-tit">家电数码</span>
-                  <div class="sort">heihei</div>
-                </li>
-                <li>
-                  <span class="menu-item-tit">女婴童装</span>
-                  <div class="sort"></div>
-                </li>
-                <li>
-                  <span class="menu-item-tit">手表配饰</span>
-                  <div class="sort"></div>
-                </li>
-                <li>
-                  <span class="menu-item-tit">居家用品</span>
-                  <div class="sort"></div>
-                </li>
-                <li>
-                  <span class="menu-item-tit">唯品生活</span>
-                  <div class="sort"></div>
-                </li>
-                <li>
-                  <span class="menu-item-tit">唯品国际/唯品奢</span>
-                  <div class="sort"></div>
-                </li>
-                <li>
-                  <span class="menu-item-tit">医药健康</span>
-                  <div class="sort"></div>
-                </li>
-              </ul>
+                </div>
+              </div>
+
+              <nav class="nav">
+                <a href="###">首页</a>
+                <a href="###">最后疯抢</a>
+                <a href="###">尚品汇超市</a>
+                <a href="###">唯品快抢</a>
+                <a href="###">品牌清仓</a>
+                <a href="###">女装</a>
+                <a href="###">男装</a>
+                <a href="###">美妆</a>
+              </nav>
             </div>
           </div>
           <!-- 商品分类结束 -->
           <!-- 这个是商品分类旁边那几个标签 -->
-          <ul class="Label-container">
+          <!-- <ul class="Label-container">
             <li class="shop-label">
               <a href="##">首页</a>
             </li>
@@ -166,7 +1883,7 @@
                 </ol>
               </div>
             </li>
-          </ul>
+          </ul> -->
           <!-- 标签结束 -->
         </div>
         <!-- 商品分类中心层结束 -->
@@ -293,362 +2010,6 @@
               </button>
             </div>
           </div>
-          <!-- 最多一套 -->
-          <!-- <div class="c-filter-groups-item">
-                <h3 class="c-filter-groups-item-title">唯品服务</h3>
-                <ul class="c-filter-groups-content">
-                    <li>
-                        <a href="">超值优惠</a>
-                    </li>
-                    <li>
-                        <a href="">专柜同步</a>
-                    </li>
-                </ul>
-                <div class="c-filter-groups-botton">
-                    <button>
-                        <i>+</i>
-                        <span>多选</span>
-                    </button>
-                </div>
-            </div>
-            <div class="c-filter-groups-item">
-                <h3 class="c-filter-groups-item-title">品牌</h3>
-                <ul class="c-filter-groups-content">
-                    <li>
-                        <a href="">JEEP</a>
-                    </li>
-                    <li>
-                        <a href="">稻草人</a>
-                    </li>
-                    <li>
-                        <a href="">Columbia</a>
-                    </li>
-                    <li>
-                        <a href="">美津浓</a>
-                    </li>
-                    <li>
-                        <a href="">耐克</a>
-                    </li>
-                    <li>
-                        <a href="">骆驼牌</a>
-                    </li>
-                    <li>
-                        <a href="">凯乐石</a>
-                    </li>
-                    <li>
-                        <a href="">牧高笛</a>
-                    </li>
-                </ul>
-                <div class="c-filter-groups-botton">
-                    <button>
-                        <i>+</i>
-                        <span>多选</span>
-                    </button>
-                </div>
-            </div>
-            <div class="c-filter-groups-item">
-                <h3 class="c-filter-groups-item-title">品类</h3>
-                <ul class="c-filter-groups-content">
-                    <li>
-                        <a href="">户外风衣</a>
-                    </li>
-                    <li>
-                        <a href="">女款外套</a>
-                    </li>
-                    <li>
-                        <a href="">运动外套</a>
-                    </li>
-                </ul>
-                <div class="c-filter-groups-botton">
-                    <button>
-                        <i>+</i>
-                        <span>多选</span>
-                    </button>
-                </div>
-            </div>
-            <div class="c-filter-groups-item">
-                <h3 class="c-filter-groups-item-title">唯品服务</h3>
-                <ul class="c-filter-groups-content">
-                    <li>
-                        <a href="">XXS</a>
-                    </li>
-                    <li>
-                        <a href="">XS</a>
-                    </li>
-                    <li>
-                        <a href="">S</a>
-                    </li>
-                    <li>
-                        <a href="">M</a>
-                    </li>
-                    <li>
-                        <a href="">L</a>
-                    </li>
-                    <li>
-                        <a href="">XL</a>
-                    </li>
-                    <li>
-                        <a href="">2XL</a>
-                    </li>
-                    <li>
-                        <a href="">3XL</a>
-                    </li>
-                    <li>
-                        <a href="">4XL</a>
-                    </li>
-                    <li>
-                        <a href="">均码</a>
-                    </li>
-                </ul>
-                <div class="c-filter-groups-botton">
-                    <button>
-                        <i>+</i>
-                        <span>多选</span>
-                    </button>
-                </div>
-            </div>
-            <div class="c-filter-groups-item">
-                <h3 class="c-filter-groups-item-title">适用性别</h3>
-                <ul class="c-filter-groups-content">
-                    <li>
-                        <a href="">男士</a>
-                    </li>
-                    <li>
-                        <a href="">女士</a>
-                    </li>
-                </ul>
-                <div class="c-filter-groups-botton">
-                    <button>
-                        <i>+</i>
-                        <span>多选</span>
-                    </button>
-                </div>
-            </div>
-            <div class="c-filter-groups-item">
-                <h3 class="c-filter-groups-item-title">颜色</h3>
-                <ul class="c-filter-groups-content">
-                    <li>
-                        <a href="">黑色</a>
-                    </li>
-                    <li>
-                        <a href="">白色</a>
-                    </li>
-                    <li>
-                        <a href="">灰色</a>
-                    </li>
-                    <li>
-                        <a href="">米色</a>
-                    </li>
-                    <li>
-                        <a href="">红色</a>
-                    </li>
-                    <li>
-                        <a href="">粉色</a>
-                    </li>
-                    <li>
-                        <a href="">粉红色</a>
-                    </li>
-                    <li>
-                        <a href="">橙色</a>
-                    </li>
-                    <li>
-                        <a href="">黄色</a>
-                    </li>
-                </ul>
-                <div class="c-filter-groups-botton">
-                    <button>
-                        <i>+</i>
-                        <span>多选</span>
-                    </button>
-                </div>
-            </div>
-            <div class="c-filter-groups-item">
-                <h3 class="c-filter-groups-item-title">厚薄</h3>
-                <ul class="c-filter-groups-content">
-                    <li>
-                        <a href="">薄</a>
-                    </li>
-                    <li>
-                        <a href="">常规</a>
-                    </li>
-                </ul>
-                <div class="c-filter-groups-botton">
-                    <button>
-                        <i>+</i>
-                        <span>多选</span>
-                    </button>
-                </div>
-            </div>
-            <div class="c-filter-groups-item">
-                <h3 class="c-filter-groups-item-title">衣长</h3>
-                <ul class="c-filter-groups-content">
-                    <li>
-                        <a href="">短</a>
-                    </li>
-                    <li>
-                        <a href="">常规</a>
-                    </li>
-                    <li>
-                        <a href="">长</a>
-                    </li>
-                    <li>
-                        <a href="">中长</a>
-                    </li>
-                    <li>
-                        <a href="">不对称衣长</a>
-                    </li>
-                </ul>
-                <div class="c-filter-groups-botton">
-                    <button>
-                        <i>+</i>
-                        <span>多选</span>
-                    </button>
-                </div>
-            </div>
-            <div class="c-filter-groups-item">
-                <h3 class="c-filter-groups-item-title">版型</h3>
-                <ul class="c-filter-groups-content">
-                    <li>
-                        <a href="">修身</a>
-                    </li>
-                    <li>
-                        <a href="">常规</a>
-                    </li>
-                    <li>
-                        <a href="">宽松</a>
-                    </li>
-                    <li>
-                        <a href="">收腰</a>
-                    </li>
-                </ul>
-                <div class="c-filter-groups-botton">
-                    <button>
-                        <i>+</i>
-                        <span>多选</span>
-                    </button>
-                </div>
-            </div>
-            <div class="c-filter-groups-item">
-                <h3 class="c-filter-groups-item-title">功能</h3>
-                <ul class="c-filter-groups-content">
-                    <li>
-                        <a href="">保暖</a>
-                    </li>
-                    <li>
-                        <a href="">防紫外线</a>
-                    </li>
-                    <li>
-                        <a href="">速干</a>
-                    </li>
-                    <li>
-                        <a href="">轻盈</a>
-                    </li>
-                    <li>
-                        <a href="">透气</a>
-                    </li>
-                    <li>
-                        <a href="">反光夜视</a>
-                    </li>
-                    <li>
-                        <a href="">防虫</a>
-                    </li>
-                    <li>
-                        <a href="">耐磨</a>
-                    </li>
-                </ul>
-                <div class="c-filter-groups-botton">
-                    <button>
-                        <i>+</i>
-                        <span>多选</span>
-                    </button>
-                </div>
-            </div>
-            <div class="c-filter-groups-item">
-                <h3 class="c-filter-groups-item-title">适用项目</h3>
-                <ul class="c-filter-groups-content">
-                    <li>
-                        <a href="">XXS</a>
-                    </li>
-                    <li>
-                        <a href="">XS</a>
-                    </li>
-                    <li>
-                        <a href="">S</a>
-                    </li>
-                    <li>
-                        <a href="">M</a>
-                    </li>
-                    <li>
-                        <a href="">L</a>
-                    </li>
-                    <li>
-                        <a href="">XL</a>
-                    </li>
-                    <li>
-                        <a href="">2XL</a>
-                    </li>
-                    <li>
-                        <a href="">3XL</a>
-                    </li>
-                    <li>
-                        <a href="">4XL</a>
-                    </li>
-                    <li>
-                        <a href="">均码</a>
-                    </li>
-                </ul>
-                <div class="c-filter-groups-botton">
-                    <button>
-                        <i>+</i>
-                        <span>多选</span>
-                    </button>
-                </div>
-            </div>
-            <div class="c-filter-groups-item">
-                <div class="button-visited">
-                    <span>收起选项^</span>
-                </div>
-                <h3 class="c-filter-groups-item-title">唯品服务</h3>
-                <ul class="c-filter-groups-content">
-                    <li>
-                        <a href="">XXS</a>
-                    </li>
-                    <li>
-                        <a href="">XS</a>
-                    </li>
-                    <li>
-                        <a href="">S</a>
-                    </li>
-                    <li>
-                        <a href="">M</a>
-                    </li>
-                    <li>
-                        <a href="">L</a>
-                    </li>
-                    <li>
-                        <a href="">XL</a>
-                    </li>
-                    <li>
-                        <a href="">2XL</a>
-                    </li>
-                    <li>
-                        <a href="">3XL</a>
-                    </li>
-                    <li>
-                        <a href="">4XL</a>
-                    </li>
-                    <li>
-                        <a href="">均码</a>
-                    </li>
-                </ul>
-                <div class="c-filter-groups-botton">
-                    <button>
-                        <i>+</i>
-                        <span>多选</span>
-                    </button>
-
-                </div>
-            </div> -->
         </div>
         <!-- 商品价格区 -->
         <div class="pro-list-oper">
@@ -710,13 +2071,13 @@
           <!-- 这是一个容器 -->
           <div
             class="shop-list-one"
-            @click="shoplist(item)"
-            v-for="item in goodsList"
+            @click="shoplist(index)"
+            v-for="(item, index) in goodsItem.goodsList"
             :key="item.id"
           >
             <!-- 这是一个装img的div -->
             <div class="shop-list-div">
-              <img class="shop-list-tu" :src="item.coverImgUrl" />
+              <img class="shop-list-tu" :src="item.hd_url" />
             </div>
             <!-- 这是装价格和介绍商品 -->
             <div class="shop-list-introduce">
@@ -724,10 +2085,12 @@
               <div class="shop-list-item-goods">
                 <div class="shop-list-item-item">
                   <div class="shop-list-item_temai">
-                    <span class="shop-list-item_text">特卖价</span>
+                    <span class="shop-list-item_text">特卖</span>
                   </div>
                   <div class="shop-list-item_temai2">
-                    <span class="shop-list-item_text2">给老子跳给老子跳</span>
+                    <span class="shop-list-item_text2">{{
+                      item.short_name
+                    }}</span>
                   </div>
                 </div>
               </div>
@@ -743,20 +2106,21 @@ import { mapState, mapActions } from "vuex";
 export default {
   name: "Detail",
   data() {
-    return {};
+    return {
+      goodsItem: [],
+      LV1Index: 0,
+      LV2Index: 0,
+    };
   },
   methods: {
     ...mapActions({
       getGoodsList: "getGoodsList",
     }),
-    shoplist(item) {
+    shoplist(index) {
       this.$router.push({
-        path: "/shopping",
-        query: {
-          item: item,
-        },
+        path: `/shopping/${index}`,
       });
-    // localStorage.setItem('goods-list',JSON.stringify(item))
+      // localStorage.setItem('goods-list',JSON.stringify(item))
     },
     toMore() {
       this.$router.push("/home/more");
@@ -768,8 +2132,14 @@ export default {
     }),
   },
   mounted() {
-    this.getGoodsList();
-    console.log(this.goodsList);
+    //获取一级索引,二级索引,二级索引存入localStorage,根据一级索引获取商品列表
+    this.LV1Index = JSON.parse(localStorage.getItem("LV1Index"));
+    this.LV2Index = this.$route.params.index;
+    localStorage.setItem("LV2Index", JSON.stringify(this.LV2Index));
+    this.goodsItem =
+      this.$store.state.home.goodsList.length > 0
+        ? this.$store.state.home.goodsList[this.LV1Index]
+        : JSON.parse(localStorage.getItem("goodsList"))[this.LV1Index];
   },
 };
 </script>
@@ -960,68 +2330,125 @@ export default {
     box-shadow: 0px 1px 3px 0 rgba(0, 0, 0, 0.1);
 
     .head-inner {
-      width: 1170px;
-      height: 43px;
-      margin: 0 auto;
+      // width: 1170px;
+      // height: 43px;
+      // margin: 0 auto;
 
       //商品分类
-      .shop-category {
-        width: 156px;
-        height: 43px;
-        background: #fa2a83;
-        font-size: 16px;
-        text-align: center;
-        float: left;
-        margin-left: -144px;
-        &:hover {
-          .shop-category-he {
-            display: block;
-            z-index: 10000;
-          }
-        }
-
-        a {
-          color: #fff;
-          display: inline-block;
-          width: 156px;
-          height: 43px;
-        }
-
-        //商品隐藏列表
-        .shop-category-he {
-          width: 156px;
-          height: 440px;
-          font-size: 12px;
-          background: #fa2a83;
+      .type-nav {
+        // border-bottom: 2px solid #e1251b;
+        .container {
+          width: 1200px;
+          margin: 0 auto;
+          display: flex;
           position: relative;
-          display: none;
-
-          #shop-category-yin {
-            //  &:hover li {
-            //      background: #fff;
-            //  }
-            li {
-              width: 100%;
-              height: 40px;
-
-              .sort {
-                width: 694px;
-                height: 474px;
-                position: absolute;
-                top: 0px;
-                left: 156px;
-                display: none;
-              }
-            }
-
-            .menu-item-tit {
-              padding-left: 35px;
-              height: 41px;
+          left: -241px;
+          div{
+            width: 230px;
+             &:hover {
+            .sort {
               display: block;
-              color: #fff;
-              text-align: left;
-              margin-bottom: 1px;
-              cursor: pointer;
+            }
+          }
+          }
+         
+          .all {
+            width: 210px;
+            height: 45px;
+            background-color: #fa2a83;
+            line-height: 45px;
+            text-align: center;
+            color: #fff;
+            font-size: 14px;
+            font-weight: bold;
+            margin-right: 50px;
+          }
+          .nav {
+            a {
+              height: 45px;
+              margin: 0 22px;
+              line-height: 45px;
+              font-size: 16px;
+              color: #333;
+            }
+          }
+          .sort {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 45px;
+            width: 210px;
+            height: 461px;
+            position: absolute;
+            background: #fafafa;
+            z-index: 999;
+            .all-sort-list2 {
+              .item {
+                h3 {
+                  line-height: 30px;
+                  font-size: 14px;
+                  font-weight: 400;
+                  overflow: hidden;
+                  padding: 0 20px;
+                  margin-bottom: 23px;
+                  a {
+                    color: #333;
+                  }
+                }
+                .item-list {
+                  display: none;
+                  position: absolute;
+                  width: 734px;
+                  min-height: 460px;
+                  _height: 200px;
+                  background: #f7f7f7;
+                  left: 210px;
+                  border: 1px solid #ddd;
+                  top: 0;
+                  z-index: 9999 !important;
+                  .subitem {
+                    float: left;
+                    width: 650px;
+                    padding: 0 4px 0 8px;
+                    dl {
+                      border-top: 1px solid #eee;
+                      padding: 6px 0;
+                      overflow: hidden;
+                      zoom: 1;
+                      &.fore {
+                        border-top: 0;
+                      }
+                      dt {
+                        float: left;
+                        width: 54px;
+                        line-height: 22px;
+                        text-align: right;
+                        padding: 3px 6px 0 0;
+                        font-weight: 700;
+                      }
+                      dd {
+                        float: left;
+                        width: 415px;
+                        padding: 3px 0 0;
+                        overflow: hidden;
+                        em {
+                          float: left;
+                          height: 14px;
+                          line-height: 14px;
+                          padding: 0 8px;
+                          margin-top: 5px;
+                          border-left: 1px solid #ccc;
+                        }
+                      }
+                    }
+                  }
+                }
+                &:hover {
+                  .item-list {
+                    display: block;
+                  }
+                }
+              }
             }
           }
         }
@@ -1415,6 +2842,13 @@ export default {
             font-weight: 700;
             font-size: 23px;
             line-height: 18px;
+            position: absolute;
+            top: 29px;
+            left: 23px;
+            .shop-list-item_text2 {
+              font-size: 12px;
+              color: #666;
+            }
           }
         }
       }

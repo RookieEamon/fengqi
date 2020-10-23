@@ -6,11 +6,11 @@
         <!-- 大容器左边部分 -->
         <div class="shopping-page-left">
           <!-- 这个是大图 -->
-          <div class="block">
+          <div class="block" v-if="goodsItem.goodsList">
             <!-- <span class="demonstration">默认 Hover 指示器触发</span> -->
             <el-carousel height="400px" width="400px">
               <el-carousel-item
-                v-for="item in shopItem.goodsList.slice(0, 5)"
+                v-for="item in goodsItem.goodsList.slice(0, 5)"
                 :key="item.goods_id"
               >
                 <img :src="item.hd_url" alt="" />
@@ -92,7 +92,7 @@
               MORELINE
             </a>
             <p class="shopping-page-right-centent-title">
-              沐兰2019秋冬新款长袖女装半高圆领修身弹力典雅印花衬衫
+              {{ shopDetail.goods_name }}
               <!-- {{this.detailData.goods_name}} -->
             </p>
           </div>
@@ -101,7 +101,7 @@
             <div class="shopping-page-right-img-qian">
               <i>￥</i>
               <!-- <span>{{this.detailData.group_price}}</span> -->
-              <span>999</span>
+              <span>{{ shopDetail.normal_price }}</span>
               <span class="shopping-page-right-img-jiage">1.9折</span>
             </div>
           </div>
@@ -111,10 +111,24 @@
             <div class="shopping-page-right-bottom-one">
               <span class="heihei">配送</span>
               <!-- 选择市区 -->
-              <div class="shopping-page-right-bottom-one-city">
+              <!-- <div class="shopping-page-right-bottom-one-city">
                 请选择省市区
                 <i class="fa fa-caret-down" aria-hidden="true"></i>
-              </div>
+              </div> -->
+              <el-dropdown>
+                <span class="el-dropdown-link">
+                  选择市区<i class="el-icon-arrow-down el-icon--right"></i>
+                </span>
+                <el-dropdown-menu slot="dropdown">
+                  <el-dropdown-item>北京市</el-dropdown-item>
+                  <el-dropdown-item>上海市</el-dropdown-item>
+                  <el-dropdown-item>深圳市</el-dropdown-item>
+                  <el-dropdown-item disabled>giao市</el-dropdown-item>
+                  <el-dropdown-item divided
+                    >谁来给我的奔驰加油</el-dropdown-item
+                  >
+                </el-dropdown-menu>
+              </el-dropdown>
             </div>
             <!-- 运送行 -->
             <div class="shopping-page-right-bottom-two">
@@ -149,16 +163,19 @@
               </ul>
             </div>
             <!-- 数量 -->
-            <div class="shopping-page-right-bottom-Four" >
+            <div class="shopping-page-right-bottom-Four">
               <p>数量</p>
               <!-- 增选价格小容器 -->
               <div class="shopping-page-right-bottom-Four-item">
                 <!-- 减号 -->
                 <div class="shopping-page-right-bottom-Four-item-minus-sign">
-                  <span @click="skuNum>1?skuNum--:''">-</span>
+                  <span @click="skuNum > 1 ? skuNum-- : ''">-</span>
                 </div>
                 <!-- 数量 -->
-                <input class="shopping-page-right-bottom-Four-item-number" v-model="skuNum">
+                <input
+                  class="shopping-page-right-bottom-Four-item-number"
+                  v-model="skuNum"
+                />
                 <!-- </input> -->
                 <!-- 加号 -->
                 <div class="shopping-page-right-bottom-Four-item-plus">
@@ -167,7 +184,8 @@
               </div>
               <div class="shopping-page-right-bottom-Four-text">
                 <p class="plus-pone">
-                  仅剩 <span>10件</span> ，抓紧时间抢购哦!
+                  仅剩
+                  <span>{{ shopDetail.quantity }}件</span> ，抓紧时间抢购哦!
                 </p>
               </div>
             </div>
@@ -175,8 +193,7 @@
             <div class="shopping-page-right-bottom-Five">
               <!-- 第一个按钮 -->
               <div class="shopping-page-right-bottom-Five-one" @click="toLogin">
-           
-                <span class="Five-spanTwo">给老子结算</span>
+                <span class="Five-spanTwo">添加至购物车</span>
               </div>
             </div>
             <!-- 客服 -->
@@ -246,41 +263,52 @@
 </template>
 
 <script>
+import { mapMutations } from "vuex";
 export default {
-  name:'Shopping',
+  name: "Shopping",
   data() {
     return {
-      shopItem: [], //商品数据
+      goodsItem: [], //商品数据
       skuNum: 1, //个数
-      detailId: "" //商品id
+      detailId: "", //商品id
+      LV1Index: 0,
+      LV2Index: 0,
+      shopDetail: {},
     };
   },
   methods: {
-    //宝贝这个是判断登录跳转带参数页面去购物车结算
+    ...mapMutations({
+      ADD_CARTLIST: "ADD_CARTLIST",
+    }),
+    //这个是判断登录跳转带参数页面去购物车结算
     toLogin() {
-      const query = { skuNum: this.skuNum };
+      // const query = { skuNum: this.skuNum };
       if (!localStorage.getItem("USERINFO_TOKEN")) {
         this.$router.push("/login");
       } else {
-        this.$router.push({ path: "/cart", query });
+        //将商品信息放入vuex,跳转页面
+        this.ADD_CARTLIST(this.shopDetail);
+        this.$router.push("/cart");
       }
-    }
+    },
   },
   mounted() {
-    // this.shopItem = this.$route.query.item;
-    console.log(this.$route);
-    this.shopItem = JSON.parse(localStorage.getItem('goodsList'))
+    //获取一级索引,二级索引,根据一级,二级索引获取商品列表
+    this.LV1Index = JSON.parse(localStorage.getItem("LV1Index"));
+    this.LV2Index = JSON.parse(localStorage.getItem("LV2Index"));
+    this.goodsItem =
+      this.$store.state.home.goodsList.length > 0
+        ? this.$store.state.home.goodsList[this.LV1Index]
+        : JSON.parse(localStorage.getItem("goodsList"))[this.LV1Index];
+    this.shopDetail =
+      this.$store.state.home.goodsList.length > 0
+        ? this.$store.state.home.goodsList[this.LV1Index].goodsList[
+            this.LV2Index
+          ]
+        : JSON.parse(localStorage.getItem("goodsList"))[this.LV1Index]
+            .goodsList[this.LV2Index];
   },
   components: {},
-  computed: {
-    detailData() {
-      if (this.shopItem.goodsList) {
-        return this.shopItem.goodsList.find(item => {
-          item.cat_id1 === detailId;
-        });
-      }
-    }
-  }
 };
 </script>
 
@@ -513,24 +541,32 @@ export default {
           //  <!-- 配送 -->
           .heihei {
             font-size: 12px;
-            color: #999;
+            color: #333;
             float: left;
+            margin-right: 18px;
           }
           //<!-- 选择市区 -->
-          .shopping-page-right-bottom-one-city {
-            width: 252px;
-            height: 32px;
-            line-height: 32px;
-            float: left;
-            margin-left: 12px;
-            padding-left: 8px;
-            border: 1px solid rgb(180, 178, 178);
-            i {
-              float: right;
-              margin-top: 11px;
-              margin-right: 10px;
-            }
+          .el-dropdown-link {
+            cursor: pointer;
+            color: #454649;
           }
+          .el-icon-arrow-down {
+            font-size: 12px;
+          }
+          // .shopping-page-right-bottom-one-city {
+          //   width: 252px;
+          //   height: 32px;
+          //   line-height: 32px;
+          //   float: left;
+          //   margin-left: 12px;
+          //   padding-left: 8px;
+          //   border: 1px solid rgb(180, 178, 178);
+          //   i {
+          //     float: right;
+          //     margin-top: 11px;
+          //     margin-right: 10px;
+          //   }
+          // }
         }
         // <!-- 运送行 -->
         .shopping-page-right-bottom-two {
@@ -656,7 +692,7 @@ export default {
               font-size: 14px;
               position: absolute;
               top: 15px;
-              left: 23px;
+              left: 17px;
             }
           }
           //第二个按钮
