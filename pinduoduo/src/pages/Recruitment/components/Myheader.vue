@@ -18,7 +18,7 @@
       <!-- 头部导航栏 -->
       <ul class="headerNav">
         <li class="firstLi">
-          <router-link to="/recruitment">
+          <router-link to="/home">
             <div>
               <span>首页</span>
             </div>
@@ -31,15 +31,21 @@
             </div>
           </router-link>
         </li>
+
         <li>
-          <div>
-            <span>个人中心</span>
-          </div>
+          <router-link to="/career">
+            <div>
+              <span>社会招聘</span>
+            </div>
+          </router-link>
         </li>
+
         <li>
-          <div>
-            <span>关于我们</span>
-          </div>
+          <router-link to="/cooperation">
+            <div>
+              <span>招采中心</span>
+            </div>
+          </router-link>
         </li>
       </ul>
       <!-- 头部登录/注册 -->

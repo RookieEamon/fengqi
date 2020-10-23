@@ -125,30 +125,36 @@ export default {
       console.log(pageSize);
       this.pageSize = pageSize;
       this.getPositionList(this.page, pageSize, this.recruitType);
-      if (document.body.scrollTop) {
-        document.body.scrollTop = 0;
-      } else {
-        document.documentElement.scrollTop = 0;
-      }
+
+      //处理点击分页后返回顶部的方法
+
+      // if (document.body.scrollTop) {
+      //   document.body.scrollTop = 0;
+      // } else {
+      //   document.documentElement.scrollTop = 0;
+      // }
     },
     handleCurrentChange(page) {
       console.log(page);
       this.page = page;
       this.getPositionList(this.page, this.pageSize, this.recruitType);
-      if (document.body.scrollTop) {
-        document.body.scrollTop = 0;
-      } else {
-        document.documentElement.scrollTop = 0;
-      }
+
+      //处理点击分页后返回顶部的方法
+
+      // if (document.body.scrollTop) {
+      //   document.body.scrollTop = 0;
+      // } else {
+      //   document.documentElement.scrollTop = 0;
+      // }
     },
     //处理点击分页后返回顶部的方法
-    opt() {
-      if (document.body.scrollTop) {
-        document.body.scrollTop = 0;
-      } else {
-        document.documentElement.scrollTop = 0;
-      }
-    },
+    // opt() {
+    //   if (document.body.scrollTop) {
+    //     document.body.scrollTop = 0;
+    //   } else {
+    //     document.documentElement.scrollTop = 0;
+    //   }
+    // },
   },
 };
 </script>

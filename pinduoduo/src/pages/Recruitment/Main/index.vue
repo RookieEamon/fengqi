@@ -180,9 +180,9 @@
               <div class="p2">基于现有资源，给你机会创造并擦出新的火花</div>
               <div class="p2">广阔平台：提升自己的能力与价值</div>
               <div class="p2">从简单了解到深度使用，学到的知识被盘活</div>
-              <a href="" title="下次再聊..">
+              <router-link to="/recruitment/jobinformation/position">
                 <div class="p3">了解更多></div>
-              </a>
+              </router-link>
             </div>
           </div>
         </div>

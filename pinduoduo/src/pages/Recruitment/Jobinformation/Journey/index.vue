@@ -80,15 +80,17 @@ export default {
       this.list = res.tripList;
       console.log("tripList", this.list);
     },
-    opt() {
-      console.log('111');
-      if (document.body.scrollTop) {
-        document.body.scrollTop = 0;
-      } else {
-        document.documentElement.scrollTop = 0;
-      }
 
-    },
+    //点击自动返回顶部
+    // opt() {
+    //   console.log('111');
+    //   if (document.body.scrollTop) {
+    //     document.body.scrollTop = 0;
+    //   } else {
+    //     document.documentElement.scrollTop = 0;
+    //   }
+
+    // },
   },
 };
 </script>

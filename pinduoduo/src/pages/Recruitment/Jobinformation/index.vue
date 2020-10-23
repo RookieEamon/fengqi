@@ -23,7 +23,6 @@
               <li>校招行程</li>
             </router-link>
 
-            <li>Q&A专区</li>
           </ul>
           <!-- 左侧导航栏二维码 -->
           <div>
