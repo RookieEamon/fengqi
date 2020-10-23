@@ -3,10 +3,10 @@
     <!-- footer部分 -->
     <footer class="footer">
       <!-- 底部二维码和联系我们区域 -->
-      <FooterTop v-show="path !== '/cooperation' && path !== '/recruitment'"/>
+      <FooterTop v-show="path !== '/cooperation' && path !== '/recruitment'&& path !=='/recruitment/jobinformation/position'&& path!== '/recruitment/jobinformation/journey'"/>
       <FooterCenter/>
       <!-- 最底部图片列表区域 -->
-      <FooterBottom  v-show="path !== '/recruitment'"/>
+      <FooterBottom  v-show="path !== '/recruitment'&& path !=='/recruitment/jobinformation/position'&& path!== '/recruitment/jobinformation/journey'"/>
     </footer>
   </div>
 </template>

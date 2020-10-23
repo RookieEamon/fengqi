@@ -12,9 +12,10 @@
         path !== '/complaint/reportdetail' &&
         path !== '/complaint/contraband' &&
         path !== '/complaint' &&
-        path !== '/detail'
-      "
-    />
+        path !== '/detail' &&
+        path !== '/recruitment/jobinformation/journey'
+      "/>
+     
     <router-view></router-view>
     <Footer v-show="!$route.meta.isHeaderAndFooter" />
   </div>

@@ -147,12 +147,14 @@ export default {
     //获取热点新闻列表
     async getHotnews() {
       const result = await reqHotNews();
+      // console.log(result)
       this.hotNewsList = result;
     },
     //获取媒体报道列表
     async getMediaReport(page = 1, pageSize = 10) {
       const result = await reqMediaReports(page, pageSize);
       this.mediaReport = result;
+      console.log(mediaReport);
     },
     //点击跳转
     openNews(url) {
