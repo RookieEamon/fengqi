@@ -56,7 +56,7 @@
               class="subjectWrap"
               v-for="(item, index) in goods"
               :key="index"
-              @click="goMore(item)"
+              @click="goMore(index)"
             >
               <img :src="item.coverImgUrl" alt="" />
               <!-- 小图商品 -->
@@ -104,39 +104,34 @@ export default {
   name: "Home",
   data() {
     return {
-      goodsData: []
+      goodsData: [],
     };
   },
   computed: {
     ...mapState({
-      goods: state => state.home.goodsList
-    })
+      goods: (state) => state.home.goodsList,
+    }),
   },
   mounted() {
     this.getGoodsList();
-    // console.log(this.goods);
-    this.goodsData = this.goods;
-    // console.log(this.goodsData)
+    // this.goodsData = this.goods;
   },
   methods: {
     ...mapActions({
-      getGoodsList: "getGoodsList"
+      getGoodsList: "getGoodsList",
     }),
-    
-    goMore(item) {
-      console.log(item)
-    localStorage.setItem('goodsList',JSON.stringify(item))
 
+    goMore(index) {
+      // console.log(index);
+      //将一级索引放入localStorage
+      localStorage.setItem("LV1Index", JSON.stringify(index));
       const { path, query } = this.$route;
       this.$router.push({
         path: "/home/more",
-        // query: {
-        //   goodsData:item
-        // }
       });
-    }
+    },
   },
-  components: {}
+  components: {},
 };
 </script>
 <style lang='less' rel='stylesheet/less' scoped>

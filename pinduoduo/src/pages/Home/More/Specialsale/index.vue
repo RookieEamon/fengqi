@@ -54,13 +54,10 @@ export default {
     };
   },
   mounted() {
-  //  if (localStorage.getItem("goodsList") == null) {
-  //     localStorage.setItem(
-  //       "goodsList",
-  //       JSON.stringify(this.$route.query.goodsData)
-  //     );
-  //   }
-    this.goodsItem = JSON.parse(localStorage.getItem("goodsList"));
+   this.LV1Index = JSON.parse(localStorage.getItem("LV1Index"));
+    this.goodsItem=this.$store.state.home.goodsList.length>0?
+    this.$store.state.home.goodsList[this.LV1Index]:
+    JSON.parse(localStorage.getItem("goodsList"))[this.LV1Index]
   },
     methods: {
     goShopping() {

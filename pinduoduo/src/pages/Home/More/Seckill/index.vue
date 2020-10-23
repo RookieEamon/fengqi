@@ -2,7 +2,7 @@
   <div>
     <!-- 大图 -->
     <div class="bannerGroup">
-      <img src="../../image/floorbannerMan.jpg" alt="" />
+      <img :src="goodsItem.coverImgUrl" alt="" />
       <div class="rightTitle">
         <div class="title">限时秒杀</div>
         <div class="desc">每日精选好货超低价秒杀，限时限量，全场包邮。</div>
@@ -13,7 +13,7 @@
       <div
         class="goods"
         v-for="(item, index) in goodsItem.goodsList"
-        :key="index"
+        :key="item.goods_id"
       >
         <div class="scan">
           <img
@@ -24,7 +24,7 @@
           />
           <div class="qrcode">
             k00000
-            <img src="../../image/saowogoumai.png" alt="" @click="goShopping()"/>
+            <img src="../../image/saowogoumai.png" alt="" @click="goShopping(index)"/>
             <div class="qrcodeText">微信扫我购买</div>
           </div>
         </div>
@@ -51,28 +51,25 @@
   </div>
 </template>
 <script>
+import {mapState} from 'vuex'
 export default {
   name: "Seckill",
   data() {
     return {
-      goodsItem: []
+      goodsItem: [],
+      LV1Index:0
     };
   },
   mounted() {
-    // if (localStorage.getItem("goodsList") == null) {
-    //   localStorage.setItem(
-    //     "goodsList",
-    //     JSON.stringify(this.$route.query.goodsData)
-    //   );
-    // }
-    this.goodsItem = JSON.parse(localStorage.getItem("goodsList"));
-
-    // console.log(localStorage.getItem("goodsList"));
+    //获取一级索引,根据一级索引获取商品列表
+    this.LV1Index = JSON.parse(localStorage.getItem("LV1Index"));
+    this.goodsItem=this.$store.state.home.goodsList.length>0?
+    this.$store.state.home.goodsList[this.LV1Index]:
+    JSON.parse(localStorage.getItem("goodsList"))[this.LV1Index]
   },
   methods: {
-    goShopping() {
-      // const { path } = this.$route;
-      this.$router.push("/detail")
+    goShopping(index) {
+      this.$router.push(`/detail/${index}`)
   }
   }
 }

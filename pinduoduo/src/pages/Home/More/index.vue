@@ -4,12 +4,13 @@
       <!-- 导航 -->
       <div class="navList">
         <ul class="nav">
-          <router-link to='/home/more/seckill'><li>限时秒杀</li></router-link>
-          <router-link to='/home/more/specialsale'><li>9.9特卖</li></router-link>
-          <router-link to='/home/more/supermarket'><li>食品超市</li></router-link>
-          <!-- <router-link :to="{path:'/home/more/seckill',query:{goodsData:goodsItem}}"><li>限时秒杀</li></router-link>
-          <router-link :to="{path:'/home/more/specialsale',query:{goodsData:goodsItem}}"><li>9.9特卖</li></router-link>
-          <router-link :to="{path:'/home/more/supermarket',query:{goodsData:goodsItem}}"><li>食品超市</li></router-link> -->
+          <router-link to="/home/more/seckill"><li>限时秒杀</li></router-link>
+          <router-link to="/home/more/specialsale"
+            ><li>9.9特卖</li></router-link
+          >
+          <router-link to="/home/more/supermarket"
+            ><li>食品超市</li></router-link
+          >
         </ul>
       </div>
       <router-view></router-view>
@@ -17,34 +18,16 @@
   </div>
 </template>
 <script>
-// import { mapState, mapActions } from "vuex";
 export default {
   name: "More",
   data() {
     return {
-      goodsItem: []
+      goodsItem: [],
     };
   },
   mounted() {
-    
-    // this.goodsItem = this.$route.query.goodsData 
-    // console.log('@@@@',this.$route.query.goodsData)
-  //  localStorage.setItem('goodsList',JSON.stringify(this.$route.query.goodsData))
-   this.goodsItem = JSON.parse(localStorage.getItem('goodsList'))
-    console.log(this.goodsItem)
-  // methods: {
-  //   change() {
-  //     const { path, query } = this.$route;
-  //     this.$router.push({
-  //       path: "/home/more/seckill",
-  //       query: {
-  //         goodsData: this.goodsItem
-  //       }
-  //     });
-  //   }
-  // }
-  }
-  }
+  },
+};
 </script>
 <style lang='less' rel='stylesheet/less' scoped>
 // 主题部分
@@ -72,7 +55,7 @@ export default {
         cursor: pointer;
       }
       .router-link-active {
-        li{
+        li {
           background-color: #d53758;
         }
       }

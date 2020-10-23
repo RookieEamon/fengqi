@@ -26,22 +26,25 @@
                 <div class="cart-th6">操作</div>
               </div>
               <div class="cart-body">
-                <ul class="cart-list">
+                <ul
+                  class="cart-list"
+                  v-for="(item, index) in cartList"
+                  :key="index"
+                >
                   <li class="cart-list-con1">
                     <input type="checkbox" name="chk_list" />
                   </li>
                   <li class="cart-list-con2">
-                    <img src="./images/goods1.png" />
+                    <img :src="item.hd_url" />
                     <div class="item-msg">
-                      米家（MIJIA） 小米小白智能摄像机增强版
-                      1080p高清360度全景拍摄AI增强
+                      {{ item.goods_name }}
                     </div>
                   </li>
                   <li class="cart-list-con3">
-                    <div class="item-txt">语音升级款</div>
+                    <div class="item-txt">{{ item.sales_tip }}</div>
                   </li>
                   <li class="cart-list-con4">
-                    <span class="price">399.00</span>
+                    <span class="price">1.00</span>
                   </li>
                   <li class="cart-list-con5">
                     <a href="javascript:void(0)" class="mins">-</a>
@@ -94,6 +97,17 @@
 <script>
 export default {
   name: "Cart",
+  data() {
+    return {
+      cartList: [],
+    };
+  },
+  mounted() {
+    this.cartList =
+      this.$store.state.home.cartList.length > 0
+        ? this.$store.state.home.cartList
+        : JSON.parse(localStorage.getItem("cartList"));
+  },
 };
 </script>
 
