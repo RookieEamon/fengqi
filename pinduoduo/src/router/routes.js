@@ -111,14 +111,14 @@ export default [
 		component: Cooperation
 	},
 	{
-		path: '/detail',
+		path: '/detail/:index',
 		component: Detail,
 		meta: {
 			isHeaderAndFooter: true
 		}
 	},
 	{
-		path: '/shopping',
+		path: '/shopping/:index',
 		component: Shopping
 	},
 	{

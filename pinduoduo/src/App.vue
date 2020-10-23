@@ -12,7 +12,7 @@
         path !== '/complaint/reportdetail' &&
         path !== '/complaint/contraband' &&
         path !== '/complaint' &&
-        path !== '/detail' &&
+        path !== '/detail/0' &&
         path !== '/recruitment/jobinformation/journey'
       "/>
      
