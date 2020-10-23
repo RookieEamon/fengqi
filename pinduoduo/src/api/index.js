@@ -17,3 +17,7 @@ export const reqLogin = (username, password) => ajax.post('/login', { username, 
 // 发送请求获取注册信息
 export const reqRegister = (username, password) => ajax.post('/register', { username, password })
 
+//发送请求获取校园招聘-应届生职位列表
+export const reqInternJobList = (page,pageSize,recruitType) => ajax.post('/recruitmentfresh',{page,pageSize,recruitType})
+//发送请求获取校园招聘-校招行程
+export const reqJourney = () => ajax.get('/recruitmentjourney')

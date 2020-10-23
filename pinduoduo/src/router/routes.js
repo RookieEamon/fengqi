@@ -29,7 +29,15 @@ const Jobinformation = () => import('../pages/Recruitment/Jobinformation')
 //引入应届生招聘的路由子组件  应届生招聘-招聘信息
 const Position = () => import('../pages/Recruitment/Jobinformation/Position/index.vue') 
 //引入应届生招聘的路由子组件  应届生招聘-招聘流程
+<<<<<<< HEAD
 const Process = () => import('../pages/Recruitment/Jobinformation/Process') 
+=======
+import Process from '../pages/Recruitment/Jobinformation/Process'
+//引入应届生招聘的路由子组件  应届生招聘-校招行程
+import Journey from '../pages/Recruitment/Jobinformation/Journey'
+
+
+>>>>>>> feature/lipengyu
 //实习生招聘通用
 const Intern = () => import('../pages/Recruitment/Intern') 
 
@@ -128,37 +136,43 @@ export default [
 			hideHead: true,
 		},
 		children: [{ //校园招聘首页
-			path: '/recruitment',
-			component: Main
-		},
-		{
-			// 应届生招聘
-			path: '/recruitment/jobinformation',
-			component: Jobinformation,
-			children: [
-				{
-					//应届生招聘-招聘职位
-					path: '/recruitment/jobinformation/',
-					component: Position,
-				},
-				{
-					//应届生招聘-招聘职位
-					path: '/recruitment/jobinformation/position',
-					component: Position,
-				},
-				{
-					//应届生招聘-招聘流程
-					path: '/recruitment/jobinformation/process',
-					component: Process,
+				path: '/recruitment',
+				component: Main
+			},
+			{
+				// 应届生招聘
+				path: '/recruitment/jobinformation',
+				component: Jobinformation,
+				children: [
+					{
+						//应届生招聘-招聘职位
+						path: '/recruitment/jobinformation/',
+						redirect:'/recruitment/jobinformation/position',
+					},
+					{
+						//应届生招聘-招聘职位-
+						path: '/recruitment/jobinformation/position',
+						component: Position,
+					},
+					{
+						//应届生招聘-招聘流程
+						path: '/recruitment/jobinformation/process',
+						component: Process,
+						// redirect:'/home'  重新定向一个新地址 往往应用：访问根路径/时
 
-				}
-			]
-		},
-		{
-			// 实习生招聘
-			path: '/recruitment/intern',
-			component: Intern
-		},
+					},
+					{
+						//应届生招聘-招聘形成
+						path:'/recruitment/jobinformation/journey',
+						component:Journey,
+					},
+				]
+			},
+			{
+				// 实习生招聘
+				path: '/recruitment/intern',
+				component: Intern
+			},
 		]
 
 	},

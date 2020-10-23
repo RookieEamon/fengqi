@@ -9,6 +9,21 @@
 import Myheader from './components/Myheader'
 export default {
   name: "Recruitment",
+  data() {
+    return {
+    }
+  },
+  mounted() {
+   
+  },
+
+  methods:{
+    
+
+
+  },
+
+
   components:{
       Myheader,
   }

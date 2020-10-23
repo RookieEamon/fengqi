@@ -1,48 +1,54 @@
 <template>
-<div>
-
-<!-- <Myheader></Myheader> -->
-  <div class="job1Container">
-    <img
+  <div>
+    <!-- <Myheader></Myheader> -->
+    <div class="job1Container">
+      <!-- <img
       src="https://funimg.pddpic.com/Recruit/2021_campus_banner.jpg"
       alt=""
-    />
-    <!-- 主体内容 -->
-    <div class="main">
-      <!-- 左侧内容 -->
-      <div class="left">
-        <!-- 左侧导航栏文字内容 -->
-        <ul>
-          <router-link to="/recruitment/jobinformation/position"><li>招聘职位</li></router-link>
-          <router-link to="/recruitment/jobinformation/process"><li>招聘流程</li></router-link>
-          <li>校招行程</li>
-          <li>相关视频</li>
-          <li>Q&A专区</li>
-        </ul>
-        <!-- 左侧导航栏二维码 -->
-        <div>
-          <p class="words">招聘公众号</p>
-          <img
-            src="https://funimg.pddpic.com/career/img/wechat-qrcode.jpg"
-            alt=""
-          />
+    /> -->
+      <div class="bannerContainer"></div>
+      <!-- 主体内容 -->
+      <div class="main">
+        <!-- 左侧内容 -->
+        <div class="left">
+          <!-- 左侧导航栏文字内容 -->
+          <ul>
+            <router-link to="/recruitment/jobinformation/position"
+              ><li>招聘职位</li></router-link
+            >
+            <router-link to="/recruitment/jobinformation/process">
+              <li>招聘流程</li>
+            </router-link>
+            <router-link to="/recruitment/jobinformation/journey">
+              <li>校招行程</li>
+            </router-link>
+
+            <li>Q&A专区</li>
+          </ul>
+          <!-- 左侧导航栏二维码 -->
+          <div>
+            <p class="words">招聘公众号</p>
+            <img
+              src="https://funimg.pddpic.com/career/img/wechat-qrcode.jpg"
+              alt=""
+            />
+          </div>
         </div>
+
+        <!-- 右侧内容 -->
+        <router-view></router-view>
       </div>
-      
-      <!-- 右侧内容 -->
-      <router-view></router-view>
     </div>
   </div>
-</div>
 </template>
 
 <script>
-import Myheader from '../components/Myheader'
+import Myheader from "../components/Myheader";
 export default {
   name: "Jobinformation",
- components:{
-   Myheader
- }
+  components: {
+    Myheader,
+  },
 };
 </script>
 
@@ -52,8 +58,20 @@ export default {
   overflow: hidden;
   background-color: rgb(250, 250, 250);
 
-  //头部
+  /* //头部
   //图片
+  //图片banner */
+  .bannerContainer {
+    //设置背景图片的尺寸
+    width: 100%;
+    height: 294px;
+    font-size: 0; //加给父容器解决图片底部白边
+    background-image: url(https://funimg.pddpic.com/Recruit/2021_campus_banner.jpg);
+    //背景图片的定位原点
+    // background-origin:
+    // //背景图片的背景位置
+    background-position-x: 50%;
+  }
   //主体内容
   .main {
     width: 1200px;
@@ -63,62 +81,58 @@ export default {
 
     display: flex;
 
-   //左侧导航栏
-        .left{
-            width: 278px;
-            margin-right: 22px;
-            display:flex;
-            flex-direction: column;
+    //左侧导航栏
+    .left {
+      width: 278px;
+      margin-right: 22px;
+      display: flex;
+      flex-direction: column;
 
-            // 左侧导航栏文字内容
-            ul{
+      // 左侧导航栏文字内容
+      ul {
+        margin-bottom: 30px;
+        //<li招聘流程校招行程相关视频Q&A专区>招聘职位</li招聘流程校招行程相关视频Q&A专区
+        //li通用样式
+        li {
+          // display:block;
+          color: black;
+          background-color: white;
+          font-size: 20px;
+          width: 278px;
+          height: 60px;
+          box-sizing: border-box;
+          padding-left: 38px;
+          line-height: 60px;
+          cursor: pointer;
 
-                margin-bottom:30px;
-                //<li招聘流程校招行程相关视频Q&A专区>招聘职位</li招聘流程校招行程相关视频Q&A专区
-               //li通用样式
-                li{
-                    // display:block;
-                    color:black;
-                    background-color: white;
-                    font-size: 20px;
-                    width: 278px;
-                    height: 60px;
-                    box-sizing: border-box;
-                    padding-left: 38px;
-                    line-height:60px;
-                    cursor: pointer;
-
-                    &:hover{
-                        background-color: #F04055;
-                        color:white;
-                    }
-
-                }
-            }
-
-            // 左侧导航栏二维码
-            div{
-                background-color: white;
-                
-                // 左侧导航栏二维码
-                .words{
-                    height: 60px;
-                    font-size:20px;
-                    color:#686868;
-                    text-align: center;
-                    line-height: 60px;
-                    background-color: white;
-                    border-bottom: 1px solid #686868;
-                }
-
-                img{
-                    display:block;
-                    margin:10px auto;
-                }
-            }
-            
+          &:hover {
+            background-color: #f04055;
+            color: white;
+          }
         }
-   
+      }
+
+      // 左侧导航栏二维码
+      div {
+        background-color: white;
+
+        // 左侧导航栏二维码
+        .words {
+          height: 60px;
+          font-size: 20px;
+          color: #686868;
+          text-align: center;
+          line-height: 60px;
+          background-color: white;
+          border-bottom: 1px solid #686868;
+        }
+
+        img {
+          display: block;
+          margin: 10px auto;
+        }
+      }
+    }
 
     //右侧信息区域
     .right {

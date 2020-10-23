@@ -27,14 +27,7 @@
         <li>
           <router-link to="/recruitment/jobinformation">
             <div>
-              <span>应届生招聘</span>
-            </div>
-          </router-link>
-        </li>
-        <li>
-          <router-link to="/recruitment/intern">
-            <div>
-              <span>实习生招聘</span>
+              <span>招聘信息</span>
             </div>
           </router-link>
         </li>
