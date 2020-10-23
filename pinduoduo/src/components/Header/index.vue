@@ -10,7 +10,7 @@
             <img src="./images/LOGO.png" alt="拼多多LOGO" />
           </router-link>
           <!-- 导航List -->
-          <ul class="navList" @click="addActive" id="ul">
+          <ul class="navList" id="ul">
             <li>
               <router-link to="/home">
                 <span>首页</span>
@@ -18,9 +18,9 @@
               <i></i>
             </li>
             <li>
-              <router-link to="/login">
-                <span>{{ isLogin ? "个人中心" : "登录/注册" }}</span>
-              </router-link>
+              <a @click="toLogin">
+                 <span>{{ isLogin ? "退出登录" : "登录/注册" }}</span>
+              </a>
               <i></i>
             </li>
             <li>
@@ -75,25 +75,38 @@ export default {
   name: "Header",
   data() {
     return {
-
+      isLogin:false
     };
   },
   mounted() {
     // this.$Eventbus.$on("changeLogin", (data) => {
     //   this.isLogin = data;
     // });
+    // location.href = location.href
+    console.log('@');
+    this.isLogin=localStorage.getItem('USERINFO_TOKEN')
+  },
+  watch: {
+    
   },
   methods: {
-    addActive(event) {
-      
+    toLogin() {
+      if(!localStorage.getItem('USERINFO_TOKEN')){
+        this.$router.push('/login')
+      }else{
+        if(confirm('您确定要退出登陆吗')){
+          localStorage.removeItem('USERINFO_TOKEN')
+          location.href = location.href
+        }
+      }
     },
   },
 
  
    computed: {
-     isLogin(){
-       return localStorage.getItem('USERINFO_TOKEN')
-     }
+    //  isLogin(){
+    //    return localStorage.getItem('USERINFO_TOKEN')
+    //  }
   },
 };
 </script>

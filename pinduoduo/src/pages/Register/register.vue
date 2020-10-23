@@ -25,15 +25,15 @@
         </div> -->
         <div class="content">
           <label>登录密码:</label>
-          <input type="text" placeholder="请输入你的登录密码" v-model="password"/>
+          <input type="password" placeholder="请输入你的登录密码" v-model="password"/>
         </div>
         <div class="content">
           <label>确认密码:</label>
-          <input type="text" placeholder="请输入确认密码" v-model="rePassword"/>
+          <input type="password" placeholder="请输入确认密码" v-model="rePassword"/>
         </div>
         <div class="controls">
-          <input name="m1" type="checkbox" />
-          <span>同意协议并注册《拼多多用户协议》</span>
+          <!-- <input name="m1" type="checkbox" /> -->
+          <!-- <span>同意协议并注册《拼多多用户协议》</span> -->
         </div>
         <div class="btn">
           <a href="javascript:" @click="toRegister">完成注册</a>
@@ -61,14 +61,14 @@ export default {
       let passwordReg = /^\d{4,6}/;
       if(!this.username.trim() || !this.password.trim()){
       this.$message({
-          message: '手机号和密码不能为空！',
+          message: '用户名和密码不能为空！',
           type: 'warning'
         });
       return;
       }
       if(!usernameReg.test(this.username)){
         this.$message({
-          message: '手机号不正确',
+          message: '用户名不正确',
           type: 'warning'
         });
         return;
