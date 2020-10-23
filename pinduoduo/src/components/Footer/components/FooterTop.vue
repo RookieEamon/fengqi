@@ -114,7 +114,7 @@
     .contactInfo {
       // position: absolute;
       float: right;
-      margin-right: -122px;
+      margin-right:-122px;
       padding-left: 45px;
       margin-top: -20px;
       width: 410px;

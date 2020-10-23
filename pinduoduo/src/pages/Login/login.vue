@@ -219,7 +219,6 @@ export default {
       height: 280px;
       border-radius: 6px;
       background: #fff;
-
       .loginBox {
         margin: 16px;
         margin-top: 32px;

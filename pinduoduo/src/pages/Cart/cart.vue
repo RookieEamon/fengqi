@@ -22,7 +22,7 @@
                 <div class="cart-th2">商品</div>
                 <div class="cart-th3">单价（元）</div>
                 <div class="cart-th4">数量</div>
-                <div class="cart-th5">小计（元）</div>
+                <!-- <div class="cart-th5">小计（元）</div> -->
                 <div class="cart-th6">操作</div>
               </div>
               <div class="cart-body">
@@ -32,7 +32,12 @@
                   :key="index"
                 >
                   <li class="cart-list-con1">
-                    <input type="checkbox" name="chk_list" />
+                    <input
+                      type="checkbox"
+                      name="chk_list"
+                      :checked="item.selected"
+                      @change="changeSelectedOne(index)"
+                    />
                   </li>
                   <li class="cart-list-con2">
                     <img :src="item.hd_url" />
@@ -44,43 +49,55 @@
                     <div class="item-txt">{{ item.sales_tip }}</div>
                   </li>
                   <li class="cart-list-con4">
-                    <span class="price">1.00</span>
+                    <span class="price">{{ item.normal_price }}</span>
                   </li>
                   <li class="cart-list-con5">
-                    <a href="javascript:void(0)" class="mins">-</a>
-                    <input
+                    <span class="mins" @click="changCount(false, index)"
+                      >-</span
+                    >
+                    <!-- <input
                       autocomplete="off"
                       type="text"
                       value="1"
                       minnum="1"
                       class="itxt"
-                    />
-                    <a href="javascript:void(0)" class="plus">+</a>
+                       
+                    /> -->
+                    <span class="itxt">{{ item.count }}</span>
+                    <span class="plus" @click="changCount(true, index)">+</span>
                   </li>
                   <li class="cart-list-con6">
-                    <span class="sum">399</span>
+                    <!-- <span class="sum">{{retailPrice}}</span> -->
                   </li>
                   <li class="cart-list-con7">
-                    <a href="#none" class="sindelet">删除</a>
+                    <a href="#none" class="sindelet" @click="deleteGood(index)">删除</a>
                     <br />
-                    <a href="#none">移到收藏</a>
+                    <!-- <a href="#none">移到收藏</a> -->
                   </li>
                 </ul>
               </div>
             </div>
             <div class="cart-tool">
               <div class="select-all">
-                <input class="chooseAll" type="checkbox" />
+                <input
+                  v-model="isSelectedAll"
+                  class="chooseAll"
+                  type="checkbox"
+                  @change="changeSelectAll"
+                />
                 <span>全选</span>
               </div>
               <div class="option">
-                <a href="#none">删除选中的商品</a>
+                <!-- <a href="#none">删除选中的商品</a> -->
               </div>
               <div class="money-box">
-                <div class="chosed">已选择 <span>0</span>件商品</div>
+                <div class="chosed">
+                  已选择 <span>{{ totalCount }}</span
+                  >件商品
+                </div>
                 <div class="sumprice">
                   <em>总价（不含运费） ：</em>
-                  <i class="summoney">0</i>
+                  <i class="summoney">{{ totalPrice }}</i>
                 </div>
                 <div class="sumbtn">
                   <a class="sum-btn" href="###" target="_blank">结算</a>
@@ -95,6 +112,7 @@
 </template>
 
 <script>
+import { mapMutations } from "vuex";
 export default {
   name: "Cart",
   data() {
@@ -107,6 +125,75 @@ export default {
       this.$store.state.home.cartList.length > 0
         ? this.$store.state.home.cartList
         : JSON.parse(localStorage.getItem("cartList"));
+
+    console.log(this.cartList);
+  },
+  computed: {
+    totalCount() {
+      return this.cartList.filter((item) => item.selected === true).length;
+    },
+    totalPrice() {
+      let num = 0;
+      this.cartList
+        .filter((item) => item.selected === true)
+        .forEach((item) => {
+          num += item.count * item.normal_price;
+        });
+      return num;
+    },
+    isSelectedAll: {
+      get() {
+        return (
+          this.cartList.filter((item) => item.selected === true).length ===
+            this.cartList.length && this.cartList.length > 0
+        );
+      },
+      set(newVal) {
+        // this.changeSelectAll()
+      },
+    },
+  },
+  methods: {
+    ...mapMutations({
+      changeCountMutation: "changeCountMutation",
+      changeSelectedMutation: "changeSelectedMutation",
+      changeAllSelectedMutation: "changeAllSelectedMutation",
+    }),
+    changeSelectedOne(index) {
+      this.cartList[index].selected = event.target.checked;
+      localStorage.setItem("cartList", JSON.stringify(this.cartList));
+      // this.changeSelectedMutation(event.target.checked,index)
+      // if(this.totalCount===this.cartList.length && this.cartList.length>0 ){
+      //   this.$refs.selectAll.checked=true
+      // }
+      // console.log(event.target.checked);
+      // console.log(index);
+    },
+    changCount(isAdd, index) {
+      // this.changeCountMutation({ isAdd, index });
+      if (isAdd) {
+        this.cartList[index].count += 1;
+      } else {
+        if (this.cartList[index].count > 1) {
+          this.cartList[index].count -= 1;
+        } else {
+          this.deleteGood(index)
+        }
+      }
+      localStorage.setItem("cartList", JSON.stringify(this.cartList));
+    },
+    deleteGood(index) {
+      if (confirm("您确认删除该商品吗？")) {
+        this.cartList.splice(index, 1);
+      }
+      localStorage.setItem("cartList", JSON.stringify(this.cartList));
+    },
+    changeSelectAll() {
+      console.log(event.target.checked);
+      // this.changeAllSelectedMutation(event.target.checked);
+      this.cartList.forEach((item) => (item.selected = event.target.checked));
+      localStorage.setItem("cartList", JSON.stringify(this.cartList));
+    },
   },
 };
 </script>
@@ -172,6 +259,7 @@ export default {
             border: 1px solid #ddd;
             padding: 10px;
             overflow: hidden;
+            position: relative;
             & > div {
               float: left;
             }
@@ -193,6 +281,21 @@ export default {
             .cart-th6 {
               width: 12.5%;
             }
+            .cart-th3{
+              position: absolute;
+              left: 637px;
+              top: 10px;
+            }
+            .cart-th4{
+              position: absolute;
+              left: 794px;
+              top: 10px;
+            }
+            .cart-th6{
+              position: absolute;
+              right: 44px;
+              top: 10px;
+            }
           }
           .cart-body {
             margin: 15px 0;
@@ -201,6 +304,7 @@ export default {
               padding: 10px;
               border-bottom: 1px solid #ddd;
               overflow: hidden;
+              position: relative;
               & > li {
                 float: left;
               }
@@ -209,6 +313,8 @@ export default {
               }
               .cart-list-con2 {
                 width: 25%;
+                // line-height: 50px;
+                padding-left: 40px;
                 img {
                   width: 82px;
                   height: 82px;
@@ -232,17 +338,24 @@ export default {
               }
               .cart-list-con5 {
                 width: 12.5%;
+                position: relative;
                 .mins {
                   border: 1px solid #ddd;
                   border-right: 0;
-                  float: left;
+                  position: absolute;
+                  left: -21px;
+                  top: 0px;
+                  // float: left;
                   color: #666;
                   width: 6px;
                   text-align: center;
                   padding: 8px;
                 }
-                input {
-                  border: 1px solid #ddd;
+                .itxt {
+                  position: absolute;
+                  left: 0px;
+                  top: 0px;
+                  border: 1px solid #666;
                   width: 40px;
                   height: 33px;
                   float: left;
@@ -250,7 +363,10 @@ export default {
                   font-size: 14px;
                 }
                 .plus {
-                  border: 1px solid #ddd;
+                  position: absolute;
+                  left: 40px;
+                  top: 0px;
+                  border: 1px solid #666;
                   border-left: 0;
                   float: left;
                   color: #666;
@@ -261,14 +377,24 @@ export default {
               }
               .cart-list-con6 {
                 width: 12.5%;
+                position: relative;
+
                 .sum {
                   font-size: 16px;
+                  position: absolute;
+                  left: 158px;
+                  top: 7px;
                 }
               }
               .cart-list-con7 {
                 width: 12.5%;
+                position: relative;
                 a {
                   color: #666;
+                  position: absolute;
+                  width: 40px;
+                  left: 222px;
+                  top: 0px;
                 }
               }
             }
@@ -301,13 +427,13 @@ export default {
           .money-box {
             float: right;
             .chosed {
-              line-height: 26px;
+              line-height: 50px;
               float: left;
               padding: 0 10px;
             }
             .sumprice {
               width: 200px;
-              line-height: 22px;
+              line-height: 50px;
               float: left;
               padding: 0 10px;
               .summoney {
