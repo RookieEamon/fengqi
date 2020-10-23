@@ -16,12 +16,7 @@
         :key="item.goods_id"
       >
         <div class="scan">
-          <img
-            class="img"
-            :src="item.hd_thumb_url"
-            alt=""
-            
-          />
+          <img class="img" :src="item.hd_thumb_url" alt="" />
           <div class="qrcode">
             k00000
             <img src="../../image/saowogoumai.png" alt="" @click="goShopping(index)"/>
@@ -62,17 +57,18 @@ export default {
   },
   mounted() {
     //获取一级索引,根据一级索引获取商品列表
-    this.LV1Index = JSON.parse(localStorage.getItem("LV1Index"));
-    this.goodsItem=this.$store.state.home.goodsList.length>0?
-    this.$store.state.home.goodsList[this.LV1Index]:
-    JSON.parse(localStorage.getItem("goodsList"))[this.LV1Index]
+    this.LV1Index = JSON.parse(localStorage.getItem("LV1Index"));
+    this.goodsItem =
+      this.$store.state.home.goodsList.length > 0
+        ? this.$store.state.home.goodsList[this.LV1Index]
+        : JSON.parse(localStorage.getItem("goodsList"))[this.LV1Index];
   },
   methods: {
     goShopping(index) {
-      this.$router.push(`/detail/${index}`)
-  }
-  }
-}
+      this.$router.push(`/detail/${index}`);
+    },
+  },
+};
 </script>
 <style lang='less' rel='stylesheet/less' scoped>
 // 大图部分

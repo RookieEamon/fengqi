@@ -6,11 +6,11 @@ const state = {
 const mutations = {
     RECEIVE_GOODS_LIST(state, goodsList) {
         state.goodsList = goodsList
-        localStorage.setItem('goodsList',JSON.stringify(goodsList))
+        localStorage.setItem('goodsList', JSON.stringify(goodsList))
     },
-    ADD_CARTLIST(state,good){
+    ADD_CARTLIST(state, good) {
         state.cartList.push(good)
-        localStorage.setItem('cartList',JSON.stringify(state.cartList))
+        localStorage.setItem('cartList', JSON.stringify(state.cartList))
     }
 }
 const actions = {
