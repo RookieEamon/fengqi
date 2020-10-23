@@ -28,6 +28,8 @@ import Jobinformation from '../pages/Recruitment/Jobinformation'
 import Position from '../pages/Recruitment/Jobinformation/Position/index.vue'
 //引入应届生招聘的路由子组件  应届生招聘-招聘流程
 import Process from '../pages/Recruitment/Jobinformation/Process'
+//引入应届生招聘的路由子组件  应届生招聘-校招行程
+import Journey from '../pages/Recruitment/Jobinformation/Journey'
 
 
 //实习生招聘通用
@@ -134,10 +136,10 @@ export default [
 					{
 						//应届生招聘-招聘职位
 						path: '/recruitment/jobinformation/',
-						component: Position,
+						redirect:'/recruitment/jobinformation/position',
 					},
 					{
-						//应届生招聘-招聘职位
+						//应届生招聘-招聘职位-
 						path: '/recruitment/jobinformation/position',
 						component: Position,
 					},
@@ -145,8 +147,14 @@ export default [
 						//应届生招聘-招聘流程
 						path: '/recruitment/jobinformation/process',
 						component: Process,
+						// redirect:'/home'  重新定向一个新地址 往往应用：访问根路径/时
 
-					}
+					},
+					{
+						//应届生招聘-招聘形成
+						path:'/recruitment/jobinformation/journey',
+						component:Journey,
+					},
 				]
 			},
 			{

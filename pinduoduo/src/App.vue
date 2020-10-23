@@ -10,7 +10,8 @@
     &&path !=='/complaint/merchantbackground'
     &&path !=='/complaint/reportdetail'
     &&path !=='/complaint/contraband'
-    &&path !=='/complaint'"
+    &&path !=='/complaint'
+    &&path !== '/recruitment/jobinformation/journey'"
     />
     <router-view></router-view>
     <Footer v-show="!$route.meta.isHeaderAndFooter"/>

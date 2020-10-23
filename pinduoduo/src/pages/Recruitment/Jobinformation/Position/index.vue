@@ -17,15 +17,13 @@
     </div>
 
     <!-- 信息容器  重复 封装组件-->
-    <div class="infoContainer">
+    <div class="infoContainer" v-for="item in jobList" :key="item.id">
       <!-- 信息元素 每个信息 -->
       <div class="infoItem">
         <!-- 信息头部部分 -->
         <div class="infoItemHeader">
           <!-- 信息头部部分 标题 -->
-          <span class="infoItemHeaderTitle"
-            >视频算法工程师（编解码及图像处理）
-          </span>
+          <span class="infoItemHeaderTitle">{{ item.name }} </span>
 
           <!-- 信息头部部分 详情 -->
           <span class="infoItemHeaderDetail">详情</span>
@@ -35,11 +33,11 @@
           <span class="infoItemHeaderLocation">
             <div class="locationItem">
               <i class="iconfont icon-tubiaozhizuomoban-115"></i>
-              <span>技术</span>
+              <span>{{ item.jobName }}</span>
             </div>
             <div class="locationItem">
               <i class="iconfont icon-weibiaoti-"></i>
-              <span>北京</span>
+              <span>{{ item.workLocationName }}</span>
             </div>
             <div class="locationItem">
               <i class="iconfont icon-yonghu"></i>
@@ -55,89 +53,115 @@
         <div class="infoItemContent">
           <p class="jobDuty">岗位职责</p>
           <div class="jobDetail">
-            <p>
-              1.需要对拼多多用户的需求进行分析和拆解，并能通过设计产品方案来满足用户的需求。
-            </p>
-            <p>
-              2.和技术团队、设计团队等部门进行良好的沟通协作，可以有效执行任务并推动项目落地。
-            </p>
-            <p>
-              3.日常需要通过对用户需求的洞察和数据分析，主动发现问题并提出有效的创新解决方案。
-            </p>
+            <div>
+              <div
+                v-for="(shoItem, index) in item.jobDuty.split('\n')"
+                :key="index"
+              >
+                {{ shoItem }}
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- 信息容器  即主体部分-->
-    <div class="infoContainer">
-      <!-- 信息元素 每个信息 -->
-      <div class="infoItem">
-        <!-- 信息头部部分 -->
-        <div class="infoItemHeader">
-          <!-- 信息头部部分 标题 -->
-          <span class="infoItemHeaderTitle"
-            >视频算法工程师（编解码及图像处理）
-          </span>
-
-          <!-- 信息头部部分 详情 -->
-          <span class="infoItemHeaderDetail">详情</span>
-
-          <!-- 信息头部部分 定位 -->
-
-          <span class="infoItemHeaderLocation">
-            <div class="locationItem">
-              <i class="iconfont icon-tubiaozhizuomoban-115"></i>
-              <span>技术</span>
-            </div>
-            <div class="locationItem">
-              <i class="iconfont icon-weibiaoti-"></i>
-              <span>北京</span>
-            </div>
-            <div class="locationItem">
-              <i class="iconfont icon-yonghu"></i>
-              <span>若干</span>
-            </div>
-            <div class="locationItem">
-              <i class="iconfont icon-shijian"></i>
-              <span>2020-10-10</span>
-            </div>
-          </span>
-        </div>
-        <!-- 信息内容部分 -->
-        <div class="infoItemContent">
-          <p class="jobDuty">岗位职责</p>
-          <div class="jobDetail">
-            <p>
-              1.需要对拼多多用户的需求进行分析和拆解，并能通过设计产品方案来满足用户的需求。
-            </p>
-            <p>
-              2.和技术团队、设计团队等部门进行良好的沟通协作，可以有效执行任务并推动项目落地。
-            </p>
-            <p>
-              3.日常需要通过对用户需求的洞察和数据分析，主动发现问题并提出有效的创新解决方案。
-            </p>
-          </div>
-        </div>
-      </div>
+    <!-- 分页器 -->
+    <!-- <div style="margin: 0 auto; margin-bottom: 20px;background-color:> -->
+    <div class="block">
+      <el-pagination
+        @size-change="handleSizeChange"
+        @current-change="handleCurrentChange"
+        :current-page.sync="currentPage"
+        :page-sizes="[3, 5, 8, 10]"
+        :page-size="100"
+        layout="prev, pager, next,sizes"
+        align="right"
+        :total="total"
+        background
+      >
+      </el-pagination>
+      <span class="demonstration">调整每页显示条数</span>
+      <!-- </div> -->
     </div>
   </div>
 </template>
 
 <script>
+import { reqInternJobList } from "@/api";
+import { Pagination } from "element-ui";
 export default {
   name: "Position",
+  data() {
+    return {
+      page: 1,
+      pageSize: 3,
+      currentPage: 1,
+      recruitType: "headquarters", //recruitType参数初始值
+      total: 0, //分页组件的总页数
+      jobList: [], //所有职位信息列表
+
+      jobDutyItem: {}, //职责列表
+    };
+  },
+  mounted() {
+    //调用方法获取职位列表
+    let { page, pageSize, recruitType } = this;
+    this.getPositionList(page, pageSize, recruitType);
+  },
+  methods: {
+    //获取职位列表的方法
+    async getPositionList(page, pageSize, recruitType) {
+      const resultObj = await reqInternJobList(page, pageSize, recruitType);
+      console.log("resultObj", resultObj);
+      this.jobList = resultObj.list;
+      const totalPageSize = resultObj.total;
+      // console.log(totalPageSize);
+      this.total = totalPageSize * 1;
+      console.log(this.total);
+    },
+
+    handleSizeChange(pageSize) {
+      console.log(pageSize);
+      this.pageSize = pageSize;
+      this.getPositionList(this.page, pageSize, this.recruitType);
+      if (document.body.scrollTop) {
+        document.body.scrollTop = 0;
+      } else {
+        document.documentElement.scrollTop = 0;
+      }
+    },
+    handleCurrentChange(page) {
+      console.log(page);
+      this.page = page;
+      this.getPositionList(this.page, this.pageSize, this.recruitType);
+      if (document.body.scrollTop) {
+        document.body.scrollTop = 0;
+      } else {
+        document.documentElement.scrollTop = 0;
+      }
+    },
+    //处理点击分页后返回顶部的方法
+    opt() {
+      if (document.body.scrollTop) {
+        document.body.scrollTop = 0;
+      } else {
+        document.documentElement.scrollTop = 0;
+      }
+    },
+  },
 };
 </script>
 
 <style lang = 'less' rel='stylesheet/less' scoped>
+/* @import url("") */
 //右侧信息区域
 .right {
   width: 900px;
 
   display: flex;
   flex-direction: column;
-
+  overflow: hidden;
   //  搜索部分
   .searchContainer {
     background-color: white;
@@ -278,6 +302,11 @@ export default {
         }
       }
     }
+  }
+
+  /* 分页器样式 */
+  .block {
+    margin: 20px 0;
   }
 }
 </style>

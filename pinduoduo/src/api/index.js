@@ -11,3 +11,7 @@ export const reqLatestPositionList = (job,page,pageSize) => ajax.post('/careers'
 export const reqJobdetail = (code) => ajax.post('/jobdetail',{code})
 // 发送请求获取首页数据
 export const reqHome = () => ajax.get('/indexData')
+//发送请求获取校园招聘-应届生职位列表
+export const reqInternJobList = (page,pageSize,recruitType) => ajax.post('/recruitmentfresh',{page,pageSize,recruitType})
+//发送请求获取校园招聘-校招行程
+export const reqJourney = () => ajax.get('/recruitmentjourney')
