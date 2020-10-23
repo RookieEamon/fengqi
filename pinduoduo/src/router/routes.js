@@ -29,15 +29,11 @@ const Jobinformation = () => import('../pages/Recruitment/Jobinformation')
 //引入应届生招聘的路由子组件  应届生招聘-招聘信息
 const Position = () => import('../pages/Recruitment/Jobinformation/Position/index.vue') 
 //引入应届生招聘的路由子组件  应届生招聘-招聘流程
-<<<<<<< HEAD
-const Process = () => import('../pages/Recruitment/Jobinformation/Process') 
-=======
 import Process from '../pages/Recruitment/Jobinformation/Process'
 //引入应届生招聘的路由子组件  应届生招聘-校招行程
 import Journey from '../pages/Recruitment/Jobinformation/Journey'
 
 
->>>>>>> feature/lipengyu
 //实习生招聘通用
 const Intern = () => import('../pages/Recruitment/Intern') 
 
